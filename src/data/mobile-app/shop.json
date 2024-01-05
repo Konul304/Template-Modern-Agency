@@ -1,0 +1,107 @@
+{
+  "categories": [
+    {
+      "title": "App Design",
+      "productsCount": 5
+    },
+    {
+      "title": "Development",
+      "productsCount": 3
+    },
+    {
+      "title": "Web Design",
+      "productsCount": 7
+    },
+    {
+      "title": "Dashboard",
+      "productsCount": 4
+    },
+    {
+      "title": "Logo Design",
+      "productsCount": 9
+    },
+    {
+      "title": "Branding",
+      "productsCount": 14
+    }
+  ],
+  "tags": [
+    "Apps",
+    "Design",
+    "Branding",
+    "Software",
+    "Development",
+    "Web"
+  ],
+  "priceFilter": {
+    "min": 5,
+    "max": 800,
+    "step": 10,
+    "value": 200
+  },
+  "products": [
+    {
+      "id": 1,
+      "image": "/mobile-app/img/shop/1.jpg",
+      "tag": "Apps",
+      "name": "Mobile Apps Design",
+      "price": 1253
+    },
+    {
+      "id": 2,
+      "image": "/mobile-app/img/shop/2.jpg",
+      "tag": "Apps",
+      "name": "Mobile Apps Design",
+      "price": 1253
+    },
+    {
+      "id": 3,
+      "image": "/mobile-app/img/shop/3.jpg",
+      "tag": "Apps",
+      "name": "Mobile Apps Design",
+      "price": 1253
+    },
+    {
+      "id": 4,
+      "image": "/mobile-app/img/shop/4.jpg",
+      "tag": "Apps",
+      "name": "Mobile Apps Design",
+      "price": 1253
+    },
+    {
+      "id": 5,
+      "image": "/mobile-app/img/shop/5.jpg",
+      "tag": "Apps",
+      "name": "Mobile Apps Design",
+      "price": 1253
+    },
+    {
+      "id": 6,
+      "image": "/mobile-app/img/shop/6.jpg",
+      "tag": "Apps",
+      "name": "Mobile Apps Design",
+      "price": 1253
+    },
+    {
+      "id": 7,
+      "image": "/mobile-app/img/shop/7.jpg",
+      "tag": "Apps",
+      "name": "Mobile Apps Design",
+      "price": 1253
+    },
+    {
+      "id": 8,
+      "image": "/mobile-app/img/shop/8.jpg",
+      "tag": "Apps",
+      "name": "Mobile Apps Design",
+      "price": 1253
+    },
+    {
+      "id": 9,
+      "image": "/mobile-app/img/shop/9.jpg",
+      "tag": "Apps",
+      "name": "Mobile Apps Design",
+      "price": 1253
+    }
+  ]
+}

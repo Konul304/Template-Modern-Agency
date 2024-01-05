@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "image": "/mobile-app/img/blog/1.jpg",
+    "tag": "Design & Arts",
+    "title": "Everything You Want Know About Creating Voice Interfaces",
+    "author": "Lisa A. Cowles",
+    "comments": 5
+  },
+  {
+    "id": 2,
+    "image": "/mobile-app/img/blog/2.jpg",
+    "tag": "Design & Arts",
+    "title": "Everything You Want Know About Creating Voice Interfaces",
+    "author": "Lisa A. Cowles",
+    "comments": 5
+  }
+]

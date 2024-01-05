@@ -1,0 +1,45 @@
+{
+  "image": "/mobile-app/img/shapes/border.png",
+  "brands": [
+    {
+      "id": 1,
+      "image": "/mobile-app/img/brands/l1.png"
+    },
+    {
+      "id": 2,
+      "image": "/mobile-app/img/brands/l2.png"
+    },
+    {
+      "id": 3,
+      "image": "/mobile-app/img/brands/l3.png"
+    },
+    {
+      "id": 4,
+      "image": "/mobile-app/img/brands/l4.png"
+    },
+    {
+      "id": 5,
+      "image": "/mobile-app/img/brands/l5.png"
+    },
+    {
+      "id": 6,
+      "image": "/mobile-app/img/brands/l5.png"
+    },
+    {
+      "id": 7,
+      "image": "/mobile-app/img/brands/l4.png"
+    },
+    {
+      "id": 8,
+      "image": "/mobile-app/img/brands/l3.png"
+    },
+    {
+      "id": 9,
+      "image": "/mobile-app/img/brands/l2.png"
+    },
+    {
+      "id": 10,
+      "image": "/mobile-app/img/brands/l1.png"
+    }
+  ]
+}

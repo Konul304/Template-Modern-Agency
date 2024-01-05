@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "icon-image": "/mobile-app/img/qoute.png",
+    "content": "unde omnis iste natus error sit voluptatem accusantium dolore laudantium totam rem aperiam eaqusa quae abillo inventore veritatis architect beatae vitae dicta ecabo.",
+    "author": {
+      "name": "William Glenn",
+      "image": "/mobile-app/img/clients/1.png",
+      "position": "Senior Manager"
+    }
+  },
+  {
+    "id": 2,
+    "icon-image": "/mobile-app/img/qoute.png",
+    "content": "unde omnis iste natus error sit voluptatem accusantium dolore laudantium totam rem aperiam eaqusa quae abillo inventore veritatis architect beatae vitae dicta ecabo.",
+    "author": {
+      "name": "John R. Gordon",
+      "image": "/mobile-app/img/clients/2.png",
+      "position": "Senior Manager"
+    }
+  },
+  {
+    "id": 3,
+    "icon-image": "/mobile-app/img/qoute.png",
+    "content": "unde omnis iste natus error sit voluptatem accusantium dolore laudantium totam rem aperiam eaqusa quae abillo inventore veritatis architect beatae vitae dicta ecabo.",
+    "author": {
+      "name": "Josesr B. Rink",
+      "image": "/mobile-app/img/clients/3.png",
+      "position": "Senior Manager"
+    }
+  },
+  {
+    "id": 4,
+    "icon-image": "/mobile-app/img/qoute.png",
+    "content": "unde omnis iste natus error sit voluptatem accusantium dolore laudantium totam rem aperiam eaqusa quae abillo inventore veritatis architect beatae vitae dicta ecabo.",
+    "author": {
+      "name": "William Glenn",
+      "image": "/mobile-app/img/clients/1.png",
+      "position": "Senior Manager"
+    }
+  }
+]

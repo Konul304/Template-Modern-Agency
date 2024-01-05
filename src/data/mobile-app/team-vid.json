@@ -1,0 +1,32 @@
+{
+  "video": {
+    "channel": "vimeo",
+    "id": "127203262"
+  },
+  "team": [
+    {
+      "id": 1,
+      "image": "/mobile-app/img/team/1.png",
+      "name": "Eddie E. Moseley",
+      "position": "CEO & Founder"
+    },
+    {
+      "id": 2,
+      "image": "/mobile-app/img/team/2.png",
+      "name": "John J. Schreffler",
+      "position": "Apps Designer"
+    },
+    {
+      "id": 3,
+      "image": "/mobile-app/img/team/3.png",
+      "name": "Venessa M. Meister",
+      "position": "Web Developer"
+    },
+    {
+      "id": 4,
+      "image": "/mobile-app/img/team/4.png",
+      "name": "Joel R. Funkhouser",
+      "position": "Senior Manager"
+    }
+  ]
+}

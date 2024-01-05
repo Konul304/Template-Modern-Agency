@@ -1,0 +1,78 @@
+{
+  "filters": [
+    {
+      "type": "Show All",
+      "operator": "*"
+    },
+    {
+      "type": "Mobile Apps",
+      "operator": ".brand"
+    },
+    {
+      "type": "Development",
+      "operator": ".web"
+    },
+    {
+      "type": "Branding",
+      "operator": ".graphic"
+    },
+    {
+      "type": "Design",
+      "operator": ".design"
+    },
+    {
+      "type": "Logo Design",
+      "operator": ".app"
+    }
+  ],
+  "works": [
+    {
+      "image": "/mobile-app/img/works/1.jpg",
+      "type": "graphic",
+      "title": "Mobile UI Design",
+      "tags": "Design Branding"
+    },
+    {
+      "image": "/mobile-app/img/works/2.jpg",
+      "type": "web",
+      "title": "Mobile UI Design",
+      "tags": "Design Branding"
+    },
+    {
+      "image": "/mobile-app/img/works/5.jpg",
+      "type": "web",
+      "title": "Mobile UI Design",
+      "tags": "Design Branding"
+    },
+    {
+      "image": "/mobile-app/img/works/3.jpg",
+      "type": "web graphic",
+      "title": "Mobile UI Design",
+      "tags": "Design Branding"
+    },
+    {
+      "image": "/mobile-app/img/works/4.jpg",
+      "type": "app design",
+      "title": "Mobile UI Design",
+      "tags": "Design Branding"
+    },
+    {
+      "image": "/mobile-app/img/works/6.jpg",
+      "type": "brand",
+      "title": "Mobile UI Design",
+      "tags": "Design Branding"
+    },
+    {
+      "image": "/mobile-app/img/works/7.jpg",
+      "type": "items",
+      "title": "Mobile UI Design",
+      "tags": "Design Branding"
+    },
+    {
+      "image": "/mobile-app/img/works/8.jpg",
+      "type": "design",
+      "title": "Mobile UI Design",
+      "tags": "Design Branding"
+    }
+  ]
+}

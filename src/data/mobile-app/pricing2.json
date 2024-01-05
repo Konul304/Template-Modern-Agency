@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "title": "Free Package",
+    "price": 0,
+    "description": "Get Free 7 Days Trial",
+    "status": "idle",
+    "features": [
+      {
+        "title": "Design & Development",
+        "disabled": false
+      },
+      {
+        "title": "Clean Code & Easy",
+        "disabled": false
+      },
+      {
+        "title": "Modern UI Design",
+        "disabled": false
+      },
+      {
+        "title": "350 GB Hosting Free",
+        "disabled": true
+      },
+      {
+        "title": "24/7 Hour Support",
+        "disabled": true
+      },
+      {
+        "title": "Upload Modern Design",
+        "disabled": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Premium Package",
+    "price": 59,
+    "description": "Choose Package",
+    "status": "active",
+    "features": [
+      {
+        "title": "Design & Development",
+        "disabled": false
+      },
+      {
+        "title": "Clean Code & Easy",
+        "disabled": false
+      },
+      {
+        "title": "Modern UI Design",
+        "disabled": false
+      },
+      {
+        "title": "350 GB Hosting Free",
+        "disabled": false
+      },
+      {
+        "title": "24/7 Hour Support",
+        "disabled": false
+      },
+      {
+        "title": "Upload Modern Design",
+        "disabled": true
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Golden Package",
+    "price": 99,
+    "description": "Choose Package",
+    "status": "Idle",
+    "features": [
+      {
+        "title": "Design & Development",
+        "disabled": false
+      },
+      {
+        "title": "Clean Code & Easy",
+        "disabled": false
+      },
+      {
+        "title": "Modern UI Design",
+        "disabled": false
+      },
+      {
+        "title": "350 GB Hosting Free",
+        "disabled": false
+      },
+      {
+        "title": "24/7 Hour Support",
+        "disabled": false
+      },
+      {
+        "title": "Upload Modern Design",
+        "disabled": false
+      }
+    ]
+  }
+]

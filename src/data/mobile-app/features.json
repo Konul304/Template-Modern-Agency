@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "icon": "pe-7s-vector",
+    "title": "Modern Design",
+    "details": "unde omniste natus error sit voluptatem accus antium dolore mque laudant totam rem aperiam."
+  },
+  {
+    "id": 2,
+    "icon": "pe-7s-rocket",
+    "title": "Fast Installation",
+    "details": "unde omniste natus error sit voluptatem accus antium dolore mque laudant totam rem aperiam."
+  },
+  {
+    "id": 3,
+    "icon": "pe-7s-graph3",
+    "title": "Digital Analytics",
+    "details": "unde omniste natus error sit voluptatem accus antium dolore mque laudant totam rem aperiam."
+  },
+  {
+    "id": 4,
+    "icon": "pe-7s-anchor",
+    "title": "SEO Friendly",
+    "details": "unde omniste natus error sit voluptatem accus antium dolore mque laudant totam rem aperiam."
+  },
+  {
+    "id": 5,
+    "icon": "pe-7s-phone",
+    "title": "Clean Coding",
+    "details": "unde omniste natus error sit voluptatem accus antium dolore mque laudant totam rem aperiam."
+  },
+  {
+    "id": 6,
+    "icon": "pe-7s-lock",
+    "title": "High Security",
+    "details": "unde omniste natus error sit voluptatem accus antium dolore mque laudant totam rem aperiam."
+  }
+]
