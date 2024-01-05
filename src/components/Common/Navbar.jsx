@@ -57,6 +57,7 @@ const Navbar = ({ lr, theme }) => {
           <ul className="navbar-nav ml-auto">
             <li className="nav-item dropdown" onClick={handleDropdown}>
               <span
+                // className="nav-link "
                 className="nav-link dropdown-toggle"
                 data-toggle="dropdown"
                 role="button"
@@ -98,16 +99,18 @@ const Navbar = ({ lr, theme }) => {
               </a>
             </li>
             <li className="nav-item dropdown" onClick={handleDropdown}>
-              <span
-                className="nav-link dropdown-toggle"
-                data-toggle="dropdown"
+              <a
+              href={`/works2/works2-dark`}
+                className="nav-link "
+                // className="nav-link dropdown-toggle"
+                // data-toggle="dropdown"
                 role="button"
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Works
-              </span>
-              <div className="dropdown-menu">
+                Portfolio
+              </a>
+              {/* <div className="dropdown-menu">
                 <a className="dropdown-item" href={`/showcase/showcase-dark`}>
                   Showcase Parallax
                 </a>
@@ -126,19 +129,20 @@ const Navbar = ({ lr, theme }) => {
                 <a className="dropdown-item" href={`/works3/works3-dark`}>
                   Portfolio Gallery
                 </a>
-              </div>
+              </div> */}
             </li>
             <li className="nav-item dropdown" onClick={handleDropdown}>
               <span
-                className="nav-link dropdown-toggle"
-                data-toggle="dropdown"
+                className="nav-link "
+                // className="nav-link dropdown-toggle"
+                // data-toggle="dropdown"
                 role="button"
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Blog
+                Services
               </span>
-              <div className="dropdown-menu">
+              {/* <div className="dropdown-menu">
                 <a className="dropdown-item" href={`/blog/blog-dark`}>
                   Blog Standerd
                 </a>
@@ -151,7 +155,19 @@ const Navbar = ({ lr, theme }) => {
                 <a className="dropdown-item" href={`/blog-details/blog-details-dark`}>
                   Blog Details
                 </a>
-              </div>
+              </div> */}
+            </li>
+            <li className="nav-item dropdown" onClick={handleDropdown}>
+              <span
+                className="nav-link "
+                // className="nav-link dropdown-toggle"
+                // data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Cases
+              </span>
             </li>
             <li className="nav-item">
               <a href={`/contact/contact-dark`} className="nav-link">
