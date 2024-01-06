@@ -40,10 +40,10 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
                 : 'text-right'
               } col-12`}>
               <div className="filter">
-                <span data-filter="*" className="active"> All </span>
-                <span data-filter=".brand">Branding</span>
-                <span data-filter=".web">Mobile App</span>
-                <span data-filter=".graphic">Creative</span>
+                <span data-filter="*" className="active"> Presentation content </span>
+                <span data-filter=".brand">Videos</span>
+                {/* <span data-filter=".web">Mobile App</span>
+                <span data-filter=".graphic">Creative</span> */}
               </div>
             </div>
           }
@@ -63,7 +63,7 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
               </div>
               <div className="cont">
                 <h6>Creativity Demand</h6>
-                <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span>
+                {/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
               </div>
             </div>
 
@@ -81,7 +81,7 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
               </div>
               <div className="cont">
                 <h6>Through The Breaking</h6>
-                <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span>
+                {/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
               </div>
             </div>
 
@@ -99,7 +99,7 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
               </div>
               <div className="cont">
                 <h6>Create With Creatives</h6>
-                <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span>
+                {/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
               </div>
             </div>
 
@@ -117,7 +117,7 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
               </div>
               <div className="cont">
                 <h6>Energies of Love</h6>
-                <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span>
+                {/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
               </div>
             </div>
 
@@ -135,7 +135,7 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
               </div>
               <div className="cont">
                 <h6>See It Yourself</h6>
-                <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span>
+                {/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
               </div>
             </div>
 
@@ -153,7 +153,7 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
               </div>
               <div className="cont">
                 <h6>Blast From The Past</h6>
-                <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span>
+                {/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
               </div>
             </div>
           </div>
