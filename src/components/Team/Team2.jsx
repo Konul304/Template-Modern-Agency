@@ -54,7 +54,9 @@ function Team2() {
                 </div>
                 <div className="info">
                   <h6>Ryan Hicks</h6>
-                  <span>Client Manager</span>
+                  <div>+9945555555</div>
+                  <div>hello@gmail.com</div>
+                  <div>Azerbaijan</div>
                 </div>
               </div>
             </div>
@@ -94,7 +96,9 @@ function Team2() {
                 </div>
                 <div className="info">
                   <h6>Ryan Hicks</h6>
-                  <span>Client Manager</span>
+                  <div>+9945555555</div>
+                  <div>hello@gmail.com</div>
+                  <div>Azerbaijan</div>
                 </div>
               </div>
             </div>
@@ -135,7 +139,9 @@ function Team2() {
                 </div>
                 <div className="info">
                   <h6>Ryan Hicks</h6>
-                  <span>Client Manager</span>
+                  <div>+9945555555</div>
+                  <div>hello@gmail.com</div>
+                  <div>Azerbaijan</div>
                 </div>
               </div>
             </div>
@@ -175,7 +181,9 @@ function Team2() {
                 </div>
                 <div className="info">
                   <h6>Ryan Hicks</h6>
-                  <span>Client Manager</span>
+                  <div>+9945555555</div>
+                  <div>hello@gmail.com</div>
+                  <div>Azerbaijan</div>
                 </div>
               </div>
             </div>
