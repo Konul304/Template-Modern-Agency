@@ -56,17 +56,17 @@ const Navbar = ({ lr, theme }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item dropdown" onClick={handleDropdown}>
-              <span
-                // className="nav-link "
-                className="nav-link dropdown-toggle"
+              <a href={`/homepage/home1-dark`}  
+                className="nav-link "
+                // className="nav-link dropdown-toggle"
                 data-toggle="dropdown"
                 role="button"
                 aria-haspopup="true"
                 aria-expanded="false"
               >
                 Home
-              </span>
-              <div className="dropdown-menu">
+              </a>
+              {/* <div className="dropdown-menu">
                 <a className="dropdown-item" href={`/homepage/home1-dark`}>
                   Main Home
                 </a>
@@ -91,7 +91,7 @@ const Navbar = ({ lr, theme }) => {
                 <a className="dropdown-item" href={`/homepage/home8-dark`}>
                   Architecture
                 </a>
-              </div>
+              </div> */}
             </li>
             <li className="nav-item">
               <a className="nav-link" href={`/about/about-dark`}>
