@@ -3728,6 +3728,23 @@ span:hover {
 
 /* ====================== [ end showcase ] ====================== */
 /* ====================== [ Start Intro ] ====================== */
+.button_container{
+  display: flex !important;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 40px;
+    div:first-child{
+      padding: 5px 10px;
+      border: 0.5px solid #1A1B1E;
+      border-radius: 50%;
+    }
+    div:last-child{
+      padding: 5px 10px;
+      border: 0.5px solid #1A1B1E;
+      border-radius: 50%;
+    }
+}
 .about .content .co-tit {
   font-weight: 400;
   margin-bottom: 30px;
