@@ -1,8 +1,0 @@
-{
-  "/(dark)/project-details2/project-details2-dark/page": "app/(dark)/project-details2/project-details2-dark/page.js",
-  "/(dark)/works3/works3-dark/page": "app/(dark)/works3/works3-dark/page.js",
-  "/(dark)/works2/works2-dark/page": "app/(dark)/works2/works2-dark/page.js",
-  "/(dark)/about/about-dark/page": "app/(dark)/about/about-dark/page.js",
-  "/(dark)/homepage/home1-dark/page": "app/(dark)/homepage/home1-dark/page.js",
-  "/(dark)/contact/contact-dark/page": "app/(dark)/contact/contact-dark/page.js"
-}
