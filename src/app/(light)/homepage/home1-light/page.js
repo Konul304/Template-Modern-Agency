@@ -9,14 +9,14 @@ import Works from '@/components/Works/Works1';
 import Numbers from '@/components/Numbers/Numbers1';
 import Testimonials from '@/components/Testimonials/TestimonialsWithVideo';
 import SkillsCircle from '@/components/Skills/SkillsCircle';
-import Clients from '@/components/Clients/Clients1';
+import Partners from '@/components/Clients/Partners';
 import Blogs from '@/components/Blogs/Blogs1';
 import CallToAction from '@/components/Others/CallToAction';
 import Footer from '@/components/Common/Footer';
 
 export const metadata = {
-  title: 'Vie - Main Demo Light'
-}
+  title: 'Vie - Main Demo Light',
+};
 
 export default function Home1() {
   return (
@@ -31,11 +31,11 @@ export default function Home1() {
         <Numbers />
         <Testimonials />
         <SkillsCircle theme="light" />
-        <Clients theme="light" />
+        <Partners theme="light" />
         <Blogs />
         <CallToAction />
         <Footer />
       </div>
     </>
-  )
+  );
 }
