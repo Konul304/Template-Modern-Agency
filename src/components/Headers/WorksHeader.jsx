@@ -19,11 +19,9 @@ function WorksHeader() {
           <div className="col-lg-7 col-md-9 static">
             <div className="capt mt-50">
               <div className="parlx text-center">
-                <h1 className="color-font">amazing works</h1>
+                <h1 className="color-font">Our Portfolio</h1>
                 <p>
-                  Creativity involves breaking out of expected &amp; repeatable
-                  patterns in order to look at things in different way than ever
-                  before.
+                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet blanditiis aliquam officia exercitationem est totam, voluptas nemo adipisci consequatur sit expedita non ut natus dolor et placeat provident fuga temporibus.
                 </p>
               </div>
               <div className="bactxt custom-font valign">
