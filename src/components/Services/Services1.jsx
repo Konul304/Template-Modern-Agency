@@ -13,7 +13,7 @@ function Services1({ style, lines }) {
                 Best Features
               </h6>
               <h3 className="wow color-font">
-                We are a new digital product development agency
+               Our Services
               </h3>
             </div>
           </div>

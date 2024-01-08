@@ -5040,7 +5040,7 @@ span:hover {
   color: #12c2e9;
 }
 
-.portfolio .filtering span:after {
+/* .portfolio .filtering span:after {
   content: "";
   width: 7px;
   height: 7px;
@@ -5049,7 +5049,7 @@ span:hover {
   position: absolute;
   right: -24px;
   top: 40%;
-}
+} */
 
 .portfolio .filtering span:last-of-type:after {
   display: none;

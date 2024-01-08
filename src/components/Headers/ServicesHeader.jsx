@@ -1,7 +1,7 @@
 'use client';
 import React, { useRef, useEffect } from 'react';
 
-function WorksHeader() {
+function ServicesHeader() {
   const fixedSlider = useRef();
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function WorksHeader() {
           <div className="col-lg-7 col-md-9 static">
             <div className="capt mt-50">
               <div className="parlx text-center">
-                <h1 className="color-font">Our Portfolio</h1>
+                <h1 className="color-font">Our Services</h1>
                 <p>
                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet blanditiis aliquam officia exercitationem est totam, voluptas nemo adipisci consequatur sit expedita non ut natus dolor et placeat provident fuga temporibus.
                 </p>
@@ -35,4 +35,4 @@ function WorksHeader() {
   )
 }
 
-export default WorksHeader
+export default ServicesHeader

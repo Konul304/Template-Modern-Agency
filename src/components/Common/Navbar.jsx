@@ -132,7 +132,7 @@ const Navbar = ({ lr, theme }) => {
               </div> */}
             </li>
             <li className="nav-item dropdown" onClick={handleDropdown}>
-              <span
+              <a href={`/works3/works3-dark`}
                 className="nav-link "
                 // className="nav-link dropdown-toggle"
                 // data-toggle="dropdown"
@@ -141,7 +141,7 @@ const Navbar = ({ lr, theme }) => {
                 aria-expanded="false"
               >
                 Services
-              </span>
+              </a>
               {/* <div className="dropdown-menu">
                 <a className="dropdown-item" href={`/blog/blog-dark`}>
                   Blog Standerd
