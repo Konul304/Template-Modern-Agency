@@ -29,7 +29,7 @@ export default function Home1() {
         <Numbers />
         <Clients theme="dark" />
         <Services />
-        <Services3 />
+        {/* <Services3 /> */}
         <Works />
         <FullTestimonials />
         {/* <SkillsCircle theme="dark" />
