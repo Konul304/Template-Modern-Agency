@@ -13,6 +13,7 @@ function ContactHeader() {
   }, []);
 
   return (
+    
     <header className="pages-header circle-bg valign position-re">
       <div className="container">
         <div className="row justify-content-center">
@@ -24,6 +25,9 @@ function ContactHeader() {
                   {contentHeaderData.title.second}
                 </h1>
                 <p>{contentHeaderData.content}</p>
+                {/* <button type="submit" className={`butn bord`}>
+                    <span>Send Message</span>
+                  </button> */}
               </div>
             </div>
           </div>
@@ -34,6 +38,8 @@ function ContactHeader() {
         <div className="gradient-circle two"></div>
       </div>
     </header>
+     
+    
   )
 }
 
