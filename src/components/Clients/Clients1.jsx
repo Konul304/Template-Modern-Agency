@@ -20,7 +20,10 @@ const swiperOptions = {
     nextEl: ".arrows .next",
   },
   centeredSlides: true,
-  autoplay: true,
+  autoplay: {
+    delay: 2000, // Set the autoplay delay to 5000 milliseconds (5 seconds)
+    disableOnInteraction: false, // Allow autoplay to continue after user interaction
+  },
   slidesPerView: 1,
   spaceBetween: 60,
   breakpoints: {
