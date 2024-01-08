@@ -1,16 +1,10 @@
 import React from 'react';
 //= Page components
-import Loading from '@/components/Common/Loader';
 import Navbar from '@/components/Common/Navbar';
 import PagesHeader from '@/components/Headers/PagesHeader';
 import AboutIntro from '@/components/AboutUs/AboutIntro';
-import Services from '@/components/Services/Services1';
-import TestimonialsWithVideo from '@/components/Testimonials/TestimonialsWithVideo';
-import SkillsCircle from '@/components/Skills/SkillsCircle';
 import Team from '@/components/Team/Team1';
-import MinimalArea from '@/components/Others/MinimalArea1';
-import Clients from '@/components/Clients/Clients1';
-import CallToAction from '@/components/Others/CallToAction';
+import Partners from '@/components/Clients/Partners';
 import Footer from '@/components/Common/Footer';
 import OurHistory from '@/components/OurHistory';
 
@@ -28,7 +22,7 @@ function AboutDark() {
         passion for what we do.
       </PagesHeader>
       <AboutIntro />
-      <Clients theme="dark" />
+      <Partners theme="dark" />
       <OurHistory />
       <Team />
       {/* <Services style="4item" />

@@ -9,31 +9,34 @@ import TestimonialsWithVideo from '@/components/Testimonials/TestimonialsWithVid
 import SkillsCircle from '@/components/Skills/SkillsCircle';
 import Team from '@/components/Team/Team1';
 import MinimalArea from '@/components/Others/MinimalArea1';
-import Clients from '@/components/Clients/Clients1';
+import Partners from '@/components/Clients/Partners';
 import CallToAction from '@/components/Others/CallToAction';
 import Footer from '@/components/Common/Footer';
 
 export const metadata = {
-  title: 'Vie - About Light'
-}
+  title: 'Vie - About Light',
+};
 
 function AboutLight() {
   return (
     <>
       <Loading />
       <Navbar theme="light" />
-      <PagesHeader imageLink="/img/slid/about.jpg">Our dedicated team of creatives is bursting with talent, experience and passion for what we do.</PagesHeader>
+      <PagesHeader imageLink="/img/slid/about.jpg">
+        Our dedicated team of creatives is bursting with talent, experience and
+        passion for what we do.
+      </PagesHeader>
       <AboutIntro />
       <Services style="4item" />
       <TestimonialsWithVideo />
       <SkillsCircle from="aboutPage" />
       <Team />
       <MinimalArea />
-      <Clients theme="light" />
+      <Partners theme="light" />
       <CallToAction />
       <Footer />
     </>
-  )
+  );
 }
 
-export default AboutLight
+export default AboutLight;
