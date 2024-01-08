@@ -101,11 +101,6 @@ function Footer({ hideBGCOLOR }) {
                   <i className="fab fa-youtube"></i>
                 </a>
               </div>
-              <div className="copy-right">
-                <p>
-                  © 2023, Vie Template. Made with passion by <a href="#0">ThemesCamp</a>.
-                </p>
-              </div>
             </div>
           </div>
         </div>
