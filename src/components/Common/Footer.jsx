@@ -38,7 +38,7 @@ function Footer({ hideBGCOLOR }) {
           <div className="col-lg-4">
             <div className="item md-mb50">
               <div className="title">
-                <h5>Recent News</h5>
+                <h5>Portfolio</h5>
               </div>
               <ul>
                 <li>
@@ -53,7 +53,7 @@ function Footer({ hideBGCOLOR }) {
                         The Start-Up Ultimate Guide to Make Your WordPress
                         Journal.
                       </p>
-                      <span className="date">14 sep 2023</span>
+                      {/* <span className="date">14 sep 2023</span> */}
                     </a>
                   </div>
                 </li>
@@ -69,7 +69,7 @@ function Footer({ hideBGCOLOR }) {
                         The Start-Up Ultimate Guide to Make Your WordPress
                         Journal.
                       </p>
-                      <span className="date">14 sep 2023</span>
+                      {/* <span className="date">14 sep 2023</span> */}
                     </a>
                   </div>
                 </li>
@@ -84,9 +84,12 @@ function Footer({ hideBGCOLOR }) {
           </div>
           <div className="col-lg-4">
             <div className="item">
-              <div className="logo">
-                <img src="/img/logo-light.png" alt="logo" />
+            <div className="title">
+                <h5>Socials</h5>
               </div>
+              {/* <div className="logo">
+                <img src="/img/logo-light.png" alt="logo" />
+              </div> */}
               <div className="social">
                 <a href="#0">
                   <i className="fab fa-facebook-f"></i>
