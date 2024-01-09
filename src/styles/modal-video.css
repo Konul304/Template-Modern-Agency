@@ -68,7 +68,7 @@
   height: 0;
   position: relative;
   padding-bottom: 56.25%;
-  background-color: var(--modal-bg-color);
+  /* background-color: var(--modal-bg-color); */
   animation-timing-function: var(--animation-function);
   animation-duration: var(--animation-speed);
   animation-name: modal-video-inner;
