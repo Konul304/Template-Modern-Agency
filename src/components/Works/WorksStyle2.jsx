@@ -65,10 +65,10 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
                 : 'col-12'
               } items presentation wow fadeInUp`} data-wow-delay=".4s">
               <div className="item-img">
-                <Link className="imago wow" href="/project-details2/project-details2-dark">
+                <div className="imago wow" >
                   <img src="/img/portfolio/portfolio/1/1.jpg" alt="image" />
                   <div className="item-img-overlay"></div>
-                </Link>
+                </div>
               </div>
               <div className="cont">
                 <h6>Creativity Demand <span onClick={handleDownload} className={styles.download_icon}>{download_icon}</span></h6>
@@ -83,10 +83,10 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
                 : 'col-12'
               } items presentation wow fadeInUp`} data-wow-delay=".4s">
               <div className="item-img">
-                <Link className="imago wow" href="/project-details2/project-details2-dark">
+                <div className="imago wow" >
                   <img src="/img/portfolio/portfolio/1/2.jpg" alt="image" />
                   <div className="item-img-overlay"></div>
-                </Link>
+                </div>
               </div>
               <div className="cont">
                 <h6>Through The Breaking<span onClick={handleDownload} className={styles.download_icon}>{download_icon}</span></h6>
@@ -120,10 +120,10 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
                 : 'col-12'
               } items presentation wow fadeInUp`} data-wow-delay=".4s">
               <div className="item-img">
-                <Link className="imago wow" href="/project-details2/project-details2-dark">
+                <div className="imago wow" >
                   <img src="/img/portfolio/portfolio/1/4.jpg" alt="image" />
                   <div className="item-img-overlay"></div>
-                </Link>
+                </div>
               </div>
               <div className="cont">
                 <h6>Energies of Love<span onClick={handleDownload} className={styles.download_icon}>{download_icon}</span></h6>
@@ -138,10 +138,10 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
                 : 'col-12'
               } items presentation wow fadeInUp`} data-wow-delay=".4s">
               <div className="item-img">
-                <Link className="imago wow" href="/project-details2/project-details2-dark">
+                <div className="imago wow" >
                   <img src="/img/portfolio/portfolio/1/5.jpg" alt="image" />
                   <div className="item-img-overlay"></div>
-                </Link>
+                </div>
               </div>
               <div className="cont">
                 <h6>See It Yourself<span onClick={handleDownload} className={styles.download_icon}>{download_icon}</span></h6>
