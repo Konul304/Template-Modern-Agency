@@ -15,9 +15,9 @@ const BlogDetails = ({ theme }) => {
             <div className="post">
               <Image />
               <Content />
-              <Pagination />
-              <CommentsArea />
-              <CommentsForm theme={theme} />
+              {/* <Pagination /> */}
+              {/* <CommentsArea />
+              <CommentsForm theme={theme} /> */}
             </div>
           </div>
         </div>
