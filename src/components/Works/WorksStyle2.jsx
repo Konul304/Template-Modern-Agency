@@ -1,15 +1,24 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import Link from 'next/link';
 //= Scripts
 import initIsotope from "@/common/initIsotope";
+import { download_icon } from '../../../public/img';
+import styles from "../../styles/Works2.module.scss"
+import ModalVideo from '../Common/ModalVideo';
 
 function WorksStyle2({ grid, filterPosition, hideFilter }) {
+  const [isOpen, setOpen] = useState(false);
+
   useEffect(() => {
-    setTimeout(() => {
+    // setTimeout(() => {
       initIsotope();
-    }, 500);
+    // }, 500);
   }, []);
+
+  const handleDownload= () => {
+    console.log('first')
+  }
 
   return (
     <section className={`${grid ? (grid === 3 ? 'three-column' : null) : null} portfolio section-padding pb-70`}>
@@ -30,7 +39,7 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
         </div>
       }
       <div className="container">
-        <div className="row">
+        <div className="row"> 
           {
             !hideFilter &&
             <div className={`filtering ${filterPosition === 'center'
@@ -40,8 +49,8 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
                 : 'text-right'
               } col-12`}>
               <div className="filter">
-                <span data-filter="*" className="active"> Presentation content </span>
-                <span data-filter=".brand">Videos</span>
+                <span data-filter=".presentation" className="active"> Presentation content </span>
+                <span data-filter=".videos">Videos</span>
                 {/* <span data-filter=".web">Mobile App</span>
                 <span data-filter=".graphic">Creative</span> */}
               </div>
@@ -54,7 +63,7 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
               : grid === 2
                 ? 'col-md-6'
                 : 'col-12'
-              } items graphic wow fadeInUp`} data-wow-delay=".4s">
+              } items presentation wow fadeInUp`} data-wow-delay=".4s">
               <div className="item-img">
                 <Link className="imago wow" href="/project-details2/project-details2-dark">
                   <img src="/img/portfolio/portfolio/1/1.jpg" alt="image" />
@@ -62,7 +71,7 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
                 </Link>
               </div>
               <div className="cont">
-                <h6>Creativity Demand</h6>
+                <h6>Creativity Demand <span onClick={handleDownload} className={styles.download_icon}>{download_icon}</span></h6>
                 {/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
               </div>
             </div>
@@ -72,7 +81,7 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
               : grid === 2
                 ? 'col-md-6'
                 : 'col-12'
-              } items web wow fadeInUp`} data-wow-delay=".4s">
+              } items presentation wow fadeInUp`} data-wow-delay=".4s">
               <div className="item-img">
                 <Link className="imago wow" href="/project-details2/project-details2-dark">
                   <img src="/img/portfolio/portfolio/1/2.jpg" alt="image" />
@@ -80,7 +89,7 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
                 </Link>
               </div>
               <div className="cont">
-                <h6>Through The Breaking</h6>
+                <h6>Through The Breaking<span onClick={handleDownload} className={styles.download_icon}>{download_icon}</span></h6>
                 {/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
               </div>
             </div>
@@ -90,15 +99,16 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
               : grid === 2
                 ? 'col-md-6'
                 : 'col-12'
-              } items brand wow fadeInUp`} data-wow-delay=".4s">
+              } items videos wow fadeInUp`} data-wow-delay=".4s">
               <div className="item-img">
-                <Link href="/project-details2/project-details2-dark" className="imago wow">
+                <div onClick={()=>setOpen(true)} className="imago wow">
                   <img src="/img/portfolio/portfolio/1/3.jpg" alt="image" />
                   <div className="item-img-overlay"></div>
-                </Link>
+                </div>
               </div>
               <div className="cont">
                 <h6>Create With Creatives</h6>
+                <ModalVideo videoId="AzwC6umvd1s" channel="youtube" isOpen={isOpen} onClose={() => setOpen(false)} autoplay />
                 {/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
               </div>
             </div>
@@ -108,7 +118,7 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
               : grid === 2
                 ? 'col-md-6'
                 : 'col-12'
-              } items graphic wow fadeInUp`} data-wow-delay=".4s">
+              } items presentation wow fadeInUp`} data-wow-delay=".4s">
               <div className="item-img">
                 <Link className="imago wow" href="/project-details2/project-details2-dark">
                   <img src="/img/portfolio/portfolio/1/4.jpg" alt="image" />
@@ -116,7 +126,7 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
                 </Link>
               </div>
               <div className="cont">
-                <h6>Energies of Love</h6>
+                <h6>Energies of Love<span onClick={handleDownload} className={styles.download_icon}>{download_icon}</span></h6>
                 {/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
               </div>
             </div>
@@ -126,7 +136,7 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
               : grid === 2
                 ? 'col-md-6'
                 : 'col-12'
-              } items web wow fadeInUp`} data-wow-delay=".4s">
+              } items presentation wow fadeInUp`} data-wow-delay=".4s">
               <div className="item-img">
                 <Link className="imago wow" href="/project-details2/project-details2-dark">
                   <img src="/img/portfolio/portfolio/1/5.jpg" alt="image" />
@@ -134,7 +144,7 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
                 </Link>
               </div>
               <div className="cont">
-                <h6>See It Yourself</h6>
+                <h6>See It Yourself<span onClick={handleDownload} className={styles.download_icon}>{download_icon}</span></h6>
                 {/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
               </div>
             </div>
@@ -144,15 +154,16 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
               : grid === 2
                 ? 'col-md-6'
                 : 'col-12'
-              } items brand wow fadeInUp`} data-wow-delay=".4s">
+              } items videos wow fadeInUp`} data-wow-delay=".4s">
               <div className="item-img">
-                <Link className="imago wow" href="/project-details2/project-details2-dark">
+                <div className="imago wow"  onClick={()=>setOpen(true)}>
                   <img src="/img/portfolio/portfolio/1/6.jpg" alt="image" />
                   <div className="item-img-overlay"></div>
-                </Link>
+                </div>
               </div>
               <div className="cont">
                 <h6>Blast From The Past</h6>
+                <ModalVideo videoId="AzwC6umvd1s" channel="youtube" isOpen={isOpen} onClose={() => setOpen(false)} autoplay />
                 {/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
               </div>
             </div>

@@ -1,11 +1,15 @@
 const initIsotope = () => {
   var grid = document.querySelectorAll(".gallery");
   var iso;
+
   if (grid.length >= 1) {
     grid.forEach((item) => {
       iso = new Isotope(item, {
         itemSelector: ".items",
       });
+
+      // Filter presentations initially
+      iso.arrange({ filter: ".presentation" });
     });
   }
 
@@ -48,4 +52,4 @@ const initIsotope = () => {
   }
 };
 
-export default initIsotope
+export default initIsotope;

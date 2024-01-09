@@ -42,6 +42,7 @@ function ModalVideo({ videoId, channel, isOpen, onClose, autoplay }) {
               <iframe
                 width='460'
                 height='230'
+                style={{marginTop:'65px',height:'550px'}}
                 src={fullVideoUrl}
                 allowFullScreen="allowFullScreen"
                 autoPlay={autoplay || false}
