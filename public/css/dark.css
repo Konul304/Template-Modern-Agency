@@ -3736,10 +3736,12 @@ span:hover {
     margin-top: 40px;
     div:first-child{
       padding: 5px 10px;
+      cursor: pointer;
       border: 0.5px solid #1A1B1E;
       border-radius: 50%;
     }
     div:last-child{
+      cursor: pointer;
       padding: 5px 10px;
       border: 0.5px solid #1A1B1E;
       border-radius: 50%;
