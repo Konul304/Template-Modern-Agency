@@ -5,6 +5,8 @@ import Content from './Details/Content';
 import Pagination from './Details/Pagination';
 import CommentsArea from './Details/CommentsArea';
 import CommentsForm from './Details/CommentsForm';
+import SimilarCases from '@/components/Blogs/SimilarCases';
+
 
 const BlogDetails = ({ theme }) => {
   return (
@@ -22,6 +24,7 @@ const BlogDetails = ({ theme }) => {
           </div>
         </div>
       </div>
+      <SimilarCases />
     </section>
   );
 };

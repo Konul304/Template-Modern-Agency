@@ -7,8 +7,8 @@ import BlogDetails from '@/components/Blogs/BlogDetails';
 import Footer from '@/components/Common/Footer';
 
 export const metadata = {
-  title: 'Vie - Blog Details Dark'
-}
+  title: 'Vie - Blog Details Dark',
+};
 
 export default function BlogDetailsPage() {
   return (
@@ -21,9 +21,12 @@ export default function BlogDetailsPage() {
         </div>
       </div>
       <Navbar />
-      <PageHeader title="Blog Details." paragraph="All the most current news and events of our creative team." />
+      <PageHeader
+        title="Blog Details."
+        paragraph="All the most current news and events of our creative team."
+      />
       <BlogDetails />
       <Footer />
     </>
-  )
+  );
 }

@@ -8,7 +8,7 @@ function PageHeader({ title, paragraph, classText }) {
           <div className="col-lg-7 col-md-9">
             <div className="cont text-center">
               <h1 className="mb-10 color-font">{title}</h1>
-              <p>{paragraph}</p>
+              {/* <p>{paragraph}</p> */}
             </div>
           </div>
         </div>
