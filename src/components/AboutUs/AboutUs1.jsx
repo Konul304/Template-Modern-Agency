@@ -14,7 +14,7 @@ function AboutUs1() {
                 {aboutData.title}
               </h3>
               <p>{aboutData.content}</p>
-              <a href="#" className="butn bord curve mt-30">
+              <a href={`/about/about-dark`} className="butn bord curve mt-30">
                 <span>Read More</span>
               </a>
             </div>
@@ -22,7 +22,7 @@ function AboutUs1() {
           <div className="col-lg-7 img">
             <img src={aboutData.image} alt={aboutData.title} />
             <div className="stauts">
-              {
+              {/* {
                 aboutData.status.map(stat => (
                   <div className="item" key={stat.id}>
                     <h4>
@@ -32,7 +32,7 @@ function AboutUs1() {
                     <h6>{stat.statusName}</h6>
                   </div>
                 ))
-              }
+              } */}
             </div>
           </div>
         </div>

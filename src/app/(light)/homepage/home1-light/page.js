@@ -10,7 +10,7 @@ import Numbers from '@/components/Numbers/Numbers1';
 import Testimonials from '@/components/Testimonials/TestimonialsWithVideo';
 import SkillsCircle from '@/components/Skills/SkillsCircle';
 import Partners from '@/components/Clients/Partners';
-import Blogs from '@/components/Blogs/Blogs1';
+import Cases from '@/components/Blogs/Cases';
 import CallToAction from '@/components/Others/CallToAction';
 import Footer from '@/components/Common/Footer';
 
@@ -32,7 +32,7 @@ export default function Home1() {
         <Testimonials />
         <SkillsCircle theme="light" />
         <Partners theme="light" />
-        <Blogs />
+        <Cases />
         <CallToAction />
         <Footer />
       </div>
