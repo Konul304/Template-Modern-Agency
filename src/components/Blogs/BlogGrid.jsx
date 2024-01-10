@@ -12,9 +12,9 @@ const BlogGrid = () => {
             {blogs.map((blogItem) => (
               <div className="col-lg-4" key={blogItem.id}>
                 <div className="item mb-80 wow fadeInUp" data-wow-delay=".3s">
-                  <div className="img">
+                  <a href="/blog-details/blog-details-dark" className="img">
                     <img src={blogItem.image} alt="" />
-                  </div>
+                  </a>
                   <div className="cont">
                     <div>
                       <div className="info">
@@ -46,7 +46,7 @@ const BlogGrid = () => {
                 </div>
               </div>
             ))}
-            <div className="pagination">
+            {/* <div className="pagination">
               <span className="active">
                 <Link href={`/blog/blog-dark`}>1</Link>
               </span>
@@ -58,7 +58,7 @@ const BlogGrid = () => {
                   <i className="fas fa-angle-right"></i>
                 </Link>
               </span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

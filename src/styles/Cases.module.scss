@@ -1,0 +1,13 @@
+.see_more {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  transition: 0.3s;
+  margin-left: 68%;
+  margin-top: 5%;
+  &:hover {
+    background-color: #fff;
+    color: #000;
+  }
+}
