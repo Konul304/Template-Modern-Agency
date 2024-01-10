@@ -6695,6 +6695,8 @@ span:hover {
 
 .testimonials .arrows .next,
 .testimonials .arrows .prev {
+z-index: 99999;
+  cursor: pointer;
   position: absolute;
   top: 50%;
   right: -50px;
