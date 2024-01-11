@@ -65,9 +65,9 @@ function SliderHeader() {
                             slide.content &&
                             <p>{slide.content}</p>
                           }
-                          <a href="#" className="butn bord curve mt-30">
+                          {/* <a href="#" className="butn bord curve mt-30">
                             <span>Look More</span>
-                          </a>
+                          </a> */}
                         </div>
                       </div>
                     </div>

@@ -56,7 +56,7 @@ const Navbar = ({ lr, theme }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item dropdown" onClick={handleDropdown}>
-              <a href={`/homepage/home1-dark`}  
+              <a href={`/`}  
                 className="nav-link "
                 // className="nav-link dropdown-toggle"
                 data-toggle="dropdown"
@@ -98,7 +98,7 @@ const Navbar = ({ lr, theme }) => {
                 About
               </a>
             </li>
-            <li className="nav-item dropdown" onClick={handleDropdown}>
+            <li className="nav-item dropdown" >
               <a
               href={`/works2/works2-dark`}
                 className="nav-link "
@@ -131,7 +131,7 @@ const Navbar = ({ lr, theme }) => {
                 </a>
               </div> */}
             </li>
-            <li className="nav-item dropdown" onClick={handleDropdown}>
+            <li className="nav-item dropdown" >
               <a href={`/works3/works3-dark`}
                 className="nav-link "
                 // className="nav-link dropdown-toggle"
@@ -157,7 +157,7 @@ const Navbar = ({ lr, theme }) => {
                 </a>
               </div> */}
             </li>
-            <li className="nav-item dropdown" onClick={handleDropdown}>
+            <li className="nav-item dropdown">
               <a href={`/blog-grid/blog-grid-dark/`}
                 className="nav-link "
                 // className="nav-link dropdown-toggle"
