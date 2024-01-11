@@ -18,28 +18,26 @@ const BlogStanderd = () => {
                   key={blogItem.id}
                 >
                   <div className="img">
-                    <Link href={`/blog-details/blog-details-dark`}>
+                    <div>
                       <img src={blogItem.image} alt="" />
-                    </Link>
+                    </div>
                   </div>
                   <div className="content">
                     <div className="row justify-content-center">
                       <div className="col-10">
-                        <Link href={`/blog/blog-dark`} className="date">
+                        {/* <div className="date">
                           <span className="num">{blogItem.date.day}</span>
                           <span>{blogItem.date.month}</span>
-                        </Link>
-                        <div className="tags">
+                        </div> */}
+                        {/* <div className="tags">
                           {blogItem.tags.map((tag, index) => (
                             <Link key={index} href="/blog/blog-dark">
                               {tag}
                             </Link>
                           ))}
-                        </div>
+                        </div> */}
                         <h4 className="title">
-                          <Link href={`/blog-details/blog-details-dark`}>
-                            {blogItem.title}
-                          </Link>
+                          <div>{blogItem.title}</div>
                         </h4>
                         <p>{blogItem.content}</p>
                         {/* <Link href={`/blog-details/blog-details-dark`} className="butn bord curve mt-30">
