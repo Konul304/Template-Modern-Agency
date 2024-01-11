@@ -214,3 +214,33 @@ body.hideX .pace {
     background: #ff4b4b;
   }
 }
+
+.ant-select {
+  width: 150px !important;
+  position: absolute !important;
+  top: 30px !important;
+  z-index: 99 !important;
+}
+
+.ant-select-selector {
+  background-color: transparent !important;
+  border: 1px solid #fff !important;
+  border-radius: 0px !important;
+  color: #fff !important;
+}
+
+.ant-select-arrow {
+  svg {
+    path {
+      fill: #fff !important;
+    }
+  }
+}
+
+.ant-select-selection-item {
+  color: #fff !important;
+}
+
+.ant-select-selection-placeholder {
+  color: #fff !important;
+}
