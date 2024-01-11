@@ -1,13 +1,14 @@
-import React from "react";
+import React from 'react';
 //= Page components
-import Navbar from "@/components/Common/Navbar";
-import Footer from "@/components/Common/Footer";
-import ServicesHeader from "@/components/Headers/ServicesHeader";
-import Services3 from "@/components/Services/Services3";
-import Loading from "@/components/Common/Loader";
+import Navbar from '@/components/Common/Navbar';
+import Footer from '@/components/Common/Footer';
+import ServicesHeader from '@/components/Headers/ServicesHeader';
+import Loading from '@/components/Common/Loader';
+import Services1 from '@/components/Services/Services1';
+import BlogStanderd from '@/components/Blogs/BlogStanderd';
 
 export const metadata = {
-  title: "Vie - Works 3 Dark",
+  title: 'Vie - Works 3 Dark',
 };
 
 export default function Works3Page() {
@@ -21,10 +22,11 @@ export default function Works3Page() {
         </div>
       </div>
       <Navbar />
-      <ServicesHeader />
+      {/* <ServicesHeader /> */}
       <div className="main-content">
         {/* <Works grid={2} hideFilter={true} filterPosition="center" /> */}
-        <Services3 />
+        <Services1 style="4item" />
+        <BlogStanderd />
         <Footer />
       </div>
     </>
