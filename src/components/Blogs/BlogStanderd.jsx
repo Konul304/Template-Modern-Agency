@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 //= Static Data
-import blogs from "@/data/blogs1.json";
+import blogs from '@/data/blogs1.json';
 
 const BlogStanderd = () => {
   return (
@@ -11,41 +11,44 @@ const BlogStanderd = () => {
           <div className="col-lg-11">
             <div className="posts">
               {blogs.map((blogItem, index) => (
-                <div className={`item ${index === blogs.length - 1 ? "" : "mb-80"}`} key={blogItem.id}>
+                <div
+                  className={`item ${
+                    index === blogs.length - 1 ? '' : 'mb-80'
+                  }`}
+                  key={blogItem.id}
+                >
                   <div className="img">
-                    <Link href={`/blog-details/blog-details-dark`}>
+                    <div>
                       <img src={blogItem.image} alt="" />
-                    </Link>
+                    </div>
                   </div>
                   <div className="content">
                     <div className="row justify-content-center">
                       <div className="col-10">
-                        <Link href={`/blog/blog-dark`} className="date">
+                        {/* <div className="date">
                           <span className="num">{blogItem.date.day}</span>
                           <span>{blogItem.date.month}</span>
-                        </Link>
-                        <div className="tags">
+                        </div> */}
+                        {/* <div className="tags">
                           {blogItem.tags.map((tag, index) => (
                             <Link key={index} href="/blog/blog-dark">
                               {tag}
                             </Link>
                           ))}
-                        </div>
+                        </div> */}
                         <h4 className="title">
-                          <Link href={`/blog-details/blog-details-dark`}>
-                            {blogItem.title}
-                          </Link>
+                          <div>{blogItem.title}</div>
                         </h4>
                         <p>{blogItem.content}</p>
-                        <Link href={`/blog-details/blog-details-dark`} className="butn bord curve mt-30">
+                        {/* <Link href={`/blog-details/blog-details-dark`} className="butn bord curve mt-30">
                           Read More
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
                 </div>
               ))}
-              <div className="pagination">
+              {/* <div className="pagination">
                 <span className="active">
                   <Link href={`/blog/blog-dark`}>1</Link>
                 </span>
@@ -57,7 +60,7 @@ const BlogStanderd = () => {
                     <i className="fas fa-angle-right"></i>
                   </Link>
                 </span>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

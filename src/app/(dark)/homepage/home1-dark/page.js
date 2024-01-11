@@ -11,6 +11,7 @@ import Footer from '@/components/Common/Footer';
 import Works from '@/components/Works/Works1';
 import FullTestimonials from '@/components/Testimonials/FullTestimonials';
 import Cases from '@/components/Blogs/Cases';
+import Services1 from '@/components/Services/Services1';
 
 export const metadata = {
   title: 'Vie - Main Demo Dark',
@@ -26,7 +27,8 @@ export default function Home1() {
         <AboutUs />
         <Numbers />
         <Partners theme="dark" />
-        <Services />
+        {/* <Services /> */}
+        <Services1 style="4item" />
         {/* <Services3 /> */}
         <Works />
         <FullTestimonials />
