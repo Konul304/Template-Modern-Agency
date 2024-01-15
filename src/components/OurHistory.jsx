@@ -1,6 +1,7 @@
-import React from "react";
+'use client';
+import React from 'react';
 
-const OurHistory = () => {
+const OurHistory = (data) => {
   return (
     <div>
       <header className="slider-stwo valign position-re">
@@ -13,14 +14,8 @@ const OurHistory = () => {
             </div>
             <div className="col-lg-7 valign">
               <div className="cont">
-               
-                <h1 className="mb-10 fw-600">Our History</h1>
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deleniti officia facilis nesciunt porro temporibus repellendus quo ex sunt quasi ratione, ipsam autem id nisi quis sint nobis atque molestiae.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deleniti officia facilis nesciunt porro temporibus repellendus quo ex sunt quasi ratione, ipsam autem id nisi quis sint nobis atque molestiae.
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deleniti officia facilis nesciunt porro temporibus repellendus quo ex sunt quasi ratione, ipsam autem id nisi quis sint nobis atque molestiae.
-                </p>
-               
+                <h1 className="mb-10 fw-600">{data?.data?.historyTitle}</h1>
+                <p>{data?.data?.historyText}</p>
               </div>
             </div>
           </div>
