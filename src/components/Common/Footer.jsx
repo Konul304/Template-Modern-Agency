@@ -15,7 +15,7 @@ function Footer({ hideBGCOLOR }) {
                   <span className="icon pe-7s-map-marker"></span>
                   <div className="cont">
                     <h6>Officeal Address</h6>
-                    <p>504 White St . Dawsonville, GA 30534 , New York</p>
+                    <p>Lorem ipsum dolor sit amet</p>
                   </div>
                 </li>
                 <li>
@@ -84,7 +84,7 @@ function Footer({ hideBGCOLOR }) {
           </div>
           <div className="col-lg-4">
             <div className="item">
-            <div className="title">
+              <div className="title">
                 <h5>Socials</h5>
               </div>
               {/* <div className="logo">
@@ -109,7 +109,7 @@ function Footer({ hideBGCOLOR }) {
         </div>
       </div>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
