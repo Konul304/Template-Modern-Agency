@@ -104,9 +104,9 @@ function ContactForm({ theme }) {
               </Split>
               <div className="item">
                 <h6>
-                  {contentFormData.location.first}
+                  Lorem, ipsum dolor sit amet
                   <br />
-                  {contentFormData.location.second}
+                  Lorem ipsum
                 </h6>
               </div>
               <div className="social mt-50">
