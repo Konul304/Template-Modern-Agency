@@ -1,7 +1,7 @@
 import React from 'react';
 //= Static Data
-import featuresData from '@/data/sections/features.json';
 import Link from 'next/link';
+import styles from '../../styles/Services.module.scss';
 
 function Services1({ style, lines }) {
   return (
@@ -22,54 +22,58 @@ function Services1({ style, lines }) {
           </div>
         </div>
         <div className="row">
-          {style === '4item'
-            ? featuresData.map((feature) => (
-                <div
-                  key={feature.id}
-                  className="col-lg-6 wow fadeInLeft"
-                  data-wow-delay={`${
-                    feature.id == 1
-                      ? '.5'
-                      : feature.id === 2
-                      ? '.7'
-                      : feature.id === 3
-                      ? '.9'
-                      : '1.1'
-                  }s`}
-                >
-                  <Link href={`works3/works3-dark`} className="item-box">
-                    <div>
-                      <span className={`icon ${feature.icon}`}></span>
-                    </div>
-                    <div className="cont">
-                      <h6>{feature.title}</h6>
-                      <p>{feature.content}</p>
-                    </div>
-                  </Link>
-                </div>
-              ))
-            : // max item 3 in Home page
-              featuresData.slice(0, 3).map((feature) => (
-                <div
-                  key={feature.id}
-                  className="col-lg-4 wow fadeInLeft"
-                  data-wow-delay=".5s"
-                >
-                  <div className="item-box md-mb50">
-                    <span className={`icon ${feature.icon}`}></span>
-                    <h6>{feature.title}</h6>
-                    <p>{feature.content}</p>
-                  </div>
-                </div>
-              ))}
+          <div className="col-md-4 wow fadeInLeft" data-wow-delay={`0s`}>
+            <Link href="#" className="item-box">
+              <div className="cont">
+                <h6 className="text-center">ATL</h6>
+                {/* <p>sdfsd</p> */}
+              </div>
+            </Link>
+          </div>
+          <div className="col-md-4 wow fadeInLeft" data-wow-delay={`0s`}>
+            <Link href="#" className="item-box">
+              <div className="cont">
+                <h6>BTI</h6>
+                {/* <p>sdfsd</p> */}
+              </div>
+            </Link>
+          </div>
+          <div className="col-md-4 wow fadeInLeft" data-wow-delay={`0s`}>
+            <Link href="#" className="item-box">
+              <div className="cont">
+                <h6>PR</h6>
+                {/* <p>sdfsd</p> */}
+              </div>
+            </Link>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-4 wow fadeInLeft" data-wow-delay={`0s`}>
+            <Link href="#" className="item-box">
+              <div className="cont">
+                <h6>Production</h6>
+                {/* <p>sdfsd</p> */}
+              </div>
+            </Link>
+          </div>
+          <div className="col-md-4 wow fadeInLeft" data-wow-delay={`0s`}>
+            <Link href="#" className="item-box">
+              <div className="cont">
+                <h6>Design</h6>
+                {/* <p>sdfsd</p> */}
+              </div>
+            </Link>
+          </div>
+          <div className="col-md-4 wow fadeInLeft" data-wow-delay={`0s`}>
+            <Link href="#" className="item-box">
+              <div className="cont">
+                <h6>Digital Marketing</h6>
+                {/* <p>sdfsd</p> */}
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
-      {lines ? (
-        <>
-          <div className="line top left"></div>
-          <div className="line bottom right"></div>
-        </>
-      ) : null}
     </section>
   );
 }

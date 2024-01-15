@@ -1,20 +1,22 @@
+'use client';
 import React from 'react';
 
-function PagesHeader({ children, imageLink }) {
+const PagesHeader = ({ children, data }) => {
+  console.log(data);
   return (
     <header className="pages-header circle-bg valign">
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-lg-10">
+          {/* <div className="col-lg-10">
             <div className="cont mt-100 mb-50 text-center">
               <h1 className="color-font fw-700">
                 {children}
               </h1>
             </div>
-          </div>
+          </div> */}
           <div className="col-lg-10">
             <div className="img">
-              <img src={imageLink} alt="" />
+              <img src="/img/slid/about.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -26,7 +28,7 @@ function PagesHeader({ children, imageLink }) {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default PagesHeader
+export default PagesHeader;
