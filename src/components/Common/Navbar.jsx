@@ -1,40 +1,48 @@
 'use client';
-import React, { useEffect, useRef } from "react";
-import Link from "next/link";
+import React, { useEffect, useRef } from 'react';
+import Link from 'next/link';
 //= Scripts
-import { handleDropdown, handleMobileDropdown } from "@/common/navbar";
+import { handleDropdown, handleMobileDropdown } from '@/common/navbar';
 //= Static Data
-import appData from "@/data/app.json";
+import appData from '@/data/app.json';
+import logo from '../../../public/img/141logo.jpg';
+import Image from 'next/image';
 
 const Navbar = ({ lr, theme }) => {
   const navbar = useRef();
 
   function handleScroll() {
     if (window.scrollY > 300) {
-      navbar.current.classList.add("nav-scroll");
+      navbar.current.classList.add('nav-scroll');
     } else {
-      navbar.current.classList.remove("nav-scroll");
+      navbar.current.classList.remove('nav-scroll');
     }
   }
 
   useEffect(() => {
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   });
 
   return (
-    <nav ref={navbar} className={`navbar navbar-expand-lg change ${theme === "light" ? "light" : ""}`}>
+    <nav
+      ref={navbar}
+      className={`navbar navbar-expand-lg change ${
+        theme === 'light' ? 'light' : ''
+      }`}
+    >
       <div className="container">
         <Link className="logo" href="/">
           {theme ? (
-            theme === "light" ? (
+            theme === 'light' ? (
               <img ref={lr} src={appData.darkLogo} alt="logo" />
             ) : (
-              <img ref={lr} src={appData.lightLogo} alt="logo" />
+              <img ref={lr} src={logo} alt="logo" />
             )
           ) : (
-            <img ref={lr} src={appData.lightLogo} alt="logo" />
+            // <img ref={lr} src="../../../public/img/141logo.jpg" alt="logo" />
+            <Image src={logo} width={60} height={60} />
           )}
         </Link>
 
@@ -56,7 +64,8 @@ const Navbar = ({ lr, theme }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item dropdown" onClick={handleDropdown}>
-              <a href={`/`}  
+              <a
+                href={`/`}
                 className="nav-link "
                 // className="nav-link dropdown-toggle"
                 data-toggle="dropdown"
@@ -98,9 +107,9 @@ const Navbar = ({ lr, theme }) => {
                 About
               </a>
             </li>
-            <li className="nav-item dropdown" >
+            <li className="nav-item dropdown">
               <a
-              href={`/works2/works2-dark`}
+                href={`/works2/works2-dark`}
                 className="nav-link "
                 // className="nav-link dropdown-toggle"
                 // data-toggle="dropdown"
@@ -131,8 +140,9 @@ const Navbar = ({ lr, theme }) => {
                 </a>
               </div> */}
             </li>
-            <li className="nav-item dropdown" >
-              <a href={`/works3/works3-dark`}
+            <li className="nav-item dropdown">
+              <a
+                href={`/works3/works3-dark`}
                 className="nav-link "
                 // className="nav-link dropdown-toggle"
                 // data-toggle="dropdown"
@@ -158,7 +168,8 @@ const Navbar = ({ lr, theme }) => {
               </div> */}
             </li>
             <li className="nav-item dropdown">
-              <a href={`/blog-grid/blog-grid-dark/`}
+              <a
+                href={`/blog-grid/blog-grid-dark/`}
                 className="nav-link "
                 // className="nav-link dropdown-toggle"
                 // data-toggle="dropdown"
@@ -166,7 +177,7 @@ const Navbar = ({ lr, theme }) => {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Cases 
+                Cases
               </a>
             </li>
             <li className="nav-item">
