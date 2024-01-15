@@ -4,7 +4,8 @@ import Link from "next/link";
 //= Scripts
 import { handleDropdown, handleMobileDropdown } from "@/common/navbar";
 //= Static Data
-import appData from "@/data/app.json";
+import Image from "next/image";
+import Logo from "../../../public/img/c141_logo.png"
 
 const Navbar = ({ lr, theme }) => {
   const navbar = useRef();
@@ -27,15 +28,7 @@ const Navbar = ({ lr, theme }) => {
     <nav ref={navbar} className={`navbar navbar-expand-lg change ${theme === "light" ? "light" : ""}`}>
       <div className="container">
         <Link className="logo" href="/">
-          {theme ? (
-            theme === "light" ? (
-              <img ref={lr} src={appData.darkLogo} alt="logo" />
-            ) : (
-              <img ref={lr} src={appData.lightLogo} alt="logo" />
-            )
-          ) : (
-            <img ref={lr} src={appData.lightLogo} alt="logo" />
-          )}
+         <Image src={Logo} width={100} height={100}/>
         </Link>
 
         <button
