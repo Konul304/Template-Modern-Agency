@@ -4,9 +4,8 @@ import Link from 'next/link';
 //= Scripts
 import { handleDropdown, handleMobileDropdown } from '@/common/navbar';
 //= Static Data
-import appData from '@/data/app.json';
-import logo from '../../../public/img/141logo.jpg';
 import Image from 'next/image';
+import Logo from '../../../public/img/c141_logo.png';
 
 const Navbar = ({ lr, theme }) => {
   const navbar = useRef();
@@ -34,16 +33,7 @@ const Navbar = ({ lr, theme }) => {
     >
       <div className="container">
         <Link className="logo" href="/">
-          {theme ? (
-            theme === 'light' ? (
-              <img ref={lr} src={appData.darkLogo} alt="logo" />
-            ) : (
-              <img ref={lr} src={logo} alt="logo" />
-            )
-          ) : (
-            // <img ref={lr} src="../../../public/img/141logo.jpg" alt="logo" />
-            <Image src={logo} width={60} height={60} />
-          )}
+          <Image src={Logo} width={100} height={100} />
         </Link>
 
         <button
