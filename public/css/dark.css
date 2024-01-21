@@ -5104,6 +5104,8 @@ span:hover {
 }
 
 .portfolio .gallery .items .item-img {
+  width: 380px;
+  height: 300px;
   overflow: hidden;
   position: relative;
   -webkit-clip-path: inset(0);
@@ -5133,8 +5135,8 @@ span:hover {
 }
 
 .portfolio .gallery .items .item-img img {
-  height: 100%;
-  width: 100%;
+  height: 300px;
+  width: 400px;
   -o-object-fit: cover;
   object-fit: cover;
   -webkit-transition: all 0.5s;

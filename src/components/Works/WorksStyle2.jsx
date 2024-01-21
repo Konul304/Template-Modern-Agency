@@ -1,11 +1,12 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
+"use client";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
 //= Scripts
-import initIsotope from '@/common/initIsotope';
-import { download_icon } from '../../../public/img';
-import styles from '../../styles/Works2.module.scss';
-import ModalVideo from '../Common/ModalVideo';
+import initIsotope from "@/common/initIsotope";
+import { download_icon } from "../../../public/img";
+import styles from "../../styles/Works2.module.scss";
+import ModalVideo from "../Common/ModalVideo";
+import Image from "next/image";
 
 function WorksStyle2({ grid, filterPosition, hideFilter }) {
   const [isOpenMap, setOpenMap] = useState({});
@@ -24,42 +25,78 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
     // }, 500);
   }, []);
 
-  const handleDownload = () => {
-    console.log('first');
+  const handleDownload = (pdfUrl, pdfName) => {
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    if (pdfName) {
+      link.download = pdfName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   const videos = [
     {
-      name: 'Baltika Event',
-      url: 'https://drive.google.com/file/d/19_RNVhyi3xATvZlAENZnK60gDN2D5ZR5/preview',
+      name: "Baltika Event",
+      url: "https://drive.google.com/file/d/19_RNVhyi3xATvZlAENZnK60gDN2D5ZR5/preview",
+      img_url: "/img/Baltika_cover.jpg",
     },
     {
-      name: 'Bosch 4',
-      url: 'https://drive.google.com/file/d/1k6ey8BI-e_rnuslGvd3WAp_Wk8eNAtFR/preview',
+      name: "Bosch 4",
+      url: "https://drive.google.com/file/d/1k6ey8BI-e_rnuslGvd3WAp_Wk8eNAtFR/preview",
+      img_url: "/img/Bosch4_cover.jpg",
     },
     {
-      name: 'Bosch 15',
-      url: 'https://drive.google.com/file/d/1XBnVM-sQ6DAZ-rvTnEB5ifi647psbWEo/preview',
+      name: "Bosch 15",
+      url: "https://drive.google.com/file/d/1XBnVM-sQ6DAZ-rvTnEB5ifi647psbWEo/preview",
+      img_url: "/img/Bosch15_cover.jpg",
     },
     {
-      name: 'Bosch Ramin',
-      url: 'https://drive.google.com/file/d/1j7tyxM6XhJBopvSkpjOlf0T42NqZXBV7/preview',
+      name: "Bosch Ramin",
+      url: "https://drive.google.com/file/d/1j7tyxM6XhJBopvSkpjOlf0T42NqZXBV7/preview",
+      img_url: "/img/BoschRamin_cover.jpg",
     },
     {
-      name: 'BoschAllPre',
-      url: 'https://drive.google.com/file/d/16dulJAelTFyVU4pSdr9w9qiE7Rewc0aD/preview',
+      name: "BoschAllPre",
+      url: "https://drive.google.com/file/d/16dulJAelTFyVU4pSdr9w9qiE7Rewc0aD/preview",
+      img_url: "/img/BoschAllPre_cover.jpg",
     },
     {
-      name: 'BoschFarhadSocial',
-      url: 'https://drive.google.com/file/d/1b8wGKZ90KV_kFdyVRwm0aNhN-w4TJRto/preview',
+      name: "BoschFarhadSocial",
+      url: "https://drive.google.com/file/d/1b8wGKZ90KV_kFdyVRwm0aNhN-w4TJRto/preview",
+      img_url: "/img/BoschFarhadSocial_cover.jpg",
     },
   ];
-  console.log(videos?.Baltika);
+
+  const presentations = [
+    {
+      name: "BTL Portfolio",
+      url: "https://drive.google.com/file/d/1LAssrnVAVugkgJQXsuzmCBez8dZ0Op5m/preview",
+      img_url: "/img/BTL.jpg",
+      pdf_url:
+        "https://drive.google.com/uc?id=1LAssrnVAVugkgJQXsuzmCBez8dZ0Op5m",
+    },
+    {
+      name: "Event Portfolio",
+      url: "https://drive.google.com/file/d/1V70zz_dO7WuxlNfwScXvqlh6t-LAs4bF/preview",
+      img_url: "/img/Event.jpg",
+      pdf_url:
+        "https://drive.google.com/uc?id=1V70zz_dO7WuxlNfwScXvqlh6t-LAs4bF",
+    },
+    {
+      name: "Production Portfolio",
+      url: "https://drive.google.com/file/d/1eCV_p3tpImBX0BxGvol2m0o1UBT50P_P/preview",
+      img_url: "/img/Production.jpg",
+      pdf_url:
+        "https://drive.google.com/uc?id=1eCV_p3tpImBX0BxGvol2m0o1UBT50P_P",
+    },
+  ];
 
   return (
     <section
       className={`${
-        grid ? (grid === 3 ? 'three-column' : null) : null
+        grid ? (grid === 3 ? "three-column" : null) : null
       } portfolio section-padding pb-70`}
     >
       {!hideFilter && (
@@ -84,17 +121,17 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
           {!hideFilter && (
             <div
               className={`filtering ${
-                filterPosition === 'center'
-                  ? 'text-center'
-                  : filterPosition === 'left'
-                  ? 'text-left'
-                  : 'text-right'
+                filterPosition === "center"
+                  ? "text-center"
+                  : filterPosition === "left"
+                  ? "text-left"
+                  : "text-right"
               } col-12`}
             >
               <div className="filter">
                 <span data-filter=".presentation" className="active">
-                  {' '}
-                  Presentation content{' '}
+                  {" "}
+                  Presentation content{" "}
                 </span>
                 <span data-filter=".videos">Videos</span>
                 {/* <span data-filter=".web">Mobile App</span>
@@ -104,125 +141,49 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
           )}
 
           <div className="gallery full-width">
-            <div
-              className={`${
-                grid === 3
-                  ? 'col-lg-4 col-md-6'
-                  : grid === 2
-                  ? 'col-md-6'
-                  : 'col-12'
-              } items presentation wow fadeInUp`}
-              data-wow-delay=".4s"
-            >
-              <div className="item-img">
-                <div className="imago wow">
-                  <img src="/img/portfolio/portfolio/1/1.jpg" alt="image" />
-                  <div className="item-img-overlay"></div>
+            {presentations?.map((item, index) => {
+              console.log(item?.img_url);
+              return (
+                <div
+                  key={index}
+                  className={`${
+                    grid === 3
+                      ? "col-lg-4 col-md-6"
+                      : grid === 2
+                      ? "col-md-6"
+                      : "col-12"
+                  } items presentation wow fadeInUp`}
+                  data-wow-delay=".4s"
+                >
+                  <div className="item-img">
+                    <div className="imago wow">
+                      <Link href={item?.url} target="_blank">
+                        <img src={item?.img_url} alt="image" />
+                      </Link>
+                      <div className="item-img-overlay"></div>
+                    </div>
+                  </div>
+                  <div className="cont">
+                    <h6>
+                      {item?.name}
+                      <span
+                        onClick={handleDownload}
+                        className={styles.download_icon}
+                      >
+                        <div
+                          onClick={() =>
+                            handleDownload(item?.pdf_url, item?.name)
+                          }
+                        >
+                          {download_icon}
+                        </div>
+                      </span>
+                    </h6>
+                    {/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
+                  </div>
                 </div>
-              </div>
-              <div className="cont">
-                <h6>
-                  Creativity Demand{' '}
-                  <span
-                    onClick={handleDownload}
-                    className={styles.download_icon}
-                  >
-                    {download_icon}
-                  </span>
-                </h6>
-                {/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
-              </div>
-            </div>
-
-            <div
-              className={`${
-                grid === 3
-                  ? 'col-lg-4 col-md-6'
-                  : grid === 2
-                  ? 'col-md-6'
-                  : 'col-12'
-              } items presentation wow fadeInUp`}
-              data-wow-delay=".4s"
-            >
-              <div className="item-img">
-                <div className="imago wow">
-                  <img src="/img/portfolio/portfolio/1/2.jpg" alt="image" />
-                  <div className="item-img-overlay"></div>
-                </div>
-              </div>
-              <div className="cont">
-                <h6>
-                  Through The Breaking
-                  <span
-                    onClick={handleDownload}
-                    className={styles.download_icon}
-                  >
-                    {download_icon}
-                  </span>
-                </h6>
-                {/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
-              </div>
-            </div>
-
-            <div
-              className={`${
-                grid === 3
-                  ? 'col-lg-4 col-md-6'
-                  : grid === 2
-                  ? 'col-md-6'
-                  : 'col-12'
-              } items presentation wow fadeInUp`}
-              data-wow-delay=".4s"
-            >
-              <div className="item-img">
-                <div className="imago wow">
-                  <img src="/img/portfolio/portfolio/1/4.jpg" alt="image" />
-                  <div className="item-img-overlay"></div>
-                </div>
-              </div>
-              <div className="cont">
-                <h6>
-                  Energies of Love
-                  <span
-                    onClick={handleDownload}
-                    className={styles.download_icon}
-                  >
-                    {download_icon}
-                  </span>
-                </h6>
-                {/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
-              </div>
-            </div>
-
-            <div
-              className={`${
-                grid === 3
-                  ? 'col-lg-4 col-md-6'
-                  : grid === 2
-                  ? 'col-md-6'
-                  : 'col-12'
-              } items presentation wow fadeInUp`}
-              data-wow-delay=".4s"
-            >
-              <div className="item-img">
-                <div className="imago wow">
-                  <img src="/img/portfolio/portfolio/1/5.jpg" alt="image" />
-                  <div className="item-img-overlay"></div>
-                </div>
-              </div>
-              <div className="cont">
-                <h6>
-                  See It Yourself
-                  <span
-                    onClick={handleDownload}
-                    className={styles.download_icon}
-                  >
-                    {download_icon}
-                  </span>
-                </h6>
-                {/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
-              </div>
-            </div>
+              );
+            })}
 
             {videos?.map((item, index) => {
               return (
@@ -234,9 +195,9 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
                   <div className="item-img">
                     <div
                       onClick={() => handleToggleModal(index)}
-                      className="imago wow"
+                      className="imago wow w-100 h-100"
                     >
-                      <img src="/img/portfolio/portfolio/1/3.jpg" alt="image" />
+                      <img src={item?.img_url} alt="image" />
                       <div className="item-img-overlay"></div>
                     </div>
                   </div>
