@@ -1,7 +1,6 @@
-import React from 'react';
+import React from "react";
 
 function Team2(data) {
-  console.log(data?.data?.data);
   return (
     <section className="team section-padding">
       <div className="container">

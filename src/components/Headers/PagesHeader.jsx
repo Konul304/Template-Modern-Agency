@@ -1,8 +1,7 @@
-'use client';
-import React from 'react';
+"use client";
+import React from "react";
 
 const PagesHeader = ({ children, data }) => {
-  console.log(data);
   return (
     <header className="pages-header circle-bg valign">
       <div className="container">

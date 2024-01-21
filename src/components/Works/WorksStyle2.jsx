@@ -142,7 +142,6 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
 
           <div className="gallery full-width">
             {presentations?.map((item, index) => {
-              console.log(item?.img_url);
               return (
                 <div
                   key={index}
