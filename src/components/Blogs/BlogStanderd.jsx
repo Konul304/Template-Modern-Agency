@@ -1,7 +1,4 @@
-import React from 'react';
-import Link from 'next/link';
-//= Static Data
-import blogs from '@/data/blogs1.json';
+import React from "react";
 
 const BlogStanderd = () => {
   return (
@@ -10,57 +7,156 @@ const BlogStanderd = () => {
         <div className="row justify-content-center">
           <div className="col-lg-11">
             <div className="posts">
-              {blogs.map((blogItem, index) => (
-                <div
-                  className={`item ${
-                    index === blogs.length - 1 ? '' : 'mb-80'
-                  }`}
-                  key={blogItem.id}
-                >
-                  <div className="img">
-                    <div>
+              <div className={`item mb-80`}>
+                <div className="img">
+                  {/* <div>
                       <img src={blogItem.image} alt="" />
-                    </div>
-                  </div>
-                  <div className="content">
-                    <div className="row justify-content-center">
-                      <div className="col-10">
-                        {/* <div className="date">
-                          <span className="num">{blogItem.date.day}</span>
-                          <span>{blogItem.date.month}</span>
-                        </div> */}
-                        {/* <div className="tags">
-                          {blogItem.tags.map((tag, index) => (
-                            <Link key={index} href="/blog/blog-dark">
-                              {tag}
-                            </Link>
-                          ))}
-                        </div> */}
-                        <h4 className="title">
-                          <div>{blogItem.title}</div>
-                        </h4>
-                        <p>{blogItem.content}</p>
-                        {/* <Link href={`/blog-details/blog-details-dark`} className="butn bord curve mt-30">
-                          Read More
-                        </Link> */}
-                      </div>
+                    </div> */}
+                </div>
+                <div className="content">
+                  <div className="row justify-content-center">
+                    <div className="col-10">
+                      <h4 className="title">
+                        <div> Build a Beautiful Blog With Ease</div>
+                      </h4>
+                      <p>
+                        My job is simple and sophisticated, so it is possible to
+                        describe and simple, and flowery language. I love the
+                        feel and sophistication of its superiority. I like
+                        people with a keen mind and at the same time easy to
+                        talk to. These qualities can be combined perfectly
+                        natural. However, things like people look miserable, if
+                        these properties are connected.
+                      </p>
                     </div>
                   </div>
                 </div>
-              ))}
-              {/* <div className="pagination">
-                <span className="active">
-                  <Link href={`/blog/blog-dark`}>1</Link>
-                </span>
-                <span>
-                  <Link href={`/blog/blog-dark`}>2</Link>
-                </span>
-                <span>
-                  <Link href={`/blog/blog-dark`}>
-                    <i className="fas fa-angle-right"></i>
-                  </Link>
-                </span>
-              </div> */}
+              </div>
+              <div className={`item mb-80`}>
+                <div className="img">
+                  {/* <div>
+                      <img src={blogItem.image} alt="" />
+                    </div> */}
+                </div>
+                <div className="content">
+                  <div className="row justify-content-center">
+                    <div className="col-10">
+                      <h4 className="title">
+                        <div> Build a Beautiful Blog With Ease</div>
+                      </h4>
+                      <p>
+                        My job is simple and sophisticated, so it is possible to
+                        describe and simple, and flowery language. I love the
+                        feel and sophistication of its superiority. I like
+                        people with a keen mind and at the same time easy to
+                        talk to. These qualities can be combined perfectly
+                        natural. However, things like people look miserable, if
+                        these properties are connected.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={`item mb-80`}>
+                <div className="img">
+                  {/* <div>
+                      <img src={blogItem.image} alt="" />
+                    </div> */}
+                </div>
+                <div className="content">
+                  <div className="row justify-content-center">
+                    <div className="col-10">
+                      <h4 className="title">
+                        <div> Build a Beautiful Blog With Ease</div>
+                      </h4>
+                      <p>
+                        My job is simple and sophisticated, so it is possible to
+                        describe and simple, and flowery language. I love the
+                        feel and sophistication of its superiority. I like
+                        people with a keen mind and at the same time easy to
+                        talk to. These qualities can be combined perfectly
+                        natural. However, things like people look miserable, if
+                        these properties are connected.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={`item mb-80`}>
+                <div className="img">
+                  {/* <div>
+                      <img src={blogItem.image} alt="" />
+                    </div> */}
+                </div>
+                <div className="content">
+                  <div className="row justify-content-center">
+                    <div className="col-10">
+                      <h4 className="title">
+                        <div> Build a Beautiful Blog With Ease</div>
+                      </h4>
+                      <p>
+                        My job is simple and sophisticated, so it is possible to
+                        describe and simple, and flowery language. I love the
+                        feel and sophistication of its superiority. I like
+                        people with a keen mind and at the same time easy to
+                        talk to. These qualities can be combined perfectly
+                        natural. However, things like people look miserable, if
+                        these properties are connected.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={`item mb-80`}>
+                <div className="img">
+                  {/* <div>
+                      <img src={blogItem.image} alt="" />
+                    </div> */}
+                </div>
+                <div className="content">
+                  <div className="row justify-content-center">
+                    <div className="col-10">
+                      <h4 className="title">
+                        <div> Build a Beautiful Blog With Ease</div>
+                      </h4>
+                      <p>
+                        My job is simple and sophisticated, so it is possible to
+                        describe and simple, and flowery language. I love the
+                        feel and sophistication of its superiority. I like
+                        people with a keen mind and at the same time easy to
+                        talk to. These qualities can be combined perfectly
+                        natural. However, things like people look miserable, if
+                        these properties are connected.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={`item`}>
+                <div className="img">
+                  {/* <div>
+                      <img src={blogItem.image} alt="" />
+                    </div> */}
+                </div>
+                <div className="content">
+                  <div className="row justify-content-center">
+                    <div className="col-10">
+                      <h4 className="title">
+                        <div> Build a Beautiful Blog With Ease</div>
+                      </h4>
+                      <p>
+                        My job is simple and sophisticated, so it is possible to
+                        describe and simple, and flowery language. I love the
+                        feel and sophistication of its superiority. I like
+                        people with a keen mind and at the same time easy to
+                        talk to. These qualities can be combined perfectly
+                        natural. However, things like people look miserable, if
+                        these properties are connected.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
