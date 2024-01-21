@@ -99,7 +99,7 @@ const Navbar = ({ lr, theme }) => {
             </li>
             <li className="nav-item dropdown">
               <a
-                href={`/works2/works2-dark`}
+                href={`/works2/portfolio`}
                 className="nav-link "
                 // className="nav-link dropdown-toggle"
                 // data-toggle="dropdown"
@@ -132,7 +132,7 @@ const Navbar = ({ lr, theme }) => {
             </li>
             <li className="nav-item dropdown">
               <a
-                href={`/works3/works3-dark`}
+                href={`/services/services_dark`}
                 className="nav-link "
                 // className="nav-link dropdown-toggle"
                 // data-toggle="dropdown"
