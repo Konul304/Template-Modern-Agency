@@ -1,34 +1,39 @@
 'use client';
-import React, { useEffect, useRef } from "react";
-import Link from "next/link";
+import React, { useEffect, useRef } from 'react';
+import Link from 'next/link';
 //= Scripts
-import { handleDropdown, handleMobileDropdown } from "@/common/navbar";
+import { handleDropdown, handleMobileDropdown } from '@/common/navbar';
 //= Static Data
-import Image from "next/image";
-import Logo from "../../../public/img/c141_logo.png"
+import Image from 'next/image';
+import Logo from '../../../public/img/c141_logo.png';
 
 const Navbar = ({ lr, theme }) => {
   const navbar = useRef();
 
   function handleScroll() {
     if (window.scrollY > 300) {
-      navbar.current.classList.add("nav-scroll");
+      navbar.current.classList.add('nav-scroll');
     } else {
-      navbar.current.classList.remove("nav-scroll");
+      navbar.current.classList.remove('nav-scroll');
     }
   }
 
   useEffect(() => {
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   });
 
   return (
-    <nav ref={navbar} className={`navbar navbar-expand-lg change ${theme === "light" ? "light" : ""}`}>
+    <nav
+      ref={navbar}
+      className={`navbar navbar-expand-lg change ${
+        theme === 'light' ? 'light' : ''
+      }`}
+    >
       <div className="container">
         <Link className="logo" href="/">
-         <Image src={Logo} width={100} height={100}/>
+          <Image src={Logo} width={100} height={100} />
         </Link>
 
         <button
@@ -49,7 +54,8 @@ const Navbar = ({ lr, theme }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item dropdown" onClick={handleDropdown}>
-              <a href={`/`}  
+              <a
+                href={`/`}
                 className="nav-link "
                 // className="nav-link dropdown-toggle"
                 data-toggle="dropdown"
@@ -91,9 +97,9 @@ const Navbar = ({ lr, theme }) => {
                 About
               </a>
             </li>
-            <li className="nav-item dropdown" >
+            <li className="nav-item dropdown">
               <a
-              href={`/works2/works2-dark`}
+                href={`/works2/portfolio`}
                 className="nav-link "
                 // className="nav-link dropdown-toggle"
                 // data-toggle="dropdown"
@@ -124,8 +130,9 @@ const Navbar = ({ lr, theme }) => {
                 </a>
               </div> */}
             </li>
-            <li className="nav-item dropdown" >
-              <a href={`/works3/works3-dark`}
+            <li className="nav-item dropdown">
+              <a
+                href={`/services/services_dark`}
                 className="nav-link "
                 // className="nav-link dropdown-toggle"
                 // data-toggle="dropdown"
@@ -151,7 +158,8 @@ const Navbar = ({ lr, theme }) => {
               </div> */}
             </li>
             <li className="nav-item dropdown">
-              <a href={`/blog-grid/blog-grid-dark/`}
+              <a
+                href={`/blog-grid/blog-grid-dark/`}
                 className="nav-link "
                 // className="nav-link dropdown-toggle"
                 // data-toggle="dropdown"
@@ -159,7 +167,7 @@ const Navbar = ({ lr, theme }) => {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Cases 
+                Cases
               </a>
             </li>
             <li className="nav-item">
