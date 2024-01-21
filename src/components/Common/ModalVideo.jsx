@@ -1,61 +1,40 @@
 'use client';
 import React, { useEffect, useState, useRef } from 'react';
 
-function ModalVideo({ videoId, channel, isOpen, onClose, autoplay }) {
+function ModalVideo({ isOpen, onClose, source }) {
   const closeBtn = useRef(null);
-  const [fullVideoUrl, setFullVideoUrl] = useState("");
 
-  useEffect(() => {
-    if (channel === 'youtube') {
-      setFullVideoUrl(getYoutubeUrl(videoId))
-    } else if (channel === 'vimeo') {
-      setFullVideoUrl(getVimeoUrl(videoId))
-    }
-  }, [channel, videoId]);
-
-  function getYoutubeUrl(videoId) {
-    return '//www.youtube.com/embed/' + videoId
-  }
-
-  function getVimeoUrl(videoId) {
-    return '//player.vimeo.com/video/' + videoId
-  }
-
-  return (
-    isOpen ? (
-      <div
-        className="modal-video"
-        tabIndex='-1'
-        role='dialog'
-        aria-label="video"
-        onClick={onClose}
-      >
-        <div className="modal-video-body">
-          <div className="modal-video-inner">
-            <button
-              className="modal-video-close-btn"
-              aria-label="video"
-              ref={closeBtn}
-              onClick={onClose}
-            />
-            <div className="modal-video-movie-wrap">
-              <iframe
-                width='460'
-                height='230'
-                style={{marginTop:'65px',height:'550px'}}
-                src={fullVideoUrl}
-                allowFullScreen="allowFullScreen"
-                autoPlay={autoplay || false}
-                tabIndex='-1'
-              />
-            </div>
+  return isOpen ? (
+    <div
+      className="modal-video"
+      tabIndex="-1"
+      role="dialog"
+      aria-label="video"
+      onClick={onClose}
+    >
+      <div className="modal-video-body">
+        <div className="modal-video-inner">
+          <button
+            className="modal-video-close-btn"
+            aria-label="video"
+            ref={closeBtn}
+            onClick={onClose}
+          />
+          <div className="modal-video-movie-wrap">
+            <iframe
+              src={source}
+              width="640"
+              height="480"
+              allow="autoplay"
+              allowFullScreen="allowFullScreen"
+              style={{ marginTop: '65px', height: '550px' }}
+              // tabIndex="-1"
+            ></iframe>
           </div>
         </div>
       </div>
-    )
-      :
-      null
-  )
+    </div>
+  ) : null;
 }
 
-export default ModalVideo
+export default ModalVideo;

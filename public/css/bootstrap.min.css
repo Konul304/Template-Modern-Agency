@@ -639,6 +639,9 @@ pre code {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+  row-gap: 40px;
+  justify-content: center;
+  /* margin-bottom: 20px; */
 }
 
 .no-gutters {

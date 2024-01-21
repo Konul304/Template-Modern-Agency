@@ -5,6 +5,8 @@ import CountUp from 'react-countup';
 import Split from "@/components/Common/Split";
 //= Static Data
 import funFactDate from '@/data/sections/fun-fact.json'
+import Image from 'next/image';
+import { brush, certificate, diamond, heart } from '../../../public/img';
 
 
 const Numbers = () => {
@@ -36,11 +38,88 @@ const Numbers = () => {
             </div>
           </div>
         </div>
-        <div className="row">
-          {funFactDate.map((item, index) => (
+        <div className="row_statistics">
+        <div  className="col-md-2">
+              <div className="item no-bord sm-mb50">
+                {certificate}
+                <h3 className='mt-10'>
+                  &nbsp;
+                  {
+                    renderCounters &&
+                    <CountUp redraw={true} end={12} duration="3">
+                      <span className="count" />
+                    </CountUp>
+                  }
+                </h3>
+                <Split>
+                  <p className="wow txt words chars splitting" data-splitting>
+                  Best Stand Design Award
+                  </p>
+                </Split>
+              </div>
+            </div>
+            <div  className="col-md-2">
+              <div className="item no-bord sm-mb50">
+                {diamond}
+                <h3 className='mt-10'>
+                  &nbsp;
+                  {
+                    renderCounters &&
+                    <CountUp redraw={true} end={422} duration="3">
+                      <span className="count" />
+                    </CountUp>
+                  }
+                </h3>
+                <Split>
+                  <p className="wow txt words chars splitting" data-splitting>
+                  Successful Projects
+                  </p>
+                </Split>
+              </div>
+            </div>
+            <div  className="col-md-2">
+              <div className="item no-bord sm-mb50">
+                {brush}
+                <h3 className='mt-10'>
+                  &nbsp;
+                  {
+                    renderCounters &&
+                    <CountUp redraw={true} end={14} duration="3">
+                      <span className="count" />
+                    </CountUp>
+                  }
+                </h3>
+                <Split>
+                  <p className="wow txt words chars splitting" data-splitting>
+                  Years of Experience
+                  </p>
+                </Split>
+              </div>
+            </div>
+            <div  className="col-md-2">
+              <div className="item no-bord sm-mb50">
+                <span className='mt-10'>{heart}
+                  </span>
+                <h3 className='mt-15'>
+                  &nbsp;
+                  {
+                    renderCounters &&
+                    <CountUp redraw={true} end={99} duration="3">
+                      <span className="count" />
+                    </CountUp>
+                  }
+                </h3>
+                <Split>
+                  <p className="wow txt words chars splitting" data-splitting>
+                  Happy Clients
+                  </p>
+                </Split>
+              </div>
+            </div>
+          {/* {funFactDate.map((item, index) => (
             <div key={item.id} className="col-md-4">
               <div className="item no-bord sm-mb50">
-                <span className={`icon ${item.icon}`}></span>
+                {certificate}
                 <h3>
                   &nbsp;
                   {
@@ -57,7 +136,7 @@ const Numbers = () => {
                 </Split>
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     </section>

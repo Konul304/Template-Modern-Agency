@@ -1,13 +1,13 @@
 'use client';
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 //= Scripts
-import teamSkillsProgress from "@/common/teamSkillsProgress";
-import tooltipEffect from "@/common/tooltipEffect";
+import teamSkillsProgress from '@/common/teamSkillsProgress';
+import tooltipEffect from '@/common/tooltipEffect';
 //= Static Data
-import teamsDate from "@/data/sections/team.json";
-import Team2 from "./Team2";
+import teamsDate from '@/data/sections/team.json';
+import Team2 from './Team2';
 
-const Team = () => {
+const Team = (data) => {
   useEffect(() => {
     teamSkillsProgress();
     setTimeout(() => {
@@ -17,8 +17,7 @@ const Team = () => {
 
   return (
     <div className="team-crv section-padding">
-      <Team2/>
-   
+      <Team2 data={data} />
     </div>
   );
 };

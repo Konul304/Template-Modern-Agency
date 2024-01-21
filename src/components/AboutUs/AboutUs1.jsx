@@ -1,19 +1,22 @@
-import React from 'react';
+"use client";
+import React from "react";
 //= Static Data
 import aboutData from "@/data/about-us1.json";
 
-function AboutUs1() {
+const AboutUs1 = (data) => {
   return (
     <section className="about-us section-padding">
       <div className="container">
         <div className="row">
           <div className="col-lg-5 valign md-mb50">
             <div className="mb-50">
-              <h6 className="fw-100 text-u ls10 mb-10">{aboutData.smallTitle}</h6>
+              <h6 className="fw-100 text-u ls10 mb-10">
+                {aboutData.smallTitle}
+              </h6>
               <h3 className="fw-600 text-u ls1 mb-30 color-font">
                 {aboutData.title}
               </h3>
-              <p>{aboutData.content}</p>
+              <p>{data?.data?.weText}</p>
               <a href={`/about/about-dark`} className="butn bord curve mt-30">
                 <span>Read More</span>
               </a>
@@ -38,7 +41,7 @@ function AboutUs1() {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default AboutUs1
+export default AboutUs1;
