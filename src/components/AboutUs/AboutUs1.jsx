@@ -1,8 +1,10 @@
+"use client";
 import React from 'react';
 //= Static Data
 import aboutData from "@/data/about-us1.json";
 
-function AboutUs1() {
+const AboutUs1 = (data)=> {
+  console.log(data)
   return (
     <section className="about-us section-padding">
       <div className="container">
@@ -13,7 +15,7 @@ function AboutUs1() {
               <h3 className="fw-600 text-u ls1 mb-30 color-font">
                 {aboutData.title}
               </h3>
-              <p>{aboutData.content}</p>
+              <p>{data?.data?.weText}</p>
               <a href={`/about/about-dark`} className="butn bord curve mt-30">
                 <span>Read More</span>
               </a>
