@@ -12,7 +12,7 @@ import Works from '@/components/Works/Works1';
 import FullTestimonials from '@/components/Testimonials/FullTestimonials';
 import Cases from '@/components/Blogs/Cases';
 import Services1 from '@/components/Services/Services1';
-import { getAbout, getPartners } from '@/app/(api)/api';
+import { getAbout, getPartners, getPortfolio } from '@/app/(api)/api';
 
 export const metadata = {
   title: 'Vie - Main Demo Dark',
@@ -21,6 +21,7 @@ export const metadata = {
 const Home1 = async () => {
   const response = await getAbout();
   const partnerData = await getPartners();
+  const portfolio = await getPortfolio();
   return (
     <>
       <Loading />
@@ -33,7 +34,7 @@ const Home1 = async () => {
         {/* <Services /> */}
         <Services1 style="4item" />
         {/* <Services3 /> */}
-        <Works />
+        <Works portfolio={portfolio} />
         <FullTestimonials />
         {/* <SkillsCircle theme="dark" />
         <CallToAction /> */}
