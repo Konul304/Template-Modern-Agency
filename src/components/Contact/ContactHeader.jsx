@@ -1,20 +1,16 @@
-'use client';
-import React, { useEffect, useState } from 'react';
+"use client";
+import React, { useEffect } from "react";
 //= Static Data
-import contentHeaderData from '@/data/contact-header.json';
-import { Select } from 'antd';
-import styles from '../../styles/Contact.module.scss';
+import contentHeaderData from "@/data/contact-header.json";
 
 function ContactHeader() {
   useEffect(() => {
     setTimeout(() => {
-      if (document.querySelector('#particles-js canvas')) {
-        document.querySelector('#particles-js canvas').style.position = 'unset';
+      if (document.querySelector("#particles-js canvas")) {
+        document.querySelector("#particles-js canvas").style.position = "unset";
       }
     }, 500);
   }, []);
-
-  const [country, setCountry] = useState({ value: '', label: '' });
 
   return (
     <header className="pages-header circle-bg valign position-re">
@@ -31,34 +27,6 @@ function ContactHeader() {
                 {/* <button type="submit" className={`butn bord`}>
                     <span>Send Message</span>
                   </button> */}
-                <div className={styles.contact_button}>
-                  <Select
-                    showSearch
-                    // defaultValue="lucy"
-                    placeholder="Choose country"
-                    style={{ width: 120 }}
-                    value={
-                      country?.label !== ''
-                        ? country
-                        : {
-                            value: 'Choose country',
-                            label: 'Choose country',
-                          }
-                    }
-                    optionFilterProp="children"
-                    onChange={(value, option) => setCountry(option)}
-                    options={[
-                      { value: 'Azerbaijan', label: 'Azerbaijan' },
-                      { value: 'Belarus', label: 'Belarus' },
-                      { value: 'Georgia', label: 'Georgia' },
-                      { value: 'Germany', label: 'Germany' },
-                      { value: 'Kazakhstan', label: 'Kazakhstan' },
-                      { value: 'Russia', label: 'Russia' },
-                      { value: 'Ukraine', label: 'Ukraine' },
-                      { value: 'Uzbekistan', label: 'Uzbekistan' },
-                    ]}
-                  />
-                </div>
               </div>
             </div>
           </div>

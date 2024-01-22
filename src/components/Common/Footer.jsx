@@ -1,8 +1,29 @@
-import React from 'react';
+"use client";
 
-function Footer({ hideBGCOLOR }) {
+import { getPortfolio } from "@/app/(api)/api";
+import { useEffect, useState } from "react";
+
+const Footer = ({ hideBGCOLOR, portfolio }) => {
+  const [portfolioData, setPortfolioData] = useState();
+
+  const getPortfolioData = async () => {
+    try {
+      const portfolio = await getPortfolio();
+      console.log(portfolio);
+      setPortfolioData([
+        portfolio[portfolio?.length - 1],
+        portfolio[portfolio?.length - 2],
+      ]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getPortfolioData();
+  }, []);
   return (
-    <footer className={`${!hideBGCOLOR ? 'sub-bg' : ''}`}>
+    <footer className={`${!hideBGCOLOR ? "sub-bg" : ""}`}>
       <div className="container">
         <div className="row">
           <div className="col-lg-4">
@@ -41,38 +62,27 @@ function Footer({ hideBGCOLOR }) {
                 <h5>Portfolio</h5>
               </div>
               <ul>
-                <li>
-                  <div className="img">
-                    <a href="#">
-                      <img src="/img/blog/1.jpg" alt="" />
-                    </a>
-                  </div>
-                  <div className="sm-post">
-                    <a href="#">
-                      <p>
-                        The Start-Up Ultimate Guide to Make Your WordPress
-                        Journal.
-                      </p>
-                      {/* <span className="date">14 sep 2023</span> */}
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div className="img">
-                    <a href="#">
-                      <img src="/img/blog/2.jpg" alt="" />
-                    </a>
-                  </div>
-                  <div className="sm-post">
-                    <a href="#">
-                      <p>
-                        The Start-Up Ultimate Guide to Make Your WordPress
-                        Journal.
-                      </p>
-                      {/* <span className="date">14 sep 2023</span> */}
-                    </a>
-                  </div>
-                </li>
+                {portfolioData?.map((item) => {
+                  const img_link =
+                    "https://project141.s3.eu-north-1.amazonaws.com/" +
+                    item?.logoLink;
+                  return (
+                    <li key={item?.id}>
+                      <div className="img">
+                        <a href="#">
+                          <img src={img_link} alt="" />
+                        </a>
+                      </div>
+                      <div className="sm-post">
+                        <a href="#">
+                          <p>{item?.title}</p>
+                          {/* <span className="date">14 sep 2023</span> */}
+                        </a>
+                      </div>
+                    </li>
+                  );
+                })}
+
                 <li>
                   <div className="subscribe">
                     <input type="text" placeholder="Type Your Email" />
@@ -110,6 +120,6 @@ function Footer({ hideBGCOLOR }) {
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;
