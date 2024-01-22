@@ -6,6 +6,11 @@ import Split from '@/components/Common/Split';
 import contentFormData from '@/data/contact-form.json';
 
 function ContactForm({ theme }) {
+  // const userIp = Cookies.get('user-ip') ?? '';
+  // console.log(userIp);
+
+  console.log(Intl.DateTimeFormat().resolvedOptions().timeZone);
+
   const [inputValues, setInputValues] = useState({
     name: '',
     email: '',
