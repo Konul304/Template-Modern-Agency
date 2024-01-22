@@ -6,11 +6,15 @@ import initIsotope from '@/common/initIsotope';
 import { download_icon } from '../../../public/img';
 import styles from '../../styles/Works2.module.scss';
 import ModalVideo from '../Common/ModalVideo';
-import Image from 'next/image';
 
-function WorksStyle2({ grid, filterPosition, hideFilter }) {
+function WorksStyle2({
+  grid,
+  filterPosition,
+  hideFilter,
+  presentations,
+  videos,
+}) {
   const [isOpenMap, setOpenMap] = useState({});
-
   // Function to handle opening/closing modal for a specific video
   const handleToggleModal = (index) => {
     setOpenMap((prevOpenMap) => ({
@@ -36,65 +40,44 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
     }
   };
 
-  const videos = [
-    {
-      title: 'Baltika Event',
-      videoLink:
-        'https://drive.google.com/file/d/19_RNVhyi3xATvZlAENZnK60gDN2D5ZR5/view?usp=drive_link',
-      logoLink: '/img/Baltika_cover.jpg',
-    },
-    {
-      title: 'Bosch 4',
-      videoLink:
-        'https://drive.google.com/file/d/1k6ey8BI-e_rnuslGvd3WAp_Wk8eNAtFR/view?usp=drive_link',
-      logoLink: '/img/Bosch4_cover.jpg',
-    },
-    {
-      title: 'Bosch 15',
-      videoLink:
-        'https://drive.google.com/file/d/1XBnVM-sQ6DAZ-rvTnEB5ifi647psbWEo/view?usp=drive_link',
-      logoLink: '/img/Bosch15_cover.jpg',
-    },
-    {
-      title: 'Bosch Ramin',
-      videoLink:
-        'https://drive.google.com/file/d/1j7tyxM6XhJBopvSkpjOlf0T42NqZXBV7/view?usp=drive_link',
-      logoLink: '/img/BoschRamin_cover.jpg',
-    },
-    {
-      title: 'BoschAllPre',
-      videoLink:
-        'https://drive.google.com/file/d/16dulJAelTFyVU4pSdr9w9qiE7Rewc0aD/view?usp=drive_link',
-      logoLink: '/img/BoschAllPre_cover.jpg',
-    },
-    {
-      title: 'BoschFarhadSocial',
-      videoLink:
-        'https://drive.google.com/file/d/1b8wGKZ90KV_kFdyVRwm0aNhN-w4TJRto/view?usp=drive_link',
-      logoLink: '/img/BoschFarhadSocial_cover.jpg',
-    },
-  ];
-
-  const presentations = [
-    {
-      title: 'BTL Portfolio',
-      logoLink: '/img/BTL.jpg',
-      pdfLink:
-        'https://drive.google.com/file/d/1LAssrnVAVugkgJQXsuzmCBez8dZ0Op5m/view?usp=drive_link',
-    },
-    {
-      title: 'Event Portfolio',
-      logoLink: '/img/Event.jpg',
-      pdfLink:
-        'https://drive.google.com/file/d/1V70zz_dO7WuxlNfwScXvqlh6t-LAs4bF/view?usp=drive_link',
-    },
-    {
-      title: 'Production Portfolio',
-      logoLink: '/img/Production.jpg',
-      pdfLink:
-        'https://drive.google.com/file/d/1eCV_p3tpImBX0BxGvol2m0o1UBT50P_P/view?usp=drive_link',
-    },
-  ];
+  // const videos = [
+  //   {
+  //     title: 'Baltika Event',
+  //     videoLink:
+  //       'https://drive.google.com/file/d/19_RNVhyi3xATvZlAENZnK60gDN2D5ZR5/view?usp=drive_link',
+  //     logoLink: '/img/Baltika_cover.jpg',
+  //   },
+  //   {
+  //     title: 'Bosch 4',
+  //     videoLink:
+  //       'https://drive.google.com/file/d/1k6ey8BI-e_rnuslGvd3WAp_Wk8eNAtFR/view?usp=drive_link',
+  //     logoLink: '/img/Bosch4_cover.jpg',
+  //   },
+  //   {
+  //     title: 'Bosch 15',
+  //     videoLink:
+  //       'https://drive.google.com/file/d/1XBnVM-sQ6DAZ-rvTnEB5ifi647psbWEo/view?usp=drive_link',
+  //     logoLink: '/img/Bosch15_cover.jpg',
+  //   },
+  //   {
+  //     title: 'Bosch Ramin',
+  //     videoLink:
+  //       'https://drive.google.com/file/d/1j7tyxM6XhJBopvSkpjOlf0T42NqZXBV7/view?usp=drive_link',
+  //     logoLink: '/img/BoschRamin_cover.jpg',
+  //   },
+  //   {
+  //     title: 'BoschAllPre',
+  //     videoLink:
+  //       'https://drive.google.com/file/d/16dulJAelTFyVU4pSdr9w9qiE7Rewc0aD/view?usp=drive_link',
+  //     logoLink: '/img/BoschAllPre_cover.jpg',
+  //   },
+  //   {
+  //     title: 'BoschFarhadSocial',
+  //     videoLink:
+  //       'https://drive.google.com/file/d/1b8wGKZ90KV_kFdyVRwm0aNhN-w4TJRto/view?usp=drive_link',
+  //     logoLink: '/img/BoschFarhadSocial_cover.jpg',
+  //   },
+  // ];
 
   return (
     <section
@@ -145,13 +128,19 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
 
           <div className="gallery full-width">
             {presentations?.map((item, index) => {
+              const img_link =
+                'https://project141.s3.eu-north-1.amazonaws.com/' +
+                item?.logoLink;
               const download_url = item?.pdfLink
                 ?.replace('/view?usp=drive_link', '')
                 ?.replace('file/d/', 'uc?id=');
+              console.log(download_url);
               const view_url = item?.pdfLink?.replace(
                 'view?usp=drive_link',
                 'preview'
               );
+              console.log(view_url);
+
               return (
                 <div
                   key={index}
@@ -167,7 +156,7 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
                   <div className="item-img">
                     <div className="imago wow">
                       <Link href={view_url} target="_blank">
-                        <img src={item?.logoLink} alt="image" />
+                        <img src={img_link} alt="image" />
                       </Link>
                       <div className="item-img-overlay"></div>
                     </div>
@@ -195,6 +184,9 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
             })}
 
             {videos?.map((item, index) => {
+              const cover_link =
+                'https://project141.s3.eu-north-1.amazonaws.com/' +
+                item?.logoLink;
               const video_link = item?.videoLink?.replace(
                 'view?usp=drive_link',
                 'preview'
@@ -210,7 +202,7 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
                       onClick={() => handleToggleModal(index)}
                       className="imago wow w-100 h-100"
                     >
-                      <img src={item?.logoLink} alt="image" />
+                      <img src={cover_link} alt="image" />
                       <div className="item-img-overlay"></div>
                     </div>
                   </div>

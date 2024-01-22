@@ -26,3 +26,21 @@ export const getTeamMembers = async () => {
     console.log(err);
   }
 };
+
+export const getPortfolio = async () => {
+  try {
+    const response = await axiosTemplate.get('Presentation');
+    return response?.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const getVideos = async () => {
+  try {
+    const response = await axiosTemplate.get('Video');
+    return response?.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
