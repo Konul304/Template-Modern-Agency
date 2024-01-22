@@ -2,13 +2,9 @@ import Script from 'next/script';
 //= Scripts
 import generateStylesheetObject from '@/common/generateStylesheetsObject';
 //= Common Components
-import LoadingScreen from '@/components/Common/Loader';
 import Cursor from '@/components/Common/Cursor';
 import ProgressScroll from '@/components/Common/ProgressScroll';
 //= Page Components
-import CircleBg from '@/components/Demos/CircleBg';
-import Header from '@/components/Demos/Header';
-import MainContent from '@/components/Demos/MainContent';
 import Home1 from './(dark)/homepage/home1-dark/page';
 
 export const metadata = {
