@@ -4,6 +4,26 @@ import Link from 'next/link';
 import styles from '../../styles/Services.module.scss';
 
 function Services1({ style, lines }) {
+  const services = [
+    {
+      name: 'ATL',
+    },
+    {
+      name: 'BTI',
+    },
+    {
+      name: 'PR',
+    },
+    {
+      name: 'ATL',
+    },
+    {
+      name: 'ATL',
+    },
+    {
+      name: 'ATL',
+    },
+  ];
   return (
     <section
       className={`services bords section-padding ${
@@ -21,57 +41,23 @@ function Services1({ style, lines }) {
             </div>
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-4 wow fadeInLeft" data-wow-delay={`0s`}>
-            <Link href="#" className="item-box">
-              <div className="cont">
-                <h6 className="text-center">ATL</h6>
-                {/* <p>sdfsd</p> */}
+        <div className="row_services">
+          {services?.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className="col-md-4 wow fadeInLeft"
+                data-wow-delay={`0s`}
+              >
+                <Link href="#" className="item-box">
+                  <div className="cont">
+                    <h6 className="text-center">{item?.name}</h6>
+                    {/* <p>sdfsd</p> */}
+                  </div>
+                </Link>
               </div>
-            </Link>
-          </div>
-          <div className="col-md-4 wow fadeInLeft" data-wow-delay={`0s`}>
-            <Link href="#" className="item-box">
-              <div className="cont">
-                <h6>BTI</h6>
-                {/* <p>sdfsd</p> */}
-              </div>
-            </Link>
-          </div>
-          <div className="col-md-4 wow fadeInLeft" data-wow-delay={`0s`}>
-            <Link href="#" className="item-box">
-              <div className="cont">
-                <h6>PR</h6>
-                {/* <p>sdfsd</p> */}
-              </div>
-            </Link>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-md-4 wow fadeInLeft" data-wow-delay={`0s`}>
-            <Link href="#" className="item-box">
-              <div className="cont">
-                <h6>Production</h6>
-                {/* <p>sdfsd</p> */}
-              </div>
-            </Link>
-          </div>
-          <div className="col-md-4 wow fadeInLeft" data-wow-delay={`0s`}>
-            <Link href="#" className="item-box">
-              <div className="cont">
-                <h6>Design</h6>
-                {/* <p>sdfsd</p> */}
-              </div>
-            </Link>
-          </div>
-          <div className="col-md-4 wow fadeInLeft" data-wow-delay={`0s`}>
-            <Link href="#" className="item-box">
-              <div className="cont">
-                <h6>Digital Marketing</h6>
-                {/* <p>sdfsd</p> */}
-              </div>
-            </Link>
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>
