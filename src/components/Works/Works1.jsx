@@ -1,17 +1,15 @@
 'use client';
 import React from 'react';
-import Link from 'next/link';
 //= Modules
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper';
 //= Static Data
-import worksData from "@/data/works1.json";
 
 const swiperOptions = {
   modules: [Autoplay, Navigation],
   navigation: {
-    prevEl: ".swiper-button-prev",
-    nextEl: ".swiper-button-next",
+    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-button-next',
   },
   slidesPerView: 2,
   centeredSlides: true,
@@ -40,9 +38,9 @@ const swiperOptions = {
       slidesPerView: 2,
     },
   },
-}
+};
 
-function Works1() {
+const Works1 = (portfolio) => {
   return (
     <section className="work-carousel metro position-re">
       <div className="container-fluid">
@@ -50,25 +48,34 @@ function Works1() {
           <div className="col-lg-12 no-padding">
             <div className="swiper-container">
               <Swiper {...swiperOptions} className="swiper-wrapper">
-                {
-                  worksData.map(slide => (
-                    <SwiperSlide key={slide.id} className="swiper-slide">
-                      <div className="content wow noraidus fadeInUp" data-wow-delay=".3s">
-                        <div className="item-img bg-img wow imago" style={{ backgroundImage: `url(${slide.image})` }}></div>
+                {portfolio?.portfolio?.map((item) => {
+                  const img_url =
+                    'https://project141.s3.eu-north-1.amazonaws.com/' +
+                    item?.logoLink;
+                  return (
+                    <SwiperSlide key={item?.id} className="swiper-slide">
+                      <div
+                        className="content wow noraidus fadeInUp"
+                        data-wow-delay=".3s"
+                      >
+                        <div
+                          className="item-img bg-img wow imago"
+                          style={{ backgroundImage: `url(${img_url})` }}
+                        ></div>
                         <div className="cont">
                           <h6 className="color-font">
-                            <a href="#">{slide.title}</a>
+                            <a href="#">{item?.title}</a>
                           </h6>
-                          <h4>
+                          {/* <h4>
                             <Link href="/project-details2/project-details2-dark">
                               {slide.secTex}
                             </Link>
-                          </h4>
+                          </h4> */}
                         </div>
                       </div>
                     </SwiperSlide>
-                  ))
-                }
+                  );
+                })}
               </Swiper>
               <div className="swiper-button-next swiper-nav-ctrl simp-next cursor-pointer">
                 <span className="simple-btn right">Next</span>
@@ -81,7 +88,7 @@ function Works1() {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Works1;

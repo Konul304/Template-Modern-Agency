@@ -6,11 +6,15 @@ import initIsotope from "@/common/initIsotope";
 import { download_icon } from "../../../public/img";
 import styles from "../../styles/Works2.module.scss";
 import ModalVideo from "../Common/ModalVideo";
-import Image from "next/image";
 
-function WorksStyle2({ grid, filterPosition, hideFilter }) {
+function WorksStyle2({
+  grid,
+  filterPosition,
+  hideFilter,
+  presentations,
+  videos,
+}) {
   const [isOpenMap, setOpenMap] = useState({});
-
   // Function to handle opening/closing modal for a specific video
   const handleToggleModal = (index) => {
     setOpenMap((prevOpenMap) => ({
@@ -35,63 +39,6 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
       document.body.removeChild(link);
     }
   };
-
-  const videos = [
-    {
-      name: "Baltika Event",
-      url: "https://drive.google.com/file/d/19_RNVhyi3xATvZlAENZnK60gDN2D5ZR5/preview",
-      img_url: "/img/Baltika_cover.jpg",
-    },
-    {
-      name: "Bosch 4",
-      url: "https://drive.google.com/file/d/1k6ey8BI-e_rnuslGvd3WAp_Wk8eNAtFR/preview",
-      img_url: "/img/Bosch4_cover.jpg",
-    },
-    {
-      name: "Bosch 15",
-      url: "https://drive.google.com/file/d/1XBnVM-sQ6DAZ-rvTnEB5ifi647psbWEo/preview",
-      img_url: "/img/Bosch15_cover.jpg",
-    },
-    {
-      name: "Bosch Ramin",
-      url: "https://drive.google.com/file/d/1j7tyxM6XhJBopvSkpjOlf0T42NqZXBV7/preview",
-      img_url: "/img/BoschRamin_cover.jpg",
-    },
-    {
-      name: "BoschAllPre",
-      url: "https://drive.google.com/file/d/16dulJAelTFyVU4pSdr9w9qiE7Rewc0aD/preview",
-      img_url: "/img/BoschAllPre_cover.jpg",
-    },
-    {
-      name: "BoschFarhadSocial",
-      url: "https://drive.google.com/file/d/1b8wGKZ90KV_kFdyVRwm0aNhN-w4TJRto/preview",
-      img_url: "/img/BoschFarhadSocial_cover.jpg",
-    },
-  ];
-
-  const presentations = [
-    {
-      name: "BTL Portfolio",
-      url: "https://drive.google.com/file/d/1LAssrnVAVugkgJQXsuzmCBez8dZ0Op5m/preview",
-      img_url: "/img/BTL.jpg",
-      pdf_url:
-        "https://drive.google.com/uc?id=1LAssrnVAVugkgJQXsuzmCBez8dZ0Op5m",
-    },
-    {
-      name: "Event Portfolio",
-      url: "https://drive.google.com/file/d/1V70zz_dO7WuxlNfwScXvqlh6t-LAs4bF/preview",
-      img_url: "/img/Event.jpg",
-      pdf_url:
-        "https://drive.google.com/uc?id=1V70zz_dO7WuxlNfwScXvqlh6t-LAs4bF",
-    },
-    {
-      name: "Production Portfolio",
-      url: "https://drive.google.com/file/d/1eCV_p3tpImBX0BxGvol2m0o1UBT50P_P/preview",
-      img_url: "/img/Production.jpg",
-      pdf_url:
-        "https://drive.google.com/uc?id=1eCV_p3tpImBX0BxGvol2m0o1UBT50P_P",
-    },
-  ];
 
   return (
     <section
@@ -142,6 +89,19 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
 
           <div className="gallery full-width">
             {presentations?.map((item, index) => {
+              const img_link =
+                "https://project141.s3.eu-north-1.amazonaws.com/" +
+                item?.logoLink;
+              const download_url = item?.pdfLink
+                ?.replace("/view?usp=drive_link", "")
+                ?.replace("file/d/", "uc?id=");
+              console.log(download_url);
+              const view_url = item?.pdfLink?.replace(
+                "view?usp=drive_link",
+                "preview"
+              );
+              console.log(view_url);
+
               return (
                 <div
                   key={index}
@@ -156,22 +116,22 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
                 >
                   <div className="item-img">
                     <div className="imago wow">
-                      <Link href={item?.url} target="_blank">
-                        <img src={item?.img_url} alt="image" />
+                      <Link href={view_url} target="_blank">
+                        <img src={img_link} alt="image" />
                       </Link>
                       <div className="item-img-overlay"></div>
                     </div>
                   </div>
                   <div className="cont">
                     <h6>
-                      {item?.name}
+                      {item?.title}
                       <span
                         onClick={handleDownload}
                         className={styles.download_icon}
                       >
                         <div
                           onClick={() =>
-                            handleDownload(item?.pdf_url, item?.name)
+                            handleDownload(download_url, item?.title)
                           }
                         >
                           {download_icon}
@@ -185,6 +145,13 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
             })}
 
             {videos?.map((item, index) => {
+              const cover_link =
+                "https://project141.s3.eu-north-1.amazonaws.com/" +
+                item?.logoLink;
+              const video_link = item?.videoLink?.replace(
+                "view?usp=drive_link",
+                "preview"
+              );
               return (
                 <div
                   key={index}
@@ -196,14 +163,14 @@ function WorksStyle2({ grid, filterPosition, hideFilter }) {
                       onClick={() => handleToggleModal(index)}
                       className="imago wow w-100 h-100"
                     >
-                      <img src={item?.img_url} alt="image" />
+                      <img src={cover_link} alt="image" />
                       <div className="item-img-overlay"></div>
                     </div>
                   </div>
                   <div className="cont">
-                    <h6>{item?.name}</h6>
+                    <h6>{item?.title}</h6>
                     <ModalVideo
-                      source={item?.url}
+                      source={video_link}
                       isOpen={isOpenMap[index]}
                       onClose={() => handleToggleModal(index)}
                       autoplay
