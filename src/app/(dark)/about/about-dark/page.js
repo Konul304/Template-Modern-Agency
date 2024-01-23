@@ -8,7 +8,7 @@ import Partners from '@/components/Clients/Partners';
 import Footer from '@/components/Common/Footer';
 import Loading from '@/components/Common/Loader';
 import OurHistory from '@/components/OurHistory';
-import { getAbout, getTeamMembers } from '@/app/(api)/api';
+import { getAbout, getPartners, getTeamMembers } from '@/app/(api)/api';
 
 export const metadata = {
   title: 'Vie - About Dark',
@@ -17,6 +17,7 @@ export const metadata = {
 const AboutDark = async () => {
   const response = await getAbout();
   const teamMembers = await getTeamMembers();
+  const partnerData = await getPartners();
   return (
     <>
       <Loading />
@@ -26,7 +27,7 @@ const AboutDark = async () => {
         passion for what we do.
       </PagesHeader>
       <AboutIntro data={response} />
-      <Partners theme="dark" />
+      <Partners theme="dark" partners={partnerData} />
       <OurHistory data={response} />
       <Team data={teamMembers} />
       {/* <Services style="4item" />

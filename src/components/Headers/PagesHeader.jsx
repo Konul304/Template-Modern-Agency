@@ -1,7 +1,10 @@
-"use client";
-import React from "react";
+'use client';
+import React from 'react';
 
 const PagesHeader = ({ children, data }) => {
+  const img_link =
+    'https://project141.s3.eu-north-1.amazonaws.com/' + data?.wePhotoLink;
+
   return (
     <header className="pages-header circle-bg valign">
       <div className="container">
@@ -15,7 +18,7 @@ const PagesHeader = ({ children, data }) => {
           </div> */}
           <div className="col-lg-10">
             <div className="img">
-              <img src="/img/slid/about.jpg" alt="" />
+              <img src={`${img_link}`} alt="" />
             </div>
           </div>
         </div>

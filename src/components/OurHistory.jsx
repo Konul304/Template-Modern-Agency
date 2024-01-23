@@ -2,6 +2,10 @@
 import React from 'react';
 
 const OurHistory = (data) => {
+  const img_link =
+    'https://project141.s3.eu-north-1.amazonaws.com/' +
+    data?.data?.historyPhotoLink;
+
   return (
     <div>
       <header className="slider-stwo valign position-re">
@@ -9,7 +13,7 @@ const OurHistory = (data) => {
           <div className="row">
             <div className="col-lg-5">
               <div className="img">
-                <img src="/img/slid/002.jpg" alt="" />
+                <img src={`${img_link}`} alt="" />
               </div>
             </div>
             <div className="col-lg-7 valign">

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function Team2(data) {
   return (
@@ -20,11 +20,14 @@ function Team2(data) {
       <div className="container-fluid">
         <div className="row">
           {data?.data?.data?.map((item, index) => {
+            const img_link =
+              'https://project141.s3.eu-north-1.amazonaws.com/' +
+              item?.profilePicLink;
             return (
               <div key={index} className="col-lg-3 col-md-6">
                 <div className="item cir md-mb50">
                   <div className="img">
-                    <img src="/img/team/1.jpg" alt="" />
+                    <img src={img_link} alt="" />
                     <div id="circle1">
                       <svg
                         version="1.1"
@@ -48,7 +51,7 @@ function Team2(data) {
                           <use xlinkHref="#circlePath1" fill="none" />
                           <text fill="#fff">
                             <textPath xlinkHref="#circlePath1">
-                              CEO Manager CEO Manager CEO Manager
+                              {item?.position}
                             </textPath>
                           </text>
                         </g>
