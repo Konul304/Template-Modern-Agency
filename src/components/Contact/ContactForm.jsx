@@ -1,25 +1,70 @@
-'use client';
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 //= Components
-import Split from '@/components/Common/Split';
+import Split from "@/components/Common/Split";
 //= Static Data
-import contentFormData from '@/data/contact-form.json';
+import contentFormData from "@/data/contact-form.json";
+import styles from "../../styles/Contact.module.scss";
+import countryData from "@/data/regions-to-countries";
+import { Select } from "antd";
 
-function ContactForm({ theme }) {
-  // const userIp = Cookies.get('user-ip') ?? '';
-  // console.log(userIp);
-
-  console.log(Intl.DateTimeFormat().resolvedOptions().timeZone);
-
+function ContactForm({ theme, data }) {
+  // console.log(data);
+  const [country, setCountry] = useState({ value: "", label: "" });
   const [inputValues, setInputValues] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
+
+  const { countries, zones } = require("moment-timezone/data/meta/latest.json");
+  const timeZoneToCountry = {};
+  const timeZoneCityToCountry = {};
+  Object.keys(zones).forEach((z) => {
+    timeZoneToCountry[z] = countries[zones[z].countries[0]].name;
+    const cityArr = z.split("/");
+    const city = cityArr[cityArr.length - 1];
+    timeZoneCityToCountry[city] = countries[zones[z].countries[0]].name;
+  });
+  if (Intl) {
+    const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const myCountry = Object.entries(countryData).find(
+      ([key, value]) => key === userTimeZone
+    );
+    // console.log(myCountry[1]);
+  }
 
   const handleSubmit = () => {};
   return (
     <section className="contact section-padding">
+      <div className={styles.contact_button}>
+        <Select
+          showSearch
+          // defaultValue="lucy"
+          placeholder="Choose country"
+          style={{ width: 120 }}
+          value={
+            country?.label !== ""
+              ? country
+              : {
+                  value: "Choose country",
+                  label: "Choose country",
+                }
+          }
+          optionFilterProp="children"
+          onChange={(value, option) => setCountry(option)}
+          options={[
+            { value: "Azerbaijan", label: "Azerbaijan" },
+            { value: "Belarus", label: "Belarus" },
+            { value: "Georgia", label: "Georgia" },
+            { value: "Germany", label: "Germany" },
+            { value: "Kazakhstan", label: "Kazakhstan" },
+            { value: "Russia", label: "Russia" },
+            { value: "Ukraine", label: "Ukraine" },
+            { value: "Uzbekistan", label: "Uzbekistan" },
+          ]}
+        />
+      </div>
       <div className="container">
         <div className="row">
           <div className="col-lg-6">
@@ -80,7 +125,7 @@ function ContactForm({ theme }) {
 
                   <button
                     type="submit"
-                    className={`butn ${theme === 'light' ? 'dark' : 'bord'}`}
+                    className={`butn ${theme === "light" ? "dark" : "bord"}`}
                   >
                     <span>Send Message</span>
                   </button>
