@@ -8,7 +8,7 @@ import ProgressScroll from '@/components/Common/ProgressScroll';
 import Home1 from './(dark)/homepage/home1-dark/page';
 
 export const metadata = {
-  title: 'Vie - Preview',
+  title: 'C141',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
