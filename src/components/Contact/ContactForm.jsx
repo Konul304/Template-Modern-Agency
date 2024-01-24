@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 //= Components
 import Split from '@/components/Common/Split';
 //= Static Data
@@ -9,30 +9,44 @@ import countryData from '@/data/regions-to-countries';
 import { Select } from 'antd';
 
 function ContactForm({ theme, data }) {
-  // console.log(data);
+  const { countries, zones } = require('moment-timezone/data/meta/latest.json');
+  const timeZoneToCountry = {};
+  const timeZoneCityToCountry = {};
   const [country, setCountry] = useState({ value: '', label: '' });
+  const [contactInfo, setContactInfo] = useState({
+    email: '',
+    phoneNumber: '',
+    address: '',
+  });
   const [inputValues, setInputValues] = useState({
     name: '',
     email: '',
     message: '',
   });
+  let myCountry;
 
-  const { countries, zones } = require('moment-timezone/data/meta/latest.json');
-  const timeZoneToCountry = {};
-  const timeZoneCityToCountry = {};
-  Object.keys(zones).forEach((z) => {
-    timeZoneToCountry[z] = countries[zones[z].countries[0]].name;
-    const cityArr = z.split('/');
-    const city = cityArr[cityArr.length - 1];
-    timeZoneCityToCountry[city] = countries[zones[z].countries[0]].name;
-  });
-  if (Intl) {
-    const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const myCountry = Object.entries(countryData).find(
-      ([key, value]) => key === userTimeZone
-    );
-    // console.log(myCountry[1]);
-  }
+  useEffect(() => {
+    Object.keys(zones).forEach((z) => {
+      timeZoneToCountry[z] = countries[zones[z].countries[0]].name;
+      const cityArr = z.split('/');
+      const city = cityArr[cityArr.length - 1];
+      timeZoneCityToCountry[city] = countries[zones[z].countries[0]].name;
+    });
+    if (Intl) {
+      const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      myCountry = Object.entries(countryData).find(
+        ([key, value]) => key === userTimeZone
+      );
+      const currentLocationData = data?.find(
+        (item) => item.city === myCountry[1]
+      );
+      setContactInfo({
+        email: currentLocationData?.email,
+        phoneNumber: currentLocationData?.phoneNumber,
+        address: currentLocationData?.address,
+      });
+    }
+  }, []);
 
   const handleSubmit = () => {};
   return (
@@ -52,7 +66,19 @@ function ContactForm({ theme, data }) {
                 }
           }
           optionFilterProp="children"
-          onChange={(value, option) => setCountry(option)}
+          onChange={(value, option) => {
+            setCountry(option);
+            const selectedLocationData = data?.find(
+              (item) => item.city === option?.label
+            );
+            if (selectedLocationData) {
+              setContactInfo({
+                email: selectedLocationData?.email,
+                phoneNumber: selectedLocationData?.phoneNumber,
+                address: selectedLocationData?.address,
+              });
+            }
+          }}
           options={data?.map((item) => ({
             value: item?.city,
             label: item?.city,
@@ -137,9 +163,9 @@ function ContactForm({ theme, data }) {
               </Split>
               <div className="item mb-40">
                 <h5>
-                  <a href="#0">{contentFormData.email}</a>
+                  <a href="#0">{contactInfo?.email}</a>
                 </h5>
-                <h5>{contentFormData.phone}</h5>
+                <h5>{contactInfo?.phoneNumber}</h5>
               </div>
               <Split>
                 <h3 className="wow" data-splitting>
@@ -147,11 +173,7 @@ function ContactForm({ theme, data }) {
                 </h3>
               </Split>
               <div className="item">
-                <h6>
-                  Lorem, ipsum dolor sit amet
-                  <br />
-                  Lorem ipsum
-                </h6>
+                <h6>{contactInfo?.address}</h6>
               </div>
               <div className="social mt-50">
                 <a href="#0" className="icon">
