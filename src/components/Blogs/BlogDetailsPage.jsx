@@ -1,14 +1,14 @@
-'use client';
-import React from 'react';
+"use client";
+import React from "react";
 //= Page components
-import Loading from '@/components/Common/Loader';
-import Navbar from '@/components/Common/Navbar';
-import PageHeader from '@/components/Headers/PageHeader';
-import BlogDetails from '@/components/Blogs/BlogDetails';
-import Footer from '@/components/Common/Footer';
+import Loading from "@/components/Common/Loader";
+import Navbar from "@/components/Common/Navbar";
+import PageHeader from "@/components/Headers/PageHeader";
+import BlogDetails from "@/components/Blogs/BlogDetails";
+import Footer from "@/components/Common/Footer";
 
 export const metadata = {
-  title: 'Vie - Blog Details Dark',
+  title: "C141",
 };
 
 const BlogDetailsPage = (data) => {

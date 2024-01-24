@@ -19,11 +19,11 @@ const scrollToTop = () => {
   let offset = 150;
   window.addEventListener("scroll", function () {
     if (window.pageYOffset > offset) {
-      progressWrap.classList.add("active-progress");
+      progressWrap.classList?.add("active-progress");
     } else {
       document
         .querySelector(".progress-wrap")
-        .classList.remove("active-progress");
+        .classList?.remove("active-progress");
     }
   });
   progressWrap.addEventListener("click", function (event) {
