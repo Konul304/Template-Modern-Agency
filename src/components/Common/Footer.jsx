@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import { getContactData, getPortfolio } from "@/app/(api)/api";
-import { useEffect, useState } from "react";
-import countryData from "@/data/regions-to-countries";
+import { getContactData, getPortfolio } from '@/app/(api)/api';
+import { useEffect, useState } from 'react';
+import countryData from '@/data/regions-to-countries';
 
 const Footer = ({ hideBGCOLOR }) => {
-  const { countries, zones } = require("moment-timezone/data/meta/latest.json");
+  const { countries, zones } = require('moment-timezone/data/meta/latest.json');
   const timeZoneToCountry = {};
   const timeZoneCityToCountry = {};
   const [portfolioData, setPortfolioData] = useState();
   const [contactData, setContactData] = useState();
   const [contactInfo, setContactInfo] = useState({
-    email: "",
-    phoneNumber: "",
-    address: "",
+    email: '',
+    phoneNumber: '',
+    address: '',
   });
 
   const getPortfolioData = async () => {
@@ -45,7 +45,7 @@ const Footer = ({ hideBGCOLOR }) => {
   useEffect(() => {
     Object.keys(zones).forEach((z) => {
       timeZoneToCountry[z] = countries[zones[z].countries[0]].name;
-      const cityArr = z.split("/");
+      const cityArr = z.split('/');
       const city = cityArr[cityArr.length - 1];
       timeZoneCityToCountry[city] = countries[zones[z].countries[0]].name;
     });
@@ -55,7 +55,7 @@ const Footer = ({ hideBGCOLOR }) => {
         ([key, value]) => key === userTimeZone
       );
       const currentLocationData = contactData?.find(
-        (item) => item.city === myCountry[1]
+        (item) => item.country === myCountry[1]
       );
       setContactInfo({
         email: currentLocationData?.email,
@@ -65,7 +65,7 @@ const Footer = ({ hideBGCOLOR }) => {
     }
   }, [portfolioData, contactData]);
   return (
-    <footer className={`${!hideBGCOLOR ? "sub-bg" : ""}`}>
+    <footer className={`${!hideBGCOLOR ? 'sub-bg' : ''}`}>
       <div className="container">
         <div className="row">
           <div className="col-lg-4">
@@ -106,7 +106,7 @@ const Footer = ({ hideBGCOLOR }) => {
               <ul>
                 {portfolioData?.map((item) => {
                   const img_link =
-                    "https://project141.s3.eu-north-1.amazonaws.com/" +
+                    'https://project141.s3.eu-north-1.amazonaws.com/' +
                     item?.logoLink;
                   return (
                     <li key={item?.id}>

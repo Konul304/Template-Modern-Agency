@@ -38,7 +38,7 @@ function ContactForm({ theme, data }) {
         ([key, value]) => key === userTimeZone
       );
       const currentLocationData = data?.find(
-        (item) => item.city === myCountry[1]
+        (item) => item.country === myCountry[1]
       );
       setContactInfo({
         email: currentLocationData?.email,
@@ -69,7 +69,7 @@ function ContactForm({ theme, data }) {
           onChange={(value, option) => {
             setCountry(option);
             const selectedLocationData = data?.find(
-              (item) => item.city === option?.label
+              (item) => item.country === option?.label
             );
             if (selectedLocationData) {
               setContactInfo({
@@ -80,8 +80,8 @@ function ContactForm({ theme, data }) {
             }
           }}
           options={data?.map((item) => ({
-            value: item?.city,
-            label: item?.city,
+            value: item?.country,
+            label: item?.country,
           }))}
         />
       </div>
