@@ -1,15 +1,24 @@
 "use client";
 
-import { getPortfolio } from "@/app/(api)/api";
+import { getContactData, getPortfolio } from "@/app/(api)/api";
 import { useEffect, useState } from "react";
+import countryData from "@/data/regions-to-countries";
 
-const Footer = ({ hideBGCOLOR, portfolio }) => {
+const Footer = ({ hideBGCOLOR }) => {
+  const { countries, zones } = require("moment-timezone/data/meta/latest.json");
+  const timeZoneToCountry = {};
+  const timeZoneCityToCountry = {};
   const [portfolioData, setPortfolioData] = useState();
+  const [contactData, setContactData] = useState();
+  const [contactInfo, setContactInfo] = useState({
+    email: "",
+    phoneNumber: "",
+    address: "",
+  });
 
   const getPortfolioData = async () => {
     try {
       const portfolio = await getPortfolio();
-      console.log(portfolio);
       setPortfolioData([
         portfolio[portfolio?.length - 1],
         portfolio[portfolio?.length - 2],
@@ -19,9 +28,42 @@ const Footer = ({ hideBGCOLOR, portfolio }) => {
     }
   };
 
+  const getContact = async () => {
+    try {
+      const contact = await getContactData();
+      setContactData(contact);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getPortfolioData();
+    getContact();
   }, []);
+
+  useEffect(() => {
+    Object.keys(zones).forEach((z) => {
+      timeZoneToCountry[z] = countries[zones[z].countries[0]].name;
+      const cityArr = z.split("/");
+      const city = cityArr[cityArr.length - 1];
+      timeZoneCityToCountry[city] = countries[zones[z].countries[0]].name;
+    });
+    if (Intl) {
+      const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const myCountry = Object.entries(countryData).find(
+        ([key, value]) => key === userTimeZone
+      );
+      const currentLocationData = contactData?.find(
+        (item) => item.city === myCountry[1]
+      );
+      setContactInfo({
+        email: currentLocationData?.email,
+        phoneNumber: currentLocationData?.phoneNumber,
+        address: currentLocationData?.address,
+      });
+    }
+  }, [portfolioData, contactData]);
   return (
     <footer className={`${!hideBGCOLOR ? "sub-bg" : ""}`}>
       <div className="container">
@@ -36,21 +78,21 @@ const Footer = ({ hideBGCOLOR, portfolio }) => {
                   <span className="icon pe-7s-map-marker"></span>
                   <div className="cont">
                     <h6>Officeal Address</h6>
-                    <p>Lorem ipsum dolor sit amet</p>
+                    <p>{contactInfo?.address}</p>
                   </div>
                 </li>
                 <li>
                   <span className="icon pe-7s-mail"></span>
                   <div className="cont">
                     <h6>Email Us</h6>
-                    <p>support@gmail.com</p>
+                    <p>{contactInfo?.email}</p>
                   </div>
                 </li>
                 <li>
                   <span className="icon pe-7s-call"></span>
                   <div className="cont">
                     <h6>Call Us</h6>
-                    <p>+87986451666</p>
+                    <p>{contactInfo?.phoneNumber}</p>
                   </div>
                 </li>
               </ul>
