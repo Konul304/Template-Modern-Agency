@@ -7,18 +7,16 @@ const SimilarCases = (data) => {
   const caseData = data?.data?.data?.find(
     (item) => item.id?.toString() === data?.data?.id?.casesID
   );
-  const tagStrings = caseData?.tags?.map((item) => item.tag);
-
-  const filteredObjects = allData.filter((item) => {
-    const tags = item.tags?.map((tagItem) => tagItem.tag) || [];
-    return tags.some((tag) => tagStrings.includes(tag));
+  const matchingObjects = allData.filter((item) => {
+    const hasMatchingTag = caseData.tagNames.some(
+      (tagName) => item.tagNames && item.tagNames.includes(tagName)
+    );
+    return hasMatchingTag;
   });
-  const indexOfItemWithId2 = filteredObjects.findIndex(
-    (item) => item.id === caseData?.id
+
+  const filteredMatchingObjects = matchingObjects.filter(
+    (item) => item.id !== caseData.id
   );
-  if (indexOfItemWithId2 !== -1) {
-    filteredObjects.splice(indexOfItemWithId2, 1);
-  }
 
   return (
     <section className={`blog ${styles.similar_cases_container}`}>
@@ -34,11 +32,11 @@ const SimilarCases = (data) => {
           </div>
         </div>
         <div className="row">
-          {filteredObjects?.map((item) => {
+          {filteredMatchingObjects?.map((item) => {
             return (
               <div key={item?.id} className="col-md-4">
                 <div className="item md-mb50 wow fadeInUp" data-wow-delay=".3s">
-                  <a href={`/cases/cases-dark${item?.id}`} className="img">
+                  <a href={`/cases/cases-dark/${item?.id}`} className="img">
                     <img src="/img/blog/1.jpg" alt="" />
                   </a>
                   <div className="cont">
@@ -51,22 +49,26 @@ const SimilarCases = (data) => {
                         </Link>
                         <span>/</span> */}
                         <Link
-                          href={`/cases/cases-dark${item?.id}`}
+                          href={`/cases/cases-dark/${item?.id}`}
                           className="tag"
                         >
-                          {item?.tags?.map((tag, index) => {
-                            <span key={index}>tag</span>;
+                          {item?.tagNames?.map((tag, index) => {
+                            return (
+                              <>
+                                <span key={index}>{tag}</span>&nbsp;&nbsp;&nbsp;
+                              </>
+                            );
                           })}
                         </Link>
                       </div>
                       <h5>
-                        <Link href={`/cases/cases-dark${item?.id}`}>
+                        <Link href={`/cases/cases-dark/${item?.id}`}>
                           {item?.title}
                         </Link>
                       </h5>
                       <div className="btn-more">
                         <Link
-                          href={`/cases/cases-dark${item?.id}`}
+                          href={`/cases/cases-dark/${item?.id}`}
                           className="simple-btn"
                         >
                           Read More

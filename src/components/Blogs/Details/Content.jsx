@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Content = (data) => {
-  console.log(data);
   return (
     <div className="content pt-60">
       <div className="row justify-content-center">
