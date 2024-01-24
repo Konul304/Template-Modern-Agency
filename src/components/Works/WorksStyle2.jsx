@@ -1,11 +1,11 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
+'use client';
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 //= Scripts
-import initIsotope from "@/common/initIsotope";
-import { download_icon } from "../../../public/img";
-import styles from "../../styles/Works2.module.scss";
-import ModalVideo from "../Common/ModalVideo";
+import initIsotope from '@/common/initIsotope';
+import { download_icon } from '../../../public/img';
+import styles from '../../styles/Works2.module.scss';
+import ModalVideo from '../Common/ModalVideo';
 
 function WorksStyle2({
   grid,
@@ -30,7 +30,7 @@ function WorksStyle2({
   }, []);
 
   const handleDownload = (pdfUrl, pdfName) => {
-    const link = document.createElement("a");
+    const link = document.createElement('a');
     link.href = pdfUrl;
     if (pdfName) {
       link.download = pdfName;
@@ -43,7 +43,7 @@ function WorksStyle2({
   return (
     <section
       className={`${
-        grid ? (grid === 3 ? "three-column" : null) : null
+        grid ? (grid === 3 ? 'three-column' : null) : null
       } portfolio section-padding pb-70`}
     >
       {!hideFilter && (
@@ -68,17 +68,17 @@ function WorksStyle2({
           {!hideFilter && (
             <div
               className={`filtering ${
-                filterPosition === "center"
-                  ? "text-center"
-                  : filterPosition === "left"
-                  ? "text-left"
-                  : "text-right"
+                filterPosition === 'center'
+                  ? 'text-center'
+                  : filterPosition === 'left'
+                  ? 'text-left'
+                  : 'text-right'
               } col-12`}
             >
               <div className="filter">
                 <span data-filter=".presentation" className="active">
-                  {" "}
-                  Presentation content{" "}
+                  {' '}
+                  Presentation content{' '}
                 </span>
                 <span data-filter=".videos">Videos</span>
                 {/* <span data-filter=".web">Mobile App</span>
@@ -90,27 +90,24 @@ function WorksStyle2({
           <div className="gallery full-width">
             {presentations?.map((item, index) => {
               const img_link =
-                "https://project141.s3.eu-north-1.amazonaws.com/" +
+                'https://project141.s3.eu-north-1.amazonaws.com/' +
                 item?.logoLink;
               const download_url = item?.pdfLink
-                ?.replace("/view?usp=drive_link", "")
-                ?.replace("file/d/", "uc?id=");
-              console.log(download_url);
+                ?.replace('/view?usp=drive_link', '')
+                ?.replace('file/d/', 'uc?id=');
               const view_url = item?.pdfLink?.replace(
-                "view?usp=drive_link",
-                "preview"
+                'view?usp=drive_link',
+                'preview'
               );
-              console.log(view_url);
-
               return (
                 <div
                   key={index}
                   className={`${
                     grid === 3
-                      ? "col-lg-4 col-md-6"
+                      ? 'col-lg-4 col-md-6'
                       : grid === 2
-                      ? "col-md-6"
-                      : "col-12"
+                      ? 'col-md-6'
+                      : 'col-12'
                   } items presentation wow fadeInUp`}
                   data-wow-delay=".4s"
                 >
@@ -146,11 +143,11 @@ function WorksStyle2({
 
             {videos?.map((item, index) => {
               const cover_link =
-                "https://project141.s3.eu-north-1.amazonaws.com/" +
+                'https://project141.s3.eu-north-1.amazonaws.com/' +
                 item?.logoLink;
               const video_link = item?.videoLink?.replace(
-                "view?usp=drive_link",
-                "preview"
+                'view?usp=drive_link',
+                'preview'
               );
               return (
                 <div
