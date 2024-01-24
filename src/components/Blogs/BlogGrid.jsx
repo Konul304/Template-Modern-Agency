@@ -9,11 +9,14 @@ const BlogGrid = (data) => {
         <div className="posts">
           <div className="row">
             {data?.data?.map((item) => {
+              const img_url =
+                'https://project141.s3.eu-north-1.amazonaws.com/' +
+                item?.logoLink;
               return (
                 <div className="col-lg-4" key={item.id}>
                   <div className="item mb-80 wow fadeInUp" data-wow-delay=".3s">
                     <a href={`/cases/cases-dark/${item?.id}`} className="img">
-                      <img src="/img/blog/b2.jpg" alt="" />
+                      <img src={img_url} alt="" />
                     </a>
                     <div className="cont">
                       <div>
@@ -25,15 +28,20 @@ const BlogGrid = (data) => {
                           </span>
                         </Link> */}
                           {/* <span>/</span> */}
-                          {item.tags.map((tagItem, index) => (
-                            <Link
-                              key={index}
-                              href={`/cases/cases-dark/${item?.id}`}
-                              className="tag"
-                            >
-                              <span>{tagItem?.tag}</span>
-                            </Link>
-                          ))}
+                          {item.tagNames.map((tagItem, index) => {
+                            return (
+                              <>
+                                <Link
+                                  key={index}
+                                  href={`/cases/cases-dark/${item?.id}`}
+                                  className="tag"
+                                >
+                                  <span key={index}>{tagItem}</span>
+                                  &nbsp;&nbsp;&nbsp;
+                                </Link>
+                              </>
+                            );
+                          })}
                         </div>
                         <h5>
                           <Link href={`/cases/cases-dark/${item?.id}`}>
