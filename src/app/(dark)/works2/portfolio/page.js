@@ -8,34 +8,34 @@ import Footer from '@/components/Common/Footer';
 import { getPortfolio, getVideos } from '@/app/(api)/api';
 
 export const metadata = {
-  title: 'Vie - Works 2 Dark',
+	title: 'Vie - Works 2 Dark',
 };
 
 const Works2Page = async () => {
-  const presentations = await getPortfolio();
-  const videos = await getVideos();
-  return (
-    <>
-      <Loading />
-      <div className="circle-bg">
-        <div className="circle-color fixed">
-          <div className="gradient-circle"></div>
-          <div className="gradient-circle two"></div>
-        </div>
-      </div>
-      <Navbar />
-      <WorksHeader />
-      <div className="main-content">
-        <Works
-          grid={3}
-          filterPosition="center"
-          presentations={presentations}
-          videos={videos}
-        />
-        <Footer />
-      </div>
-    </>
-  );
+	const presentations = await getPortfolio();
+	const videos = await getVideos();
+	return (
+		<>
+			<Loading />
+			<div className="circle-bg">
+				<div className="circle-color fixed">
+					<div className="gradient-circle"></div>
+					<div className="gradient-circle two"></div>
+				</div>
+			</div>
+			<Navbar />
+			<WorksHeader />
+			<div className="main-content">
+				<Works
+					grid={3}
+					filterPosition="center"
+					presentations={presentations}
+					videos={videos}
+				/>
+				<Footer />
+			</div>
+		</>
+	);
 };
 
 export default Works2Page;
