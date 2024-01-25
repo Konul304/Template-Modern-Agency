@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 //= Page components
-import Loading from '@/components/Common/Loader';
-import Navbar from '@/components/Common/Navbar';
-import WorksHeader from '@/components/Headers/WorksHeader';
-import Works from '@/components/Works/WorksStyle1';
-import Footer from '@/components/Common/Footer';
+import Loading from "@/components/Common/Loader";
+import Navbar from "@/components/Common/Navbar";
+import WorksHeader from "@/components/Headers/WorksHeader";
+import Works from "@/components/Works/WorksStyle1";
+import Footer from "@/components/Common/Footer";
 
 export const metadata = {
-  title: 'Vie - Works Dark'
-}
+  title: "C141",
+};
 
 export default function WorksPage() {
   return (
@@ -27,5 +27,5 @@ export default function WorksPage() {
         <Footer />
       </div>
     </>
-  )
+  );
 }

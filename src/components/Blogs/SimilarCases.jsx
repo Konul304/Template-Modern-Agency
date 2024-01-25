@@ -7,14 +7,14 @@ const SimilarCases = (data) => {
   const caseData = data?.data?.data?.find(
     (item) => item.id?.toString() === data?.data?.id?.casesID
   );
-  const matchingObjects = allData.filter((item) => {
+  const matchingObjects = allData?.filter((item) => {
     const hasMatchingTag = caseData.tagNames.some(
       (tagName) => item.tagNames && item.tagNames.includes(tagName)
     );
     return hasMatchingTag;
   });
 
-  const filteredMatchingObjects = matchingObjects.filter(
+  const filteredMatchingObjects = matchingObjects?.filter(
     (item) => item.id !== caseData.id
   );
 

@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 //= Page components
-import Loading from '@/components/Common/Loader';
-import NavbarFullMenu from '@/components/Common/NavbarFullMenu';
-import ShowcaseGrid from '@/components/Showcases/ShowcaseGrid';
+import Loading from "@/components/Common/Loader";
+import NavbarFullMenu from "@/components/Common/NavbarFullMenu";
+import ShowcaseGrid from "@/components/Showcases/ShowcaseGrid";
 
 export const metadata = {
-  title: 'Vie - Showcase 3 Dark'
-}
+  title: "C141",
+};
 
 export default function Showcase3Page() {
   return (
@@ -15,5 +15,5 @@ export default function Showcase3Page() {
       <NavbarFullMenu />
       <ShowcaseGrid />
     </>
-  )
+  );
 }

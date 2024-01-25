@@ -8,7 +8,7 @@ import BlogStanderd from '@/components/Blogs/BlogStanderd';
 import { getServices } from '@/app/(api)/api';
 
 export const metadata = {
-	title: 'Vie - Services Dark',
+  title: "C141",
 };
 
 export default async function Services() {
