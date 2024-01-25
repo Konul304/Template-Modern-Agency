@@ -7,6 +7,7 @@ import contentFormData from '@/data/contact-form.json';
 import styles from '../../styles/Contact.module.scss';
 import countryData from '@/data/regions-to-countries';
 import { Select } from 'antd';
+import { postMessage } from '@/app/(api)/api';
 
 function ContactForm({ theme, data }) {
   const { countries, zones } = require('moment-timezone/data/meta/latest.json');
@@ -24,6 +25,21 @@ function ContactForm({ theme, data }) {
     message: '',
   });
   let myCountry;
+
+  const sendMessage = async () => {
+    const query = {
+      name: inputValues?.name,
+      message: inputValues?.message,
+      email: inputValues?.email,
+    };
+    const response = await postMessage(query);
+    console.log(response);
+  };
+
+  const handleSubmit = (e) => {
+    e?.preventDefault();
+    console.log('submit');
+  };
 
   useEffect(() => {
     Object.keys(zones).forEach((z) => {
@@ -48,7 +64,6 @@ function ContactForm({ theme, data }) {
     }
   }, []);
 
-  const handleSubmit = () => {};
   return (
     <section className="contact section-padding">
       <div className={styles.contact_button}>

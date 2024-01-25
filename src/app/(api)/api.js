@@ -80,3 +80,23 @@ export const getSlider = async () => {
     console.log(err);
   }
 };
+
+export const postMessage = async (data) => {
+  try {
+    const res = await axiosTemplate.post(`Message`, data);
+    return res?.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+export const postEmail = async (data) => {
+  try {
+    const res = await axiosTemplate.post(`Email`, data);
+    return res?.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};

@@ -1,6 +1,6 @@
 'use client';
 
-import { getContactData, getPortfolio } from '@/app/(api)/api';
+import { getContactData, getPortfolio, postEmail } from '@/app/(api)/api';
 import { useEffect, useState } from 'react';
 import countryData from '@/data/regions-to-countries';
 
@@ -15,6 +15,7 @@ const Footer = ({ hideBGCOLOR }) => {
     phoneNumber: '',
     address: '',
   });
+  const [email, setEmail] = useState();
 
   const getPortfolioData = async () => {
     try {
@@ -35,6 +36,14 @@ const Footer = ({ hideBGCOLOR }) => {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const sendEmail = async (e) => {
+    e?.preventDefault();
+    const query = {
+      email: email,
+    };
+    return await postEmail(query);
   };
 
   useEffect(() => {
@@ -64,6 +73,7 @@ const Footer = ({ hideBGCOLOR }) => {
       });
     }
   }, [portfolioData, contactData]);
+
   return (
     <footer className={`${!hideBGCOLOR ? 'sub-bg' : ''}`}>
       <div className="container">
@@ -127,8 +137,18 @@ const Footer = ({ hideBGCOLOR }) => {
 
                 <li>
                   <div className="subscribe">
-                    <input type="text" placeholder="Type Your Email" />
-                    <span className="subs pe-7s-paper-plane"></span>
+                    <form onSubmit={sendEmail} id="footer-email-form">
+                      <input
+                        type="email"
+                        required
+                        placeholder="Type Your Email"
+                        onChange={(e) => setEmail(e?.target?.value)}
+                      />
+                      <button
+                        type="submit"
+                        className="subs pe-7s-paper-plane"
+                      ></button>
+                    </form>
                   </div>
                 </li>
               </ul>
