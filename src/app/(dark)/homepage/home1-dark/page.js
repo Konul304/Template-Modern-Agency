@@ -17,8 +17,10 @@ import {
   getCases,
   getPartners,
   getPortfolio,
+  getServices,
   getSlider,
 } from '@/app/(api)/api';
+import HomepageServicesSection from '@/components/Services/HomepageServicesSection';
 
 export const metadata = {
   title: 'C141',
@@ -30,7 +32,7 @@ const Home1 = async () => {
   const portfolio = await getPortfolio();
   const cases = await getCases();
   const sliderData = await getSlider();
-
+  const services = await getServices();
   return (
     <>
       <Loading />
@@ -41,7 +43,7 @@ const Home1 = async () => {
         <Numbers />
         <Partners theme="dark" partners={partnerData} />
         {/* <Services /> */}
-        <Services1 style="4item" />
+        <HomepageServicesSection style="4item" services={services} />
         {/* <Services3 /> */}
         <Works portfolio={portfolio} />
         <FullTestimonials />
