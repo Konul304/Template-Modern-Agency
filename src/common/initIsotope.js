@@ -45,8 +45,8 @@ const initIsotope = () => {
         if (!matchesSelector(event.target, "span")) {
           return;
         }
-        buttonGroup.querySelector(".active").classList.remove("active");
-        event.target.classList.add("active");
+        buttonGroup.querySelector(".active").classList?.remove("active");
+        event.target.classList?.add("active");
       });
     }
   }

@@ -2,10 +2,10 @@ import { fadeIn, fadeOut } from "./fadeInFadeOut";
 
 const tooltipEffect = () => {
   let template1 = document.createElement("div");
-  template1.classList.add("div-tooltip-tit");
+  template1.classList?.add("div-tooltip-tit");
   document.body.appendChild(template1);
   let template2 = document.createElement("div");
-  template2.classList.add("div-tooltip-sub");
+  template2.classList?.add("div-tooltip-sub");
   document.body.appendChild(template2);
   document.querySelectorAll("[data-tooltip-tit]").forEach((item) => {
     template1 = document.querySelector(".div-tooltip-tit");

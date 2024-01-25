@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 //= Page components
-import Navbar from '@/components/Common/Navbar';
-import PagesHeader from '@/components/Headers/PagesHeader';
-import AboutIntro from '@/components/AboutUs/AboutIntro';
-import Team from '@/components/Team/Team1';
-import Partners from '@/components/Clients/Partners';
-import Footer from '@/components/Common/Footer';
-import Loading from '@/components/Common/Loader';
-import OurHistory from '@/components/OurHistory';
-import { getAbout, getPartners, getTeamMembers } from '@/app/(api)/api';
+import Navbar from "@/components/Common/Navbar";
+import PagesHeader from "@/components/Headers/PagesHeader";
+import AboutIntro from "@/components/AboutUs/AboutIntro";
+import Team from "@/components/Team/Team1";
+import Partners from "@/components/Clients/Partners";
+import Footer from "@/components/Common/Footer";
+import Loading from "@/components/Common/Loader";
+import OurHistory from "@/components/OurHistory";
+import { getAbout, getPartners, getTeamMembers } from "@/app/(api)/api";
 
 export const metadata = {
-  title: 'Vie - About Dark',
+  title: "C141",
 };
 
 const AboutDark = async () => {

@@ -15,7 +15,7 @@ import Services1 from "@/components/Services/Services1";
 import { getAbout, getPartners, getPortfolio } from "@/app/(api)/api";
 
 export const metadata = {
-  title: "Vie - Main Demo Dark",
+  title: "C141",
 };
 
 const Home1 = async () => {

@@ -8,7 +8,7 @@ import Services1 from "@/components/Services/Services1";
 import BlogStanderd from "@/components/Blogs/BlogStanderd";
 
 export const metadata = {
-  title: "Vie - Services Dark",
+  title: "C141",
 };
 
 export default function Services() {

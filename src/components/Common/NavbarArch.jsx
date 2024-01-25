@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useRef, useEffect } from "react";
 import { Link } from "react-scroll";
 //= Scripts
@@ -11,9 +11,9 @@ function NavbarArch({ theme }) {
 
   function handleScroll() {
     if (window.scrollY > 300) {
-      navbarRef.current.classList.add("nav-scroll");
+      navbarRef.current.classList?.add("nav-scroll");
     } else {
-      navbarRef.current.classList.remove("nav-scroll");
+      navbarRef.current.classList?.remove("nav-scroll");
     }
   }
 
@@ -27,12 +27,15 @@ function NavbarArch({ theme }) {
     <nav className="navbar navbar-expand-lg" ref={navbarRef}>
       <div className="container">
         <a className="logo" href="/">
-          {
-            theme ?
-              (theme === "themeL" ? (<img src={appData.darkLogo} alt="logo" />) : (<img src={appData.lightLogo} alt="logo" />))
-              :
-              (<img src={appData.lightLogo} alt="logo" />)
-          }
+          {theme ? (
+            theme === "themeL" ? (
+              <img src={appData.darkLogo} alt="logo" />
+            ) : (
+              <img src={appData.lightLogo} alt="logo" />
+            )
+          ) : (
+            <img src={appData.lightLogo} alt="logo" />
+          )}
         </a>
 
         <button
@@ -61,52 +64,28 @@ function NavbarArch({ theme }) {
                 Home
               </span>
               <div className="dropdown-menu">
-                <a
-                  className="dropdown-item"
-                  href={`/homepage/home1-dark`}
-                >
+                <a className="dropdown-item" href={`/homepage/home1-dark`}>
                   Main Home
                 </a>
-                <a
-                  className="dropdown-item"
-                  href={`/homepage/home2-dark`}
-                >
+                <a className="dropdown-item" href={`/homepage/home2-dark`}>
                   Creative Agency
                 </a>
-                <a
-                  className="dropdown-item"
-                  href={`/homepage/home5-dark`}
-                >
+                <a className="dropdown-item" href={`/homepage/home5-dark`}>
                   Digital Agency
                 </a>
-                <a
-                  className="dropdown-item"
-                  href={`/homepage/home4-dark`}
-                >
+                <a className="dropdown-item" href={`/homepage/home4-dark`}>
                   Business One Page
                 </a>
-                <a
-                  className="dropdown-item"
-                  href={`/homepage/home3-dark`}
-                >
+                <a className="dropdown-item" href={`/homepage/home3-dark`}>
                   Corporate Business
                 </a>
-                <a
-                  className="dropdown-item"
-                  href={`/homepage/home6-dark`}
-                >
+                <a className="dropdown-item" href={`/homepage/home6-dark`}>
                   Modern Agency
                 </a>
-                <a
-                  className="dropdown-item"
-                  href={`/homepage/home7-dark`}
-                >
+                <a className="dropdown-item" href={`/homepage/home7-dark`}>
                   Freelancer
                 </a>
-                <a
-                  className="dropdown-item"
-                  href={`/homepage/home8-dark`}
-                >
+                <a className="dropdown-item" href={`/homepage/home8-dark`}>
                   Architecture
                 </a>
               </div>
@@ -189,6 +168,6 @@ function NavbarArch({ theme }) {
       </div>
     </nav>
   );
-};
+}
 
 export default NavbarArch;

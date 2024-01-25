@@ -5,12 +5,14 @@ import Navbar from "@/components/Common/Navbar";
 import PageHeader from "@/components/Headers/PageHeader";
 import BlogGrid from "@/components/Blogs/BlogGrid";
 import Footer from "@/components/Common/Footer";
+import { getCases } from "@/app/(api)/api";
 
 export const metadata = {
-  title: "Vie - Blog Grid Dark",
+  title: "C141",
 };
 
-export default function BlogGridPage() {
+const CasesPage = async () => {
+  const response = await getCases();
   return (
     <>
       <Loading />
@@ -25,8 +27,10 @@ export default function BlogGridPage() {
         title="Our Cases."
         paragraph="All the most current news and events of our creative team."
       />
-      <BlogGrid />
+      <BlogGrid data={response} />
       <Footer />
     </>
   );
-}
+};
+
+export default CasesPage;
