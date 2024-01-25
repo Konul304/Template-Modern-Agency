@@ -1,16 +1,16 @@
 const handleAccordion = (container) => {
   document.querySelectorAll(".accordion .item").forEach((item) => {
-    item.classList.remove("active");
+    item.classList?.remove("active");
   });
   document.querySelectorAll(".accordion-info").forEach((item) => {
-    item.classList.remove("active");
+    item.classList?.remove("active");
   });
-  container.closest(".item").classList.add("active");
+  container.closest(".item").classList?.add("active");
 
   /** Slide down. */
-  if (!container.classList.contains("active")) {
+  if (!container.classList?.contains("active")) {
     /** Show the container. */
-    container.classList.add("active");
+    container.classList?.add("active");
     container.style.height = "auto";
 
     /** Get the computed height of the container. */
@@ -35,7 +35,7 @@ const handleAccordion = (container) => {
     container.addEventListener(
       "transitionend",
       () => {
-        container.classList.remove("active");
+        container.classList?.remove("active");
       },
       { once: true }
     );

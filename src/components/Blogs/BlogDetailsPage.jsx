@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 //= Page components
 import Loading from "@/components/Common/Loader";
@@ -10,7 +11,10 @@ export const metadata = {
   title: "C141",
 };
 
-export default function BlogDetailsPage() {
+const BlogDetailsPage = (data) => {
+  const caseData = data?.data?.find(
+    (item) => item.id?.toString() === data?.id?.casesID
+  );
   return (
     <>
       <Loading />
@@ -22,11 +26,12 @@ export default function BlogDetailsPage() {
       </div>
       <Navbar />
       <PageHeader
-        title="Blog Details."
+        title={caseData?.title}
         paragraph="All the most current news and events of our creative team."
       />
-      <BlogDetails />
+      <BlogDetails data={data} />
       <Footer />
     </>
   );
-}
+};
+export default BlogDetailsPage;

@@ -8,7 +8,7 @@ import Footer from "@/components/Common/Footer";
 import { getContactData } from "@/app/(api)/api";
 
 export const metadata = {
-  title: "Vie - Contact Dark",
+  title: "C141",
 };
 
 const ContactPage = async () => {

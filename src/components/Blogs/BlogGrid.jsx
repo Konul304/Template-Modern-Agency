@@ -1,15 +1,68 @@
-import React from "react";
-import Link from "next/link";
-//= Static Data
-import blogs from "@/data/blogs3.json";
+'use client';
+import React from 'react';
+import Link from 'next/link';
 
-const BlogGrid = () => {
+const BlogGrid = (data) => {
   return (
     <section className="blog-pg blog section-padding pt-0">
       <div className="container">
         <div className="posts">
           <div className="row">
-            {blogs.map((blogItem) => (
+            {data?.data?.map((item) => {
+              const img_url =
+                'https://project141.s3.eu-north-1.amazonaws.com/' +
+                item?.logoLink;
+              return (
+                <div className="col-lg-4" key={item.id}>
+                  <div className="item mb-80 wow fadeInUp" data-wow-delay=".3s">
+                    <a href={`/cases/cases-dark/${item?.id}`} className="img">
+                      <img src={img_url} alt="" />
+                    </a>
+                    <div className="cont">
+                      <div>
+                        <div className="info">
+                          {/* <Link href="/blog/blog-dark" className="date">
+                          <span>
+                            <i>{blogItem.date.day}</i>
+                            {blogItem.date.month}
+                          </span>
+                        </Link> */}
+                          {/* <span>/</span> */}
+                          {item.tagNames.map((tagItem, index) => {
+                            return (
+                              <>
+                                <Link
+                                  key={index}
+                                  href={`/cases/cases-dark/${item?.id}`}
+                                  className="tag"
+                                >
+                                  <span key={index}>{tagItem}</span>
+                                  &nbsp;&nbsp;&nbsp;
+                                </Link>
+                              </>
+                            );
+                          })}
+                        </div>
+                        <h5>
+                          <Link href={`/cases/cases-dark/${item?.id}`}>
+                            {item.title.substr(0, 55) + '...'}
+                          </Link>
+                        </h5>
+                        <div className="btn-more">
+                          <Link
+                            href={`/cases/cases-dark/${item?.id}`}
+                            className="simple-btn"
+                          >
+                            Read More
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+            {/* {blogs.map((blogItem) => (
               <div className="col-lg-4" key={blogItem.id}>
                 <div className="item mb-80 wow fadeInUp" data-wow-delay=".3s">
                   <a href="/blog-details/blog-details-dark" className="img">
@@ -26,18 +79,25 @@ const BlogGrid = () => {
                         </Link>
                         <span>/</span>
                         {blogItem.tags.map((tag, index) => (
-                          <Link key={index} href="/blog/blog-dark/" className="tag">
+                          <Link
+                            key={index}
+                            href="/blog/blog-dark/"
+                            className="tag"
+                          >
                             <span>{tag}</span>
                           </Link>
                         ))}
                       </div>
                       <h5>
                         <Link href="/blog-details/blog-details-dark">
-                          {blogItem.title.substr(0, 55) + "..."}
+                          {blogItem.title.substr(0, 55) + '...'}
                         </Link>
                       </h5>
                       <div className="btn-more">
-                        <Link href="/blog-details/blog-details-dark" className="simple-btn">
+                        <Link
+                          href="/blog-details/blog-details-dark"
+                          className="simple-btn"
+                        >
                           Read More
                         </Link>
                       </div>
@@ -45,7 +105,7 @@ const BlogGrid = () => {
                   </div>
                 </div>
               </div>
-            ))}
+            ))} */}
             {/* <div className="pagination">
               <span className="active">
                 <Link href={`/blog/blog-dark`}>1</Link>

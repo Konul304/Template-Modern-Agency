@@ -14,12 +14,14 @@ const initFullNavbarMenu = () => {
   if (menuIcon) {
     menuIcon.addEventListener("click", function () {
       open = !open;
-      document.querySelector(".hamenu").classList.toggle("open");
+      document.querySelector(".hamenu").classList?.toggle("open");
       if (open) {
         animateElement(document.querySelector(".hamenu"), "0px");
-        document.querySelector(".topnav .menu-icon .text ").classList.add("open");
+        document
+          .querySelector(".topnav .menu-icon .text ")
+          .classList?.add("open");
         if (navDark) {
-          navDark.classList.add("navlit");
+          navDark.classList?.add("navlit");
         }
         if (logoChan) {
           logoChan.setAttribute("src", appData.lightLogo);
@@ -27,9 +29,11 @@ const initFullNavbarMenu = () => {
         window.addEventListener("scroll", noScroll);
       } else {
         delay(300, animateElement(document.querySelector(".hamenu"), "-100%"));
-        document.querySelector(".topnav .menu-icon .text").classList.remove("open");
+        document
+          .querySelector(".topnav .menu-icon .text")
+          .classList?.remove("open");
         if (navDark) {
-          navDark.classList.remove("navlit");
+          navDark.classList?.remove("navlit");
         }
         if (logoChan) {
           logoChan.setAttribute("src", appData.darkLogo);
@@ -40,9 +44,11 @@ const initFullNavbarMenu = () => {
     document.querySelectorAll(".main-menu a").forEach((item) => {
       item.addEventListener("click", () => {
         delay(300, animateElement(document.querySelector(".hamenu"), "-100%"));
-        document.querySelector(".topnav .menu-icon .text").classList.remove("open");
+        document
+          .querySelector(".topnav .menu-icon .text")
+          .classList?.remove("open");
         if (navDark) {
-          navDark.classList.remove("navlit");
+          navDark.classList?.remove("navlit");
         }
         if (logoChan) {
           logoChan.setAttribute("src", appData.darkLogo);
@@ -71,13 +77,13 @@ const initFullNavbarMenu = () => {
   if (document.querySelectorAll(".main-menu > li .dmenu").length) {
     document.querySelectorAll(".main-menu > li .dmenu").forEach((item) => {
       item.addEventListener("click", function () {
-        document.querySelector(".main-menu").classList.add("gosub");
+        document.querySelector(".main-menu").classList?.add("gosub");
         getSiblings(this.parentNode.parentNode).forEach((item) => {
           item.childNodes[1]
-            ? item.childNodes[1].classList.remove("sub-open")
+            ? item.childNodes[1].classList?.remove("sub-open")
             : "";
         });
-        this.parentNode.parentNode.childNodes[1].classList.add("sub-open");
+        this.parentNode.parentNode.childNodes[1].classList?.add("sub-open");
       });
     });
   }
@@ -88,8 +94,8 @@ const initFullNavbarMenu = () => {
       .querySelectorAll(".main-menu .sub-menu li .sub-link.back")
       .forEach((item) => {
         item.addEventListener("click", function () {
-          document.querySelector(".main-menu").classList.remove("gosub");
-          document.querySelector(".main-menu").classList.remove("sub-open");
+          document.querySelector(".main-menu").classList?.remove("gosub");
+          document.querySelector(".main-menu").classList?.remove("sub-open");
         });
       });
   }

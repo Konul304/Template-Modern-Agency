@@ -1,34 +1,34 @@
-"use client";
-import React, { useEffect, useState } from "react";
+'use client';
+import React, { useEffect, useState } from 'react';
 //= Components
-import Split from "@/components/Common/Split";
+import Split from '@/components/Common/Split';
 //= Static Data
-import contentFormData from "@/data/contact-form.json";
-import styles from "../../styles/Contact.module.scss";
-import countryData from "@/data/regions-to-countries";
-import { Select } from "antd";
+import contentFormData from '@/data/contact-form.json';
+import styles from '../../styles/Contact.module.scss';
+import countryData from '@/data/regions-to-countries';
+import { Select } from 'antd';
 
 function ContactForm({ theme, data }) {
-  const { countries, zones } = require("moment-timezone/data/meta/latest.json");
+  const { countries, zones } = require('moment-timezone/data/meta/latest.json');
   const timeZoneToCountry = {};
   const timeZoneCityToCountry = {};
-  const [country, setCountry] = useState({ value: "", label: "" });
+  const [country, setCountry] = useState({ value: '', label: '' });
   const [contactInfo, setContactInfo] = useState({
-    email: "",
-    phoneNumber: "",
-    address: "",
+    email: '',
+    phoneNumber: '',
+    address: '',
   });
   const [inputValues, setInputValues] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
   let myCountry;
 
   useEffect(() => {
     Object.keys(zones).forEach((z) => {
       timeZoneToCountry[z] = countries[zones[z].countries[0]].name;
-      const cityArr = z.split("/");
+      const cityArr = z.split('/');
       const city = cityArr[cityArr.length - 1];
       timeZoneCityToCountry[city] = countries[zones[z].countries[0]].name;
     });
@@ -38,7 +38,7 @@ function ContactForm({ theme, data }) {
         ([key, value]) => key === userTimeZone
       );
       const currentLocationData = data?.find(
-        (item) => item.city === myCountry[1]
+        (item) => item.country === myCountry[1]
       );
       setContactInfo({
         email: currentLocationData?.email,
@@ -58,18 +58,18 @@ function ContactForm({ theme, data }) {
           placeholder="Choose country"
           style={{ width: 120 }}
           value={
-            country?.label !== ""
+            country?.label !== ''
               ? country
               : {
-                  value: "Choose country",
-                  label: "Choose country",
+                  value: 'Choose country',
+                  label: 'Choose country',
                 }
           }
           optionFilterProp="children"
           onChange={(value, option) => {
             setCountry(option);
             const selectedLocationData = data?.find(
-              (item) => item.city === option?.label
+              (item) => item.country === option?.label
             );
             if (selectedLocationData) {
               setContactInfo({
@@ -79,16 +79,10 @@ function ContactForm({ theme, data }) {
               });
             }
           }}
-          options={[
-            { value: "Azerbaijan", label: "Azerbaijan" },
-            { value: "Belarus", label: "Belarus" },
-            { value: "Georgia", label: "Georgia" },
-            { value: "Germany", label: "Germany" },
-            { value: "Kazakhstan", label: "Kazakhstan" },
-            { value: "Russia", label: "Russia" },
-            { value: "Ukraine", label: "Ukraine" },
-            { value: "Uzbekistan", label: "Uzbekistan" },
-          ]}
+          options={data?.map((item) => ({
+            value: item?.country,
+            label: item?.country,
+          }))}
         />
       </div>
       <div className="container">
@@ -151,7 +145,7 @@ function ContactForm({ theme, data }) {
 
                   <button
                     type="submit"
-                    className={`butn ${theme === "light" ? "dark" : "bord"}`}
+                    className={`butn ${theme === 'light' ? 'dark' : 'bord'}`}
                   >
                     <span>Send Message</span>
                   </button>

@@ -12,9 +12,9 @@ const Navbar = ({ lr, theme }) => {
 
   function handleScroll() {
     if (window.scrollY > 300) {
-      navbar.current.classList.add('nav-scroll');
+      navbar?.current?.classList?.add('nav-scroll');
     } else {
-      navbar.current.classList.remove('nav-scroll');
+      navbar?.current?.classList?.remove('nav-scroll');
     }
   }
 
@@ -159,7 +159,7 @@ const Navbar = ({ lr, theme }) => {
             </li>
             <li className="nav-item dropdown">
               <a
-                href={`/blog-grid/blog-grid-dark/`}
+                href={`/cases/cases-dark`}
                 className="nav-link "
                 // className="nav-link dropdown-toggle"
                 // data-toggle="dropdown"
