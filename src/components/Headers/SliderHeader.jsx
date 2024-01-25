@@ -4,67 +4,74 @@ import React, { useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Parallax } from 'swiper';
 //= Scripts
-import removeSlashFromBagination from "@/common/removeSlashpagination";
-import fadeWhenScroll from "@/common/fadeWhenScroll";
+import removeSlashFromBagination from '@/common/removeSlashpagination';
+import fadeWhenScroll from '@/common/fadeWhenScroll';
 //= Static Data
-import intro1Data from "@/data/intro1.json";
+import intro1Data from '@/data/intro1.json';
 
 const swiperOptions = {
   modules: [Parallax, Navigation, Pagination],
   speed: 1000,
   navigation: {
-    prevEl: ".swiper-button-prev",
-    nextEl: ".swiper-button-next",
+    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-button-next',
   },
   parallax: true,
   pagination: {
-    type: "fraction",
+    type: 'fraction',
     clickable: true,
-    el: ".swiper-pagination",
+    el: '.swiper-pagination',
   },
   onSwiper: (swiper) => {
     for (var i = 0; i < swiper.slides.length; i++) {
       swiper.slides[i].childNodes[0].setAttribute(
-        "data-swiper-parallax",
+        'data-swiper-parallax',
         0.75 * swiper.width
       );
     }
-  }
-}
+  },
+};
 
-function SliderHeader() {
+function SliderHeader(data) {
   const fixedSlider = useRef();
 
   useEffect(() => {
     removeSlashFromBagination();
-    fadeWhenScroll(document.querySelectorAll(".fixed-slider .caption"));
+    fadeWhenScroll(document.querySelectorAll('.fixed-slider .caption'));
   }, []);
 
   useEffect(() => {
     if (fixedSlider.current) {
       const MainContent = document.querySelector('.main-content');
       const slideHeight = fixedSlider.current.offsetHeight;
-      MainContent.style.marginTop = slideHeight + "px";
+      MainContent.style.marginTop = slideHeight + 'px';
     }
   }, []);
 
   return (
-    <header className="slider slider-prlx fixed-slider text-center" ref={fixedSlider}>
+    <header
+      className="slider slider-prlx fixed-slider text-center"
+      ref={fixedSlider}
+    >
       <div className="swiper-container parallax-slider">
         <Swiper {...swiperOptions} className="swiper-wrapper">
-          {
-            intro1Data.map(slide => (
+          {data?.data?.map((slide) => {
+            const img_url =
+              'https://project141.s3.eu-north-1.amazonaws.com/' +
+              slide?.logoLink;
+            return (
               <SwiperSlide key={slide.id} className="swiper-slide">
-                <div className="bg-img valign" style={{ backgroundImage: `url(${slide.image})` }} data-overlay-dark="6">
+                <div
+                  className="bg-img valign"
+                  style={{ backgroundImage: `url('${img_url}')` }}
+                  data-overlay-dark="6"
+                >
                   <div className="container">
                     <div className="row justify-content-center">
                       <div className="col-lg-8 col-md-10">
                         <div className="caption center mt-30">
                           <h1 className="color-font">{slide.title}</h1>
-                          {
-                            slide.content &&
-                            <p>{slide.content}</p>
-                          }
+                          {slide.description}
                           {/* <a href="#" className="butn bord curve mt-30">
                             <span>Look More</span>
                           </a> */}
@@ -74,8 +81,8 @@ function SliderHeader() {
                   </div>
                 </div>
               </SwiperSlide>
-            ))
-          }
+            );
+          })}
         </Swiper>
         <div className="setone setwo">
           <div className="swiper-button-next swiper-nav-ctrl next-ctrl cursor-pointer">
@@ -103,7 +110,7 @@ function SliderHeader() {
         </div>
       </div>
     </header>
-  )
+  );
 }
 
 export default SliderHeader;
