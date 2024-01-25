@@ -5022,6 +5022,10 @@ span:hover {
   padding-left: 50px;
 }
 
+.scroll-offset {
+  padding-top: 100px; /* Adjust this value to match the height of your navbar */
+}
+
 .portfolio .filtering .filter {
   padding: 15px;
   background: rgba(255, 255, 255, 0.02);
