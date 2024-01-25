@@ -4,8 +4,8 @@ import Link from 'next/link';
 import styles from '../../styles/Cases.module.scss';
 
 const CasesHomePage = (data) => {
-  if (data?.data.length > 3) {
-    data?.data.splice(0, data?.data.length - 3);
+  if (data?.data?.length > 3) {
+    data?.data.splice(0, data?.data?.length - 3);
   }
   return (
     <section className="blog section-padding sub-bg">

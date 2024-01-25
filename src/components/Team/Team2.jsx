@@ -1,18 +1,17 @@
 import React from 'react';
 
 function Team2(data) {
+  console.log(data);
   return (
     <section className="team section-padding">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8 col-md-10">
             <div className="sec-head text-center">
-              <h6 className="wow fadeIn" data-wow-delay=".5s">
+              {/* <h6 className="wow fadeIn" data-wow-delay=".5s">
                 Our Team
-              </h6>
-              <h3 className="wow color-font">
-                An original team of creators designers &amp; dreamers.
-              </h3>
+              </h6> */}
+              <h3 className="wow color-font">Our Team</h3>
             </div>
           </div>
         </div>
