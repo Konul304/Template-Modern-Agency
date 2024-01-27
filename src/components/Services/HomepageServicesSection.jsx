@@ -1,15 +1,15 @@
-'use client';
-import React from 'react';
+"use client";
+import React from "react";
 //= Static Data
-import Link from 'next/link';
+import Link from "next/link";
 // import styles from '../../styles/Serv/ices.module.scss';
 
 const HomepageServicesSection = ({ services, style, lines }) => {
-  console.log(services);
+  // console.log(services);
   return (
     <section
       className={`services bords section-padding ${
-        style === '4item' ? 'lficon' : lines ? '' : 'pt-0'
+        style === "4item" ? "lficon" : lines ? "" : "pt-0"
       }`}
     >
       <div className="container">

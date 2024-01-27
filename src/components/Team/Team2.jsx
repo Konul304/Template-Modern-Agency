@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 function Team2(data) {
-  console.log(data);
+  // console.log(data);
   return (
     <section className="team section-padding">
       <div className="container">
@@ -20,7 +20,7 @@ function Team2(data) {
         <div className="row">
           {data?.data?.data?.map((item, index) => {
             const img_link =
-              'https://project141.s3.eu-north-1.amazonaws.com/' +
+              "https://project141.s3.eu-north-1.amazonaws.com/" +
               item?.profilePicLink;
             return (
               <div key={index} className="col-lg-3 col-md-6">
