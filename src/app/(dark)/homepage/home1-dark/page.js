@@ -12,7 +12,15 @@ import Works from '@/components/Works/Works1';
 import FullTestimonials from '@/components/Testimonials/FullTestimonials';
 import Cases from '@/components/Blogs/Cases';
 import Services1 from '@/components/Services/Services1';
-import { getAbout, getCases, getPartners, getPortfolio } from '@/app/(api)/api';
+import {
+  getAbout,
+  getCases,
+  getPartners,
+  getPortfolio,
+  getServices,
+  getSlider,
+} from '@/app/(api)/api';
+import HomepageServicesSection from '@/components/Services/HomepageServicesSection';
 
 export const metadata = {
   title: 'C141',
@@ -23,18 +31,19 @@ const Home1 = async () => {
   const partnerData = await getPartners();
   const portfolio = await getPortfolio();
   const cases = await getCases();
-
+  const sliderData = await getSlider();
+  const services = await getServices();
   return (
     <>
       <Loading />
       <Navbar />
-      <SliderHeader />
+      <SliderHeader data={sliderData} />
       <div className="main-content">
         <AboutUs data={response} />
         <Numbers />
         <Partners theme="dark" partners={partnerData} />
         {/* <Services /> */}
-        <Services1 style="4item" />
+        <HomepageServicesSection style="4item" services={services} />
         {/* <Services3 /> */}
         <Works portfolio={portfolio} />
         <FullTestimonials />

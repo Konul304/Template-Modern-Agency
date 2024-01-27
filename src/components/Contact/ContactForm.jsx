@@ -1,34 +1,50 @@
-'use client';
-import React, { useEffect, useState } from 'react';
+"use client";
+import React, { useEffect, useState } from "react";
 //= Components
-import Split from '@/components/Common/Split';
+import Split from "@/components/Common/Split";
 //= Static Data
-import contentFormData from '@/data/contact-form.json';
-import styles from '../../styles/Contact.module.scss';
-import countryData from '@/data/regions-to-countries';
-import { Select } from 'antd';
+import contentFormData from "@/data/contact-form.json";
+import styles from "../../styles/Contact.module.scss";
+import countryData from "@/data/regions-to-countries";
+import { Select } from "antd";
+import { postMessage } from "@/app/(api)/api";
 
 function ContactForm({ theme, data }) {
-  const { countries, zones } = require('moment-timezone/data/meta/latest.json');
+  const { countries, zones } = require("moment-timezone/data/meta/latest.json");
   const timeZoneToCountry = {};
   const timeZoneCityToCountry = {};
-  const [country, setCountry] = useState({ value: '', label: '' });
+  const [country, setCountry] = useState({ value: "", label: "" });
   const [contactInfo, setContactInfo] = useState({
-    email: '',
-    phoneNumber: '',
-    address: '',
+    email: "",
+    phoneNumber: "",
+    address: "",
   });
   const [inputValues, setInputValues] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
   let myCountry;
+
+  const sendMessage = async () => {
+    const query = {
+      name: inputValues?.name,
+      message: inputValues?.message,
+      email: inputValues?.email,
+    };
+    const response = await postMessage(query);
+    // console.log(response);
+  };
+
+  const handleSubmit = (e) => {
+    e?.preventDefault();
+    // console.log('submit');
+  };
 
   useEffect(() => {
     Object.keys(zones).forEach((z) => {
       timeZoneToCountry[z] = countries[zones[z].countries[0]].name;
-      const cityArr = z.split('/');
+      const cityArr = z.split("/");
       const city = cityArr[cityArr.length - 1];
       timeZoneCityToCountry[city] = countries[zones[z].countries[0]].name;
     });
@@ -48,7 +64,6 @@ function ContactForm({ theme, data }) {
     }
   }, []);
 
-  const handleSubmit = () => {};
   return (
     <section className="contact section-padding">
       <div className={styles.contact_button}>
@@ -58,11 +73,11 @@ function ContactForm({ theme, data }) {
           placeholder="Choose country"
           style={{ width: 120 }}
           value={
-            country?.label !== ''
+            country?.label !== ""
               ? country
               : {
-                  value: 'Choose country',
-                  label: 'Choose country',
+                  value: "Choose country",
+                  label: "Choose country",
                 }
           }
           optionFilterProp="children"
@@ -145,7 +160,7 @@ function ContactForm({ theme, data }) {
 
                   <button
                     type="submit"
-                    className={`butn ${theme === 'light' ? 'dark' : 'bord'}`}
+                    className={`butn ${theme === "light" ? "dark" : "bord"}`}
                   >
                     <span>Send Message</span>
                   </button>

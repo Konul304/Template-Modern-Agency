@@ -4,6 +4,8 @@ import React from "react";
 import aboutData from "@/data/about-us1.json";
 
 const AboutUs1 = (data) => {
+  const img_link =
+    "https://project141.s3.eu-north-1.amazonaws.com/" + data?.data?.wePhotoLink;
   return (
     <section className="about-us section-padding">
       <div className="container">
@@ -14,7 +16,7 @@ const AboutUs1 = (data) => {
                 {aboutData.smallTitle}
               </h6>
               <h3 className="fw-600 text-u ls1 mb-30 color-font">
-                {aboutData.title}
+                {data?.data?.weTitle}
               </h3>
               <p>{data?.data?.weText}</p>
               <a href={`/about/about-dark`} className="butn bord curve mt-30">
@@ -23,7 +25,7 @@ const AboutUs1 = (data) => {
             </div>
           </div>
           <div className="col-lg-7 img">
-            <img src={aboutData.image} alt={aboutData.title} />
+            <img src={img_link} alt={aboutData.title} />
             <div className="stauts">
               {/* {
                 aboutData.status.map(stat => (
