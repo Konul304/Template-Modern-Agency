@@ -7,7 +7,7 @@ import { getPartners } from '@/app/(api)/api';
 import { useQuery } from 'react-query';
 //= Scripts
 
-const Clients = ({ theme, partners }) => {
+const Clients = ({ theme }) => {
 	const {
 		data: partners,
 		isLoading,
@@ -47,7 +47,7 @@ const Clients = ({ theme, partners }) => {
 	};
 
 	const partnersPerPage = 8; // Number of partners to render per SwiperSlide
-	const totalSlides = Math.ceil(partners.length / partnersPerPage);
+	const totalSlides = Math.ceil(partners?.length / partnersPerPage);
 
 	return (
 		<section className="clients section-padding">
@@ -63,7 +63,7 @@ const Clients = ({ theme, partners }) => {
 								<SwiperSlide className="item" key={slideIndex}>
 									<div className="row bord">
 										{partners
-											.slice(
+											?.slice(
 												slideIndex * partnersPerPage,
 												(slideIndex + 1) * partnersPerPage
 											)
