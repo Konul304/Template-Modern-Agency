@@ -31,7 +31,7 @@ const certificate = (
       d="M14 8L11 11L10 10"
       stroke="white"
       strokeLinecap="round"
-      stroke-linejoin="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
