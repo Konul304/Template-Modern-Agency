@@ -31,6 +31,7 @@ const BlogStanderd = ({ services }) => {
 															grid={3}
 															presentations={item?.servicePresentations}
 															videos={item?.serviceVideos}
+															images={item?.serviceImages}
 															hideHeader={true}
 															filterPosition="center"
 														/>
