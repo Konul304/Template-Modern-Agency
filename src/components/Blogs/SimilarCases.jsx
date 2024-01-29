@@ -1,6 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
-import styles from '../../styles/Cases.module.scss';
+import React from "react";
+import Link from "next/link";
+import styles from "../../styles/Cases.module.scss";
 
 const SimilarCases = (data) => {
   const allData = data?.data?.data;
@@ -17,7 +17,6 @@ const SimilarCases = (data) => {
   const filteredMatchingObjects = matchingObjects?.filter(
     (item) => item.id !== caseData.id
   );
-
   return (
     <section className={`blog ${styles.similar_cases_container}`}>
       <div className="container">
@@ -33,11 +32,14 @@ const SimilarCases = (data) => {
         </div>
         <div className="row">
           {filteredMatchingObjects?.map((item) => {
+            const img_url =
+              "https://project141.s3.eu-north-1.amazonaws.com/" +
+              item?.logoLink;
             return (
               <div key={item?.id} className="col-md-4">
                 <div className="item md-mb50 wow fadeInUp" data-wow-delay=".3s">
                   <a href={`/cases/cases-dark/${item?.id}`} className="img">
-                    <img src="/img/blog/1.jpg" alt="" />
+                    <img src={img_url} alt="" />
                   </a>
                   <div className="cont">
                     <div>
