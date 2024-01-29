@@ -13,6 +13,7 @@ function WorksStyle2({
 	hideHeader = false,
 	presentations,
 	videos,
+	images,
 	id,
 }) {
 	const [isOpenMap, setOpenMap] = useState({});
@@ -82,8 +83,9 @@ function WorksStyle2({
 							{videos && videos.length > 0 && (
 								<span data-filter=".videos">Videos</span>
 							)}
-							{/* <span data-filter=".web">Mobile App</span>
-                <span data-filter=".graphic">Creative</span> */}
+							{images && images.length > 0 && (
+								<span data-filter=".images">Images</span>
+							)}
 						</div>
 					</div>
 
@@ -167,6 +169,37 @@ function WorksStyle2({
 											onClose={() => handleToggleModal(index)}
 											autoplay
 										/>
+										{/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
+									</div>
+								</div>
+							);
+						})}
+
+						{images?.map((item, index) => {
+							const img_link =
+								'https://project141.s3.eu-north-1.amazonaws.com/' +
+								item?.logoLink;
+							return (
+								<div
+									key={index}
+									className={`${
+										grid === 3
+											? 'col-lg-4 col-md-6'
+											: grid === 2
+											? 'col-md-6'
+											: 'col-12'
+									} items images wow fadeInUp`}
+									data-wow-delay=".4s">
+									<div className="item-img">
+										<div className="imago wow">
+											<Link href={img_link} target="_blank">
+												<img src={img_link} alt="image" />
+											</Link>
+											<div className="item-img-overlay"></div>
+										</div>
+									</div>
+									<div className="cont">
+										<h6>{item?.title}</h6>
 										{/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
 									</div>
 								</div>
