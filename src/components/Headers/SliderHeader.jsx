@@ -7,7 +7,8 @@ import { Navigation, Pagination, Parallax } from 'swiper';
 import removeSlashFromBagination from '@/common/removeSlashpagination';
 import fadeWhenScroll from '@/common/fadeWhenScroll';
 //= Static Data
-import intro1Data from '@/data/intro1.json';
+import { getSlider } from '@/app/(api)/api';
+import { useQuery } from 'react-query';
 
 const swiperOptions = {
   modules: [Parallax, Navigation, Pagination],
@@ -32,13 +33,21 @@ const swiperOptions = {
   },
 };
 
-function SliderHeader(data) {
+const SliderHeader = () => {
   const fixedSlider = useRef();
 
+  const { data, isLoading, isError } = useQuery(
+    ['sliderData'],
+    async () => await getSlider(),
+    {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+    }
+  );
   useEffect(() => {
     removeSlashFromBagination();
     fadeWhenScroll(document.querySelectorAll('.fixed-slider .caption'));
-  }, []);
+  }, [data]);
 
   useEffect(() => {
     if (fixedSlider.current) {
@@ -46,7 +55,7 @@ function SliderHeader(data) {
       const slideHeight = fixedSlider.current.offsetHeight;
       MainContent.style.marginTop = slideHeight + 'px';
     }
-  }, []);
+  }, [data]);
 
   return (
     <header
@@ -54,36 +63,38 @@ function SliderHeader(data) {
       ref={fixedSlider}
     >
       <div className="swiper-container parallax-slider">
-        <Swiper {...swiperOptions} className="swiper-wrapper">
-          {data?.data?.map((slide) => {
-            const img_url =
-              'https://project141.s3.eu-north-1.amazonaws.com/' +
-              slide?.logoLink;
-            return (
-              <SwiperSlide key={slide.id} className="swiper-slide">
-                <div
-                  className="bg-img valign"
-                  style={{ backgroundImage: `url('${img_url}')` }}
-                  data-overlay-dark="6"
-                >
-                  <div className="container">
-                    <div className="row justify-content-center">
-                      <div className="col-lg-8 col-md-10">
-                        <div className="caption center mt-30">
-                          <h1 className="color-font">{slide.title}</h1>
-                          {slide.description}
-                          {/* <a href="#" className="butn bord curve mt-30">
+        {data && (
+          <Swiper {...swiperOptions} className="swiper-wrapper">
+            {data?.map((slide) => {
+              const img_url =
+                'https://project141.s3.eu-north-1.amazonaws.com/' +
+                slide?.logoLink;
+              return (
+                <SwiperSlide key={slide.id} className="swiper-slide">
+                  <div
+                    className="bg-img valign"
+                    style={{ backgroundImage: `url('${img_url}')` }}
+                    data-overlay-dark="6"
+                  >
+                    <div className="container">
+                      <div className="row justify-content-center">
+                        <div className="col-lg-8 col-md-10">
+                          <div className="caption center mt-30">
+                            <h1 className="color-font">{slide.title}</h1>
+                            {slide.description}
+                            {/* <a href="#" className="butn bord curve mt-30">
                             <span>Look More</span>
                           </a> */}
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        )}
         <div className="setone setwo">
           <div className="swiper-button-next swiper-nav-ctrl next-ctrl cursor-pointer">
             <i className="fas fa-chevron-right"></i>
@@ -111,6 +122,6 @@ function SliderHeader(data) {
       </div>
     </header>
   );
-}
+};
 
 export default SliderHeader;

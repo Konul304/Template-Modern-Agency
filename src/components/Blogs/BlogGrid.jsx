@@ -1,14 +1,24 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
+import { getCases } from '@/app/(api)/api';
+import { useQuery } from 'react-query';
 
-const BlogGrid = (data) => {
+const BlogGrid = () => {
+  const { data, isLoading, isError } = useQuery(
+    ['casesData'],
+    async () => await getCases(),
+    {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+    }
+  );
   return (
     <section className="blog-pg blog section-padding pt-0">
       <div className="container">
         <div className="posts">
           <div className="row">
-            {data?.data?.map((item) => {
+            {data?.map((item) => {
               const img_url =
                 'https://project141.s3.eu-north-1.amazonaws.com/' +
                 item?.logoLink;

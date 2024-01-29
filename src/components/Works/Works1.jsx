@@ -3,6 +3,8 @@ import React from 'react';
 //= Modules
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper';
+import { getPortfolio } from '@/app/(api)/api';
+import { useQuery } from 'react-query';
 //= Static Data
 
 const swiperOptions = {
@@ -40,7 +42,15 @@ const swiperOptions = {
   },
 };
 
-const Works1 = (portfolio) => {
+const Works1 = () => {
+  const {
+    data: portfolio,
+    isLoading,
+    isError,
+  } = useQuery(['portfolioData'], async () => await getPortfolio(), {
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
+  });
   return (
     <section className="work-carousel metro position-re">
       <div className="container-fluid">
@@ -48,7 +58,7 @@ const Works1 = (portfolio) => {
           <div className="col-lg-12 no-padding">
             <div className="swiper-container">
               <Swiper {...swiperOptions} className="swiper-wrapper">
-                {portfolio?.portfolio?.map((item) => {
+                {portfolio?.map((item) => {
                   const img_url =
                     'https://project141.s3.eu-north-1.amazonaws.com/' +
                     item?.logoLink;
