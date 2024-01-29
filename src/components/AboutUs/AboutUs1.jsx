@@ -1,11 +1,21 @@
-"use client";
-import React from "react";
+'use client';
+import React from 'react';
 //= Static Data
-import aboutData from "@/data/about-us1.json";
+import aboutData from '@/data/about-us1.json';
+import { getAbout } from '@/app/(api)/api';
+import { useQuery } from 'react-query';
 
-const AboutUs1 = (data) => {
+const AboutUs1 = () => {
+  const { data, isLoading, isError } = useQuery(
+    ['aboutData'],
+    async () => await getAbout(),
+    {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+    }
+  );
   const img_link =
-    "https://project141.s3.eu-north-1.amazonaws.com/" + data?.data?.wePhotoLink;
+    'https://project141.s3.eu-north-1.amazonaws.com/' + data?.wePhotoLink;
   return (
     <section className="about-us section-padding">
       <div className="container">
@@ -16,9 +26,9 @@ const AboutUs1 = (data) => {
                 {aboutData.smallTitle}
               </h6>
               <h3 className="fw-600 text-u ls1 mb-30 color-font">
-                {data?.data?.weTitle}
+                {data?.weTitle}
               </h3>
-              <p>{data?.data?.weText}</p>
+              <p>{data?.weText}</p>
               <a href={`/about/about-dark`} className="butn bord curve mt-30">
                 <span>Read More</span>
               </a>

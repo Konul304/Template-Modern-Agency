@@ -3,9 +3,19 @@ import Split from '@/components/Common/Split';
 //= Static Data
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper';
+import { getPartners } from '@/app/(api)/api';
+import { useQuery } from 'react-query';
 //= Scripts
 
 const Clients = ({ theme, partners }) => {
+	const {
+		data: partners,
+		isLoading,
+		isError,
+	} = useQuery(['partnerData'], async () => await getPartners(), {
+		refetchOnWindowFocus: false,
+		refetchOnMount: false,
+	});
 	const swiperOptions = {
 		modules: [Autoplay, Navigation],
 		loop: true,

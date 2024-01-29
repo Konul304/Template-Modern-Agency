@@ -2,10 +2,20 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from '../../styles/Cases.module.scss';
+import { getCases } from '@/app/(api)/api';
+import { useQuery } from 'react-query';
 
-const CasesHomePage = (data) => {
-  if (data?.data?.length > 3) {
-    data?.data.splice(0, data?.data?.length - 3);
+const CasesHomePage = () => {
+  const { data, isLoading, isError } = useQuery(
+    ['caseData'],
+    async () => await getCases(),
+    {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+    }
+  );
+  if (data?.length > 3) {
+    data?.splice(0, data?.length - 3);
   }
   return (
     <section className="blog section-padding sub-bg">
@@ -21,7 +31,7 @@ const CasesHomePage = (data) => {
           </div>
         </div>
         <div className="row">
-          {data?.data?.map((item) => {
+          {data?.map((item) => {
             const img_url =
               'https://project141.s3.eu-north-1.amazonaws.com/' +
               item?.logoLink;

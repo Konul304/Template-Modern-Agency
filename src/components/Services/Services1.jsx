@@ -1,10 +1,20 @@
+'use client';
 import React from 'react';
 //= Static Data
 import Link from 'next/link';
+import { getServices } from '@/app/(api)/api';
+import { useQuery } from 'react-query';
 // import styles from '../../styles/Serv/ices.module.scss';
 
-function Services1({ services,style, lines }) {
-
+function Services1({ style, lines }) {
+  const {
+    data: services,
+    isLoading,
+    isError,
+  } = useQuery(['servicesData'], async () => await getServices(), {
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
+  });
   return (
     <section
       className={`services bords section-padding ${
