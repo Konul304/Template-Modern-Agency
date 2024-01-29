@@ -3,6 +3,7 @@
 import { getContactData, getPortfolio, postEmail } from '@/app/(api)/api';
 import { useEffect, useState } from 'react';
 import countryData from '@/data/regions-to-countries';
+import { message } from 'antd';
 
 const Footer = ({ hideBGCOLOR }) => {
   const { countries, zones } = require('moment-timezone/data/meta/latest.json');
@@ -16,6 +17,21 @@ const Footer = ({ hideBGCOLOR }) => {
     address: '',
   });
   const [email, setEmail] = useState();
+  const [messageApi, contextHolder] = message.useMessage();
+
+  const success = () => {
+    messageApi.open({
+      type: 'success',
+      content: 'Successfully subscribed',
+    });
+  };
+
+  const error = () => {
+    messageApi.open({
+      type: 'error',
+      content: 'Something went wrong',
+    });
+  };
 
   const getPortfolioData = async () => {
     try {
@@ -41,9 +57,14 @@ const Footer = ({ hideBGCOLOR }) => {
   const sendEmail = async (e) => {
     e?.preventDefault();
     const query = {
-      email: email,
+      userMail: email,
     };
-    return await postEmail(query);
+    const response = await postEmail(query);
+    if (response?.message == 'Added succesfully') {
+      success();
+    } else {
+      error();
+    }
   };
 
   useEffect(() => {
@@ -76,6 +97,7 @@ const Footer = ({ hideBGCOLOR }) => {
 
   return (
     <footer className={`${!hideBGCOLOR ? 'sub-bg' : ''}`}>
+      {contextHolder}
       <div className="container">
         <div className="row">
           <div className="col-lg-4">
