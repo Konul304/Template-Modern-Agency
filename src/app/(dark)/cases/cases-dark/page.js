@@ -12,7 +12,6 @@ export const metadata = {
 };
 
 const CasesPage = async () => {
-  const response = await getCases();
   return (
     <>
       <Loading />
@@ -27,7 +26,7 @@ const CasesPage = async () => {
         title="Our Cases"
         paragraph="All the most current news and events of our creative team."
       />
-      <BlogGrid data={response} />
+      <BlogGrid />
       <Footer />
     </>
   );

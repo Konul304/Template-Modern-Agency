@@ -1,7 +1,17 @@
 'use client';
+import { getAbout } from '@/app/(api)/api';
 import React from 'react';
+import { useQuery } from 'react-query';
 
-const PagesHeader = ({ children, data }) => {
+const PagesHeader = ({ children }) => {
+  const { data, isLoading, isError } = useQuery(
+    ['aboutData'],
+    async () => await getAbout(),
+    {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+    }
+  );
   const img_link =
     'https://project141.s3.eu-north-1.amazonaws.com/' + data?.wePhotoLink;
 

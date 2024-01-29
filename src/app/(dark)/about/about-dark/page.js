@@ -1,35 +1,31 @@
-import React from "react";
+import React from 'react';
 //= Page components
-import Navbar from "@/components/Common/Navbar";
-import PagesHeader from "@/components/Headers/PagesHeader";
-import AboutIntro from "@/components/AboutUs/AboutIntro";
-import Team from "@/components/Team/Team1";
-import Partners from "@/components/Clients/Partners";
-import Footer from "@/components/Common/Footer";
-import Loading from "@/components/Common/Loader";
-import OurHistory from "@/components/OurHistory";
-import { getAbout, getPartners, getTeamMembers } from "@/app/(api)/api";
+import Navbar from '@/components/Common/Navbar';
+import PagesHeader from '@/components/Headers/PagesHeader';
+import AboutIntro from '@/components/AboutUs/AboutIntro';
+import Team from '@/components/Team/Team1';
+import Partners from '@/components/Clients/Partners';
+import Footer from '@/components/Common/Footer';
+import Loading from '@/components/Common/Loader';
+import OurHistory from '@/components/OurHistory';
 
 export const metadata = {
-  title: "C141",
+  title: 'C141',
 };
 
 const AboutDark = async () => {
-  const response = await getAbout();
-  const teamMembers = await getTeamMembers();
-  const partnerData = await getPartners();
   return (
     <>
       <Loading />
       <Navbar />
-      <PagesHeader data={response}>
+      <PagesHeader>
         Our dedicated team of creatives is bursting with talent, experience and
         passion for what we do.
       </PagesHeader>
-      <AboutIntro data={response} />
-      <Partners theme="dark" partners={partnerData} />
-      <OurHistory data={response} />
-      <Team data={teamMembers} />
+      <AboutIntro />
+      <Partners theme="dark" />
+      <OurHistory />
+      <Team />
       {/* <Services style="4item" />
       <TestimonialsWithVideo />
       <SkillsCircle from="aboutPage" />

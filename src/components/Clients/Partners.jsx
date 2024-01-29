@@ -1,17 +1,27 @@
-"use client";
-import Split from "@/components/Common/Split";
+'use client';
+import Split from '@/components/Common/Split';
 //= Static Data
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper';
+import { getPartners } from '@/app/(api)/api';
+import { useQuery } from 'react-query';
 //= Scripts
 
-const Clients = ({ theme, partners }) => {
+const Clients = ({ theme }) => {
+  const {
+    data: partners,
+    isLoading,
+    isError,
+  } = useQuery(['partnerData'], async () => await getPartners(), {
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
+  });
   const swiperOptions = {
     modules: [Autoplay, Navigation],
     loop: true,
     navigation: {
-      prevEl: ".arrows .prev",
-      nextEl: ".arrows .next",
+      prevEl: '.arrows .prev',
+      nextEl: '.arrows .next',
     },
     centeredSlides: true,
     autoplay: {
@@ -51,7 +61,7 @@ const Clients = ({ theme, partners }) => {
                   <div className="row bord">
                     {partners?.map((item) => {
                       const logo_url =
-                        "https://project141.s3.eu-north-1.amazonaws.com/" +
+                        'https://project141.s3.eu-north-1.amazonaws.com/' +
                         item?.logoLink;
                       return (
                         <div key={item.id} className="col-md-3 col-6 brands">
@@ -59,14 +69,14 @@ const Clients = ({ theme, partners }) => {
                             className="item wow fadeIn"
                             data-wow-delay={`${
                               item.id == 1
-                                ? ".3"
+                                ? '.3'
                                 : item.id == 2
-                                ? ".6"
+                                ? '.6'
                                 : item.id == 3
-                                ? ".8"
+                                ? '.8'
                                 : item.id == 4
-                                ? ".3"
-                                : ""
+                                ? '.3'
+                                : ''
                             }s`}
                           >
                             <div className="img">

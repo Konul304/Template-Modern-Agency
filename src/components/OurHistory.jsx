@@ -1,11 +1,19 @@
 'use client';
+import { getAbout } from '@/app/(api)/api';
 import React from 'react';
+import { useQuery } from 'react-query';
 
-const OurHistory = (data) => {
+const OurHistory = () => {
+  const { data, isLoading, isError } = useQuery(
+    ['aboutData'],
+    async () => await getAbout(),
+    {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+    }
+  );
   const img_link =
-    'https://project141.s3.eu-north-1.amazonaws.com/' +
-    data?.data?.historyPhotoLink;
-
+    'https://project141.s3.eu-north-1.amazonaws.com/' + data?.historyPhotoLink;
   return (
     <div>
       <header className="slider-stwo valign position-re">
@@ -18,8 +26,8 @@ const OurHistory = (data) => {
             </div>
             <div className="col-lg-7 valign">
               <div className="cont">
-                <h1 className="mb-10 fw-600">{data?.data?.historyTitle}</h1>
-                <p>{data?.data?.historyText}</p>
+                <h1 className="mb-10 fw-600">{data?.historyTitle}</h1>
+                <p>{data?.historyText}</p>
               </div>
             </div>
           </div>
