@@ -1904,7 +1904,8 @@ span:hover {
 }
 
 .navbar .logo {
-  width: 50px;
+  /* width: 0px; */
+  margin:10px 0px;
 }
 
 .nav-scroll {
