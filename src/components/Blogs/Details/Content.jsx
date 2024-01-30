@@ -2,8 +2,6 @@ import HTMLReactParser from 'html-react-parser';
 import React from 'react';
 
 const Content = (data) => {
-  console.log(data?.data?.paragraph);
-
   return (
     <div className="content pt-60">
       <div className="row justify-content-center">
@@ -13,7 +11,9 @@ const Content = (data) => {
             {/* <div className="spacial">
               <p>{data?.data?.heading2}</p>
             </div> */}
-            <div>{data && HTMLReactParser(data?.data?.paragraph)}</div>
+            <div>
+              {data?.data?.paragraph && HTMLReactParser(data?.data?.paragraph)}
+            </div>
             {/* <h6>- We all intend to plan ahead.</h6> */}
 
             {/* <p>

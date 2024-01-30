@@ -29,7 +29,9 @@ const OurHistory = () => {
               <div className="cont">
                 <h1 className="mb-10 fw-600">{data?.historyTitle}</h1>
                 {/* <p>{data?.historyText}</p> */}
-                <div>{data && HTMLReactParser(data?.historyText)}</div>
+                <div>
+                  {data?.historyText && HTMLReactParser(data?.historyText)}
+                </div>
               </div>
             </div>
           </div>

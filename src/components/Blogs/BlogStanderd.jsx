@@ -40,7 +40,8 @@ const BlogStanderd = () => {
                             <div>{item?.title}</div>
                           </h4>
                           <p>
-                            {services && HTMLReactParser(item?.description)}
+                            {item?.description &&
+                              HTMLReactParser(item?.description)}
                           </p>
                           {(hasPresentations || hasVideos) && (
                             <Works
