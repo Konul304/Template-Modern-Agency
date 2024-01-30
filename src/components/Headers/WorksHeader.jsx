@@ -1,27 +1,44 @@
 'use client';
+import { getPortfolio } from '@/app/(api)/api';
 import React, { useRef, useEffect } from 'react';
 
 function WorksHeader() {
   const fixedSlider = useRef();
-
+  // const {
+  //   data: presentations,
+  //   isLoading: preLoading,
+  //   isError: preError,
+  // } = useQuery(['presentationData'], async () => await getPortfolio(), {
+  //   refetchOnWindowFocus: false,
+  //   refetchOnMount: false,
+  // });
   useEffect(() => {
     if (fixedSlider.current) {
       const MainContent = document.querySelector('.main-content');
       const slideHeight = fixedSlider.current.offsetHeight;
-      MainContent.style.marginTop = slideHeight + "px";
+      MainContent.style.marginTop = slideHeight + 'px';
     }
   }, []);
 
   return (
-    <header ref={fixedSlider} className="works-header fixed-slider hfixd valign sub-bg">
+    <header
+      ref={fixedSlider}
+      className="works-header fixed-slider hfixd valign sub-bg"
+    >
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-7 col-md-9 static">
             <div className="capt mt-50">
               <div className="parlx text-center">
-                <h1 className="color-font">Our Portfolio</h1>
+                <h1 className="color-font">
+                  {/* {presentations?.pageTitle} */}
+                  Our Portfolio
+                </h1>
                 <p>
-                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet blanditiis aliquam officia exercitationem est totam, voluptas nemo adipisci consequatur sit expedita non ut natus dolor et placeat provident fuga temporibus.
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet
+                  blanditiis aliquam officia exercitationem est totam, voluptas
+                  nemo adipisci consequatur sit expedita non ut natus dolor et
+                  placeat provident fuga temporibus.
                 </p>
               </div>
               <div className="bactxt custom-font valign">
@@ -32,7 +49,7 @@ function WorksHeader() {
         </div>
       </div>
     </header>
-  )
+  );
 }
 
-export default WorksHeader
+export default WorksHeader;

@@ -1,5 +1,6 @@
 'use client';
 import { getAbout } from '@/app/(api)/api';
+import HTMLReactParser from 'html-react-parser';
 import React from 'react';
 import { useQuery } from 'react-query';
 
@@ -27,7 +28,8 @@ const OurHistory = () => {
             <div className="col-lg-7 valign">
               <div className="cont">
                 <h1 className="mb-10 fw-600">{data?.historyTitle}</h1>
-                <p>{data?.historyText}</p>
+                {/* <p>{data?.historyText}</p> */}
+                <div>{data && HTMLReactParser(data?.historyText)}</div>
               </div>
             </div>
           </div>
