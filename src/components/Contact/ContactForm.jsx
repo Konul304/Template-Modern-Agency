@@ -6,7 +6,7 @@ import Split from '@/components/Common/Split';
 import contentFormData from '@/data/contact-form.json';
 import styles from '../../styles/Contact.module.scss';
 import countryData from '@/data/regions-to-countries';
-import { Select } from 'antd';
+import { Select, message } from 'antd';
 import { getContactData, postMessage } from '@/app/(api)/api';
 
 const ContactForm = ({ theme }) => {
@@ -15,6 +15,7 @@ const ContactForm = ({ theme }) => {
   const timeZoneCityToCountry = {};
   const [data, setData] = useState();
   const [country, setCountry] = useState({ value: '', label: '' });
+  const [messageApi, contextHolder] = message.useMessage();
   const [contactInfo, setContactInfo] = useState({
     email: '',
     phoneNumber: '',
@@ -52,17 +53,33 @@ const ContactForm = ({ theme }) => {
     }
   };
 
-  const sendMessage = async () => {
+  const success = () => {
+    messageApi.open({
+      type: 'success',
+      content: 'Email sent successfully',
+    });
+  };
+
+  const error = () => {
+    messageApi.open({
+      type: 'error',
+      content: 'Something went wrong',
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e?.preventDefault();
     const query = {
       name: inputValues?.name,
       message: inputValues?.message,
-      email: inputValues?.email,
+      additionalEmail: inputValues?.email,
     };
     const response = await postMessage(query);
-  };
-
-  const handleSubmit = (e) => {
-    e?.preventDefault();
+    if (response == 'Email sent successfully') {
+      success();
+    } else {
+      error();
+    }
   };
 
   //finds the country in data which is the same with the country found based on timezone
@@ -73,6 +90,7 @@ const ContactForm = ({ theme }) => {
   return (
     <section className="contact section-padding">
       <div className={styles.contact_button}>
+        {contextHolder}
         <Select
           showSearch
           // defaultValue="Azerbaijan"

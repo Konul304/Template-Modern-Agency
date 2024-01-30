@@ -1,3 +1,4 @@
+import HTMLReactParser from 'html-react-parser';
 import React from 'react';
 
 const Content = (data) => {
@@ -7,11 +8,12 @@ const Content = (data) => {
         <div className="col-lg-10">
           <div className="cont">
             <h4 className="extra-title">{data?.data?.heading1}</h4>
-            <div className="spacial">
+            {/* <div className="spacial">
               <p>{data?.data?.heading2}</p>
+            </div> */}
+            <div>
+              {data?.data?.paragraph && HTMLReactParser(data?.data?.paragraph)}
             </div>
-            <p>{data?.data?.paragraph}</p>
-
             {/* <h6>- We all intend to plan ahead.</h6> */}
 
             {/* <p>

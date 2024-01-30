@@ -1,5 +1,6 @@
 'use client';
 import { getAbout } from '@/app/(api)/api';
+import HTMLReactParser from 'html-react-parser';
 import React from 'react';
 import { useQuery } from 'react-query';
 
@@ -25,7 +26,7 @@ const AboutIntro = () => {
           <div className="col-lg-8 offset-lg-1 col-md-8">
             <div className="text">
               <p className="wow txt mb-10 words chars splitting" data-splitting>
-                {data?.weText}
+                <div>{data?.weText && HTMLReactParser(data?.weText)}</div>
               </p>
               {/* <p className="wow txt words chars splitting" data-splitting>
                 {AboutInfo1Data.paragraph2}

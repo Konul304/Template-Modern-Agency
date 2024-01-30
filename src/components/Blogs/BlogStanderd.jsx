@@ -3,6 +3,7 @@ import React from 'react';
 import Works from '@/components/Works/WorksStyle2';
 import { useQuery } from 'react-query';
 import { getServices } from '@/app/(api)/api';
+import HTMLReactParser from 'html-react-parser';
 
 const BlogStanderd = () => {
   const {
@@ -38,7 +39,10 @@ const BlogStanderd = () => {
                           <h4 className="title">
                             <div>{item?.title}</div>
                           </h4>
-                          <p>{item?.description}</p>
+                          <p>
+                            {item?.description &&
+                              HTMLReactParser(item?.description)}
+                          </p>
                           {(hasPresentations || hasVideos) && (
                             <Works
                               id={item?.id}
