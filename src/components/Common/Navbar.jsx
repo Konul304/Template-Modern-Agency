@@ -33,7 +33,7 @@ const Navbar = ({ lr, theme }) => {
     >
       <div className="container">
         <Link className="logo" href="/">
-          <Image src={Logo} />
+          <Image src={Logo} width={100} height={100} />
         </Link>
 
         <button
