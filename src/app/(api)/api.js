@@ -1,8 +1,8 @@
-import { axiosTemplate } from '.';
+import { axiosTemplate } from ".";
 
 export const getAbout = async () => {
   try {
-    const response = await axiosTemplate.get('About');
+    const response = await axiosTemplate.get("About");
     return response?.data;
   } catch (err) {
     console.log(err);
@@ -11,7 +11,7 @@ export const getAbout = async () => {
 
 export const getPartners = async () => {
   try {
-    const response = await axiosTemplate.get('Partner');
+    const response = await axiosTemplate.get("Partner");
     return response?.data;
   } catch (err) {
     console.log(err);
@@ -20,7 +20,7 @@ export const getPartners = async () => {
 
 export const getTeamMembers = async () => {
   try {
-    const response = await axiosTemplate.get('TeamMembers');
+    const response = await axiosTemplate.get("TeamMembers");
     return response?.data;
   } catch (err) {
     console.log(err);
@@ -29,7 +29,7 @@ export const getTeamMembers = async () => {
 
 export const getPortfolio = async () => {
   try {
-    const response = await axiosTemplate.get('Presentation');
+    const response = await axiosTemplate.get("Presentation");
     return response?.data;
   } catch (err) {
     console.log(err);
@@ -38,7 +38,7 @@ export const getPortfolio = async () => {
 
 export const getVideos = async () => {
   try {
-    const response = await axiosTemplate.get('Video');
+    const response = await axiosTemplate.get("Video");
     return response?.data;
   } catch (err) {
     console.log(err);
@@ -47,7 +47,7 @@ export const getVideos = async () => {
 
 export const getContactData = async () => {
   try {
-    const response = await axiosTemplate.get('Contact');
+    const response = await axiosTemplate.get("Contact");
     return response?.data;
   } catch (err) {
     console.log(err);
@@ -56,7 +56,7 @@ export const getContactData = async () => {
 
 export const getCases = async () => {
   try {
-    const response = await axiosTemplate.get('Case');
+    const response = await axiosTemplate.get("Case");
     return response?.data;
   } catch (err) {
     console.log(err);
@@ -65,7 +65,7 @@ export const getCases = async () => {
 
 export const getServices = async () => {
   try {
-    const response = await axiosTemplate.get('Services');
+    const response = await axiosTemplate.get("Services");
     return response?.data;
   } catch (err) {
     console.log(err);
@@ -74,7 +74,7 @@ export const getServices = async () => {
 
 export const getSlider = async () => {
   try {
-    const response = await axiosTemplate.get('Slider');
+    const response = await axiosTemplate.get("Slider");
     return response?.data;
   } catch (err) {
     console.log(err);
@@ -98,5 +98,14 @@ export const postEmail = async (data) => {
   } catch (error) {
     console.log(error);
     return error;
+  }
+};
+
+export const getPresentationInfo = async () => {
+  try {
+    const response = await axiosTemplate.get("PresentationInfo");
+    return response?.data;
+  } catch (err) {
+    console.log(err);
   }
 };
