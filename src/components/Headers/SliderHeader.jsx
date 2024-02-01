@@ -1,32 +1,32 @@
-'use client';
-import React, { useEffect, useRef } from 'react';
+"use client";
+import React, { useEffect, useRef } from "react";
 //= Modules
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Parallax } from 'swiper';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Parallax } from "swiper";
 //= Scripts
-import removeSlashFromBagination from '@/common/removeSlashpagination';
-import fadeWhenScroll from '@/common/fadeWhenScroll';
+import removeSlashFromBagination from "@/common/removeSlashpagination";
+import fadeWhenScroll from "@/common/fadeWhenScroll";
 //= Static Data
-import { getSlider } from '@/app/(api)/api';
-import { useQuery } from 'react-query';
+import { getSlider } from "@/app/(api)/api";
+import { useQuery } from "react-query";
 
 const swiperOptions = {
   modules: [Parallax, Navigation, Pagination],
   speed: 1000,
   navigation: {
-    prevEl: '.swiper-button-prev',
-    nextEl: '.swiper-button-next',
+    prevEl: ".swiper-button-prev",
+    nextEl: ".swiper-button-next",
   },
   parallax: true,
   pagination: {
-    type: 'fraction',
+    type: "fraction",
     clickable: true,
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
   },
   onSwiper: (swiper) => {
     for (var i = 0; i < swiper.slides.length; i++) {
       swiper.slides[i].childNodes[0].setAttribute(
-        'data-swiper-parallax',
+        "data-swiper-parallax",
         0.75 * swiper.width
       );
     }
@@ -37,7 +37,7 @@ const SliderHeader = () => {
   const fixedSlider = useRef();
 
   const { data, isLoading, isError } = useQuery(
-    ['sliderData'],
+    ["sliderData"],
     async () => await getSlider(),
     {
       refetchOnWindowFocus: false,
@@ -46,14 +46,14 @@ const SliderHeader = () => {
   );
   useEffect(() => {
     removeSlashFromBagination();
-    fadeWhenScroll(document.querySelectorAll('.fixed-slider .caption'));
+    fadeWhenScroll(document.querySelectorAll(".fixed-slider .caption"));
   }, [data]);
 
   useEffect(() => {
     if (fixedSlider.current) {
-      const MainContent = document.querySelector('.main-content');
+      const MainContent = document.querySelector(".main-content");
       const slideHeight = fixedSlider.current.offsetHeight;
-      MainContent.style.marginTop = slideHeight + 'px';
+      MainContent.style.marginTop = slideHeight + "px";
     }
   }, [data]);
 
@@ -67,7 +67,7 @@ const SliderHeader = () => {
           <Swiper {...swiperOptions} className="swiper-wrapper">
             {data?.map((slide) => {
               const img_url =
-                'https://project141.s3.eu-north-1.amazonaws.com/' +
+                "https://project141.s3.eu-north-1.amazonaws.com/" +
                 slide?.logoLink;
               return (
                 <SwiperSlide key={slide.id} className="swiper-slide">
@@ -106,10 +106,16 @@ const SliderHeader = () => {
         <div className="swiper-pagination top botm"></div>
 
         <div className="social-icon">
-          <a href="#">
+          <a href="https://www.instagram.com/creative_141?igsh=ZjZtZjAxcGdoMjJh">
+            <i className="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/c141worldwide?mibextid=ZbWKwL">
             <i className="fab fa-facebook-f"></i>
           </a>
-          <a href="#">
+          <a href="https://www.linkedin.com/company/marketing-agency-c141-creative-one-for-one-/">
+            <i className="fab fa-linkedin"></i>
+          </a>
+          {/* <a href="#">
             <i className="fab fa-twitter"></i>
           </a>
           <a href="#">
@@ -117,7 +123,7 @@ const SliderHeader = () => {
           </a>
           <a href="#">
             <i className="fab fa-pinterest-p"></i>
-          </a>
+          </a> */}
         </div>
       </div>
     </header>

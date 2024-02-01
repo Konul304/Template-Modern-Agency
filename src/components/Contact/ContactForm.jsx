@@ -1,30 +1,30 @@
-'use client';
-import React, { useEffect, useState } from 'react';
+"use client";
+import React, { useEffect, useState } from "react";
 //= Components
-import Split from '@/components/Common/Split';
+import Split from "@/components/Common/Split";
 //= Static Data
-import contentFormData from '@/data/contact-form.json';
-import styles from '../../styles/Contact.module.scss';
-import countryData from '@/data/regions-to-countries';
-import { Select, message } from 'antd';
-import { getContactData, postMessage } from '@/app/(api)/api';
+import contentFormData from "@/data/contact-form.json";
+import styles from "../../styles/Contact.module.scss";
+import countryData from "@/data/regions-to-countries";
+import { Select, message } from "antd";
+import { getContactData, postMessage } from "@/app/(api)/api";
 
 const ContactForm = ({ theme }) => {
-  const { countries, zones } = require('moment-timezone/data/meta/latest.json');
+  const { countries, zones } = require("moment-timezone/data/meta/latest.json");
   const timeZoneToCountry = {};
   const timeZoneCityToCountry = {};
   const [data, setData] = useState();
-  const [country, setCountry] = useState({ value: '', label: '' });
+  const [country, setCountry] = useState({ value: "", label: "" });
   const [messageApi, contextHolder] = message.useMessage();
   const [contactInfo, setContactInfo] = useState({
-    email: '',
-    phoneNumber: '',
-    address: '',
+    email: "",
+    phoneNumber: "",
+    address: "",
   });
   const [inputValues, setInputValues] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
   let myCountry;
 
@@ -33,7 +33,7 @@ const ContactForm = ({ theme }) => {
     setData(response);
     Object.keys(zones).forEach((z) => {
       timeZoneToCountry[z] = countries[zones[z].countries[0]].name;
-      const cityArr = z.split('/');
+      const cityArr = z.split("/");
       const city = cityArr[cityArr.length - 1];
       timeZoneCityToCountry[city] = countries[zones[z].countries[0]].name;
     });
@@ -55,15 +55,15 @@ const ContactForm = ({ theme }) => {
 
   const success = () => {
     messageApi.open({
-      type: 'success',
-      content: 'Email sent successfully',
+      type: "success",
+      content: "Email sent successfully",
     });
   };
 
   const error = () => {
     messageApi.open({
-      type: 'error',
-      content: 'Something went wrong',
+      type: "error",
+      content: "Something went wrong",
     });
   };
 
@@ -75,7 +75,7 @@ const ContactForm = ({ theme }) => {
       additionalEmail: inputValues?.email,
     };
     const response = await postMessage(query);
-    if (response == 'Email sent successfully') {
+    if (response == "Email sent successfully") {
       success();
     } else {
       error();
@@ -97,11 +97,11 @@ const ContactForm = ({ theme }) => {
           // placeholder="Choose country"
           style={{ width: 120 }}
           value={
-            country?.label !== ''
+            country?.label !== ""
               ? country
               : {
-                  value: 'Azerbaijan',
-                  label: 'Azerbaijan',
+                  value: "Azerbaijan",
+                  label: "Azerbaijan",
                 }
           }
           optionFilterProp="children"
@@ -184,7 +184,7 @@ const ContactForm = ({ theme }) => {
 
                   <button
                     type="submit"
-                    className={`butn ${theme === 'light' ? 'dark' : 'bord'}`}
+                    className={`butn ${theme === "light" ? "dark" : "bord"}`}
                   >
                     <span>Send Message</span>
                   </button>
@@ -215,17 +215,14 @@ const ContactForm = ({ theme }) => {
                 <h6>{contactInfo?.address}</h6>
               </div>
               <div className="social mt-50">
-                <a href="#0" className="icon">
+                <a href="https://www.instagram.com/creative_141?igsh=ZjZtZjAxcGdoMjJh">
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/c141worldwide?mibextid=ZbWKwL">
                   <i className="fab fa-facebook-f"></i>
                 </a>
-                <a href="#0" className="icon">
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a href="#0" className="icon">
-                  <i className="fab fa-pinterest"></i>
-                </a>
-                <a href="#0" className="icon">
-                  <i className="fab fa-behance"></i>
+                <a href="https://www.linkedin.com/company/marketing-agency-c141-creative-one-for-one-/">
+                  <i className="fab fa-linkedin"></i>
                 </a>
               </div>
             </div>
