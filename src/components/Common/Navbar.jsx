@@ -1,39 +1,50 @@
-'use client';
-import React, { useEffect, useRef } from 'react';
-import Link from 'next/link';
+"use client";
+import React, { useEffect, useRef } from "react";
+import Link from "next/link";
 //= Scripts
-import { handleDropdown, handleMobileDropdown } from '@/common/navbar';
+import { handleDropdown, handleMobileDropdown } from "@/common/navbar";
 //= Static Data
-import Image from 'next/image';
-import Logo from '../../../public/img/c141_logo.png';
+import { getLogo } from "@/app/(api)/api";
+import { useQuery } from "react-query";
 
 const Navbar = ({ lr, theme }) => {
   const navbar = useRef();
 
+  const { data, isLoading, isError } = useQuery(
+    ["Logo"],
+    async () => await getLogo(),
+    {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+    }
+  );
+  const img_url =
+    "https://project141.s3.eu-north-1.amazonaws.com/" + data?.[0]?.logoLink;
+
   function handleScroll() {
     if (window.scrollY > 300) {
-      navbar?.current?.classList?.add('nav-scroll');
+      navbar?.current?.classList?.add("nav-scroll");
     } else {
-      navbar?.current?.classList?.remove('nav-scroll');
+      navbar?.current?.classList?.remove("nav-scroll");
     }
   }
 
   useEffect(() => {
     handleScroll();
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   });
 
   return (
     <nav
       ref={navbar}
       className={`navbar navbar-expand-lg change ${
-        theme === 'light' ? 'light' : ''
+        theme === "light" ? "light" : ""
       }`}
     >
       <div className="container">
         <Link className="logo" href="/">
-          <Image src={Logo} width={100} height={100} />
+          <img src={data ? `${img_url}` : ""} />
         </Link>
 
         <button

@@ -109,3 +109,12 @@ export const getPresentationInfo = async () => {
     console.log(err);
   }
 };
+
+export const getLogo = async () => {
+  try {
+    const response = await axiosTemplate.get("WebSiteLogo");
+    return response?.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
