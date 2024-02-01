@@ -1,22 +1,24 @@
-'use client';
-import { getPortfolio } from '@/app/(api)/api';
-import React, { useRef, useEffect } from 'react';
+"use client";
+import { getPresentationInfo } from "@/app/(api)/api";
+import React, { useRef, useEffect } from "react";
+import { useQuery } from "react-query";
 
 function WorksHeader() {
   const fixedSlider = useRef();
-  // const {
-  //   data: presentations,
-  //   isLoading: preLoading,
-  //   isError: preError,
-  // } = useQuery(['presentationData'], async () => await getPortfolio(), {
-  //   refetchOnWindowFocus: false,
-  //   refetchOnMount: false,
+  const {
+    data: presentationInfo,
+    isLoading: infoLoading,
+    isError: infoError,
+  } = useQuery(["presentationInfo"], async () => await getPresentationInfo(), {
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
+  });
   // });
   useEffect(() => {
     if (fixedSlider.current) {
-      const MainContent = document.querySelector('.main-content');
+      const MainContent = document.querySelector(".main-content");
       const slideHeight = fixedSlider.current.offsetHeight;
-      MainContent.style.marginTop = slideHeight + 'px';
+      MainContent.style.marginTop = slideHeight + "px";
     }
   }, []);
 
@@ -31,15 +33,9 @@ function WorksHeader() {
             <div className="capt mt-50">
               <div className="parlx text-center">
                 <h1 className="color-font">
-                  {/* {presentations?.pageTitle} */}
-                  Our Portfolio
+                  {presentationInfo?.[0]?.pageTitle}
                 </h1>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet
-                  blanditiis aliquam officia exercitationem est totam, voluptas
-                  nemo adipisci consequatur sit expedita non ut natus dolor et
-                  placeat provident fuga temporibus.
-                </p>
+                <p>{presentationInfo?.[0]?.pageDescription}</p>
               </div>
               <div className="bactxt custom-font valign">
                 <span className="full-width">Works</span>
