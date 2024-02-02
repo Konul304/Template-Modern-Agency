@@ -4,6 +4,7 @@ import React from 'react';
 import aboutData from '@/data/about-us1.json';
 import { getAbout } from '@/app/(api)/api';
 import { useQuery } from 'react-query';
+import HTMLReactParser from 'html-react-parser';
 
 const AboutUs1 = () => {
   const { data, isLoading, isError } = useQuery(
@@ -26,9 +27,9 @@ const AboutUs1 = () => {
                 {aboutData.smallTitle}
               </h6>
               <h3 className="fw-600 text-u ls1 mb-30 color-font">
-                {data?.weTitle}
+                {data?.weTitle && HTMLReactParser(data?.weTitle)}
               </h3>
-              <p>{data?.weText}</p>
+              <p>{data?.weText && HTMLReactParser(data?.weText)}</p>
               <a href={`/about/about-dark`} className="butn bord curve mt-30">
                 <span>Read More</span>
               </a>
