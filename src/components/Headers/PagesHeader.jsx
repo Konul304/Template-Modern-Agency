@@ -26,8 +26,8 @@ const PagesHeader = ({ children }) => {
               </h1>
             </div>
           </div> */}
-          <div className="col-lg-10">
-            <div className="img">
+          <div className="">
+            <div className="about_header_img">
               <img src={`${img_link}`} alt="" />
             </div>
           </div>
