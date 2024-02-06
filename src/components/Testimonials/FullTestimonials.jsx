@@ -51,7 +51,6 @@ function FullTestimonials({
       refetchOnMount: false,
     }
   );
-  console.log(data);
   // const img_link =
   //   'https://project141.s3.eu-north-1.amazonaws.com/' + data?.historyPhotoLink;
 
