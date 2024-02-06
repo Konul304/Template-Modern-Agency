@@ -1564,8 +1564,9 @@ span:hover {
 /* ====================== [ Start Heading ] ====================== */
 .sec-head {
   position: relative;
-  margin: 0 auto 80px;
+  /* margin: 0 auto 80px; */
 }
+
 
 .sec-head h6 {
   font-weight: 300;

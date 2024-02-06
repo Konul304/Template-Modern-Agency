@@ -1,26 +1,43 @@
-'use client';
-import React from 'react';
-import Works from '@/components/Works/WorksStyle2';
-import { useQuery } from 'react-query';
-import { getServices } from '@/app/(api)/api';
-import HTMLReactParser from 'html-react-parser';
+"use client";
+import React from "react";
+import Works from "@/components/Works/WorksStyle2";
+import { useQuery } from "react-query";
+import { getServiceFAQ } from "@/app/(api)/api";
+import HTMLReactParser from "html-react-parser";
+import { Collapse } from "antd";
 
-const BlogStanderd = () => {
-  const {
-    data: services,
-    isLoading,
-    isError,
-  } = useQuery(['servicesData'], async () => await getServices(), {
-    refetchOnWindowFocus: false,
-    refetchOnMount: false,
-  });
+const ServicesFAQ = () => {
+  // const onChange = (key) => {
+  //   console.log(key);
+  // };
+
+  const { data, isLoading, isError } = useQuery(
+    ["servicesFAQ"],
+    async () => await getServiceFAQ(),
+    {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+    }
+  );
+
+  const items = data?.map((item) => ({
+    key: item?.id.toString(), // Assuming ids are unique and can be used as keys
+    label: item?.title,
+    children: <p>{item?.description && HTMLReactParser(item?.description)}</p>,
+  }));
+
   return (
     <section className="blog-pg section-padding pt-0">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-11">
             <div className="posts">
-              {services?.map((item, index) => {
+              <Collapse
+                items={items}
+                // defaultActiveKey={["1"]}
+                // onChange={onChange}
+              />
+              {/* {services?.map((item, index) => {
                 const hasPresentations =
                   item?.servicePresentations &&
                   item.servicePresentations.length > 0;
@@ -59,7 +76,7 @@ const BlogStanderd = () => {
                     </div>
                   </div>
                 );
-              })}
+              })} */}
             </div>
           </div>
         </div>
@@ -68,4 +85,4 @@ const BlogStanderd = () => {
   );
 };
 
-export default BlogStanderd;
+export default ServicesFAQ;

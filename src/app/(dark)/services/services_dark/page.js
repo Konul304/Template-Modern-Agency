@@ -1,14 +1,13 @@
-import React from 'react';
+import React from "react";
 //= Page components
-import Navbar from '@/components/Common/Navbar';
-import Footer from '@/components/Common/Footer';
-import Loading from '@/components/Common/Loader';
-import Services1 from '@/components/Services/Services1';
-import BlogStanderd from '@/components/Blogs/BlogStanderd';
-import { getServices } from '@/app/(api)/api';
+import Navbar from "@/components/Common/Navbar";
+import Footer from "@/components/Common/Footer";
+import Loading from "@/components/Common/Loader";
+import Services1 from "@/components/Services/Services1";
+import BlogStanderd from "@/components/Blogs/ServicesFAQ";
 
 export const metadata = {
-  title: 'C141',
+  title: "C141",
 };
 
 export default async function Services() {
