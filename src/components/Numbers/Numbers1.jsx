@@ -1,20 +1,20 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import CountUp from 'react-countup';
+"use client";
+import React, { useEffect, useState } from "react";
+import CountUp from "react-countup";
 //= Components
-import Split from '@/components/Common/Split';
+import Split from "@/components/Common/Split";
 //= Static Data
-import funFactDate from '@/data/sections/fun-fact.json';
-import Image from 'next/image';
-import { brush, certificate, diamond, heart } from '../../../public/img';
-import { useQuery } from 'react-query';
-import { getStatistics } from '@/app/(api)/api';
+import funFactDate from "@/data/sections/fun-fact.json";
+import Image from "next/image";
+import { brush, certificate, diamond, heart } from "../../../public/img";
+import { useQuery } from "react-query";
+import { getStatistics } from "@/app/(api)/api";
 
 const Numbers = () => {
   const [renderCounters, setRenderCounters] = useState(false);
 
   const { data, isLoading, isError } = useQuery(
-    ['statisticData'],
+    ["statisticData"],
     async () => await getStatistics(),
     {
       refetchOnWindowFocus: false,
@@ -23,7 +23,7 @@ const Numbers = () => {
   );
 
   useEffect(() => {
-    let funFactsSection = document.querySelector('.number-sec');
+    let funFactsSection = document.querySelector(".number-sec");
     new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
         setRenderCounters(true);
@@ -42,14 +42,14 @@ const Numbers = () => {
               {/* <h6 className="wow fadeIn" data-wow-delay=".5s">
                 FUN FACTS
               </h6> */}
-              <h3 className="wow color-font">Statistics</h3>
+              <h3 className="wow color-font mb-4">Statistics</h3>
             </div>
           </div>
         </div>
         <div className="row_statistics">
           {data?.map((item) => {
             const icon_url =
-              'https://project141.s3.eu-north-1.amazonaws.com/' + item?.icon;
+              "https://project141.s3.eu-north-1.amazonaws.com/" + item?.icon;
             return (
               <div className="col-md-2">
                 <div className="item no-bord sm-mb50">
