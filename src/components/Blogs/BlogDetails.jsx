@@ -18,26 +18,26 @@ const BlogDetails = ({ theme, data }) => {
     <section className="blog-pg single section-padding pt-0">
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-lg-11">
-            <div className="post">
-              <Image data={caseData} />
-              <Content data={caseData} />
-              {(hasImages || hasVideos) && (
-                <WorksStyle2
-                  id={caseData?.id}
-                  grid={3}
-                  // presentations={item?.servicePresentations}
-                  videos={caseData?.caseVideos}
-                  images={caseData?.caseImages}
-                  hideHeader={true}
-                  filterPosition="center"
-                />
-              )}
-              {/* <Pagination /> */}
-              {/* <CommentsArea />
+          {/* <div className="col-lg-11"> */}
+          <div className="">
+            <Image data={caseData} />
+            <Content data={caseData} />
+            {(hasImages || hasVideos) && (
+              <WorksStyle2
+                id={caseData?.id}
+                grid={3}
+                // presentations={item?.servicePresentations}
+                videos={caseData?.caseVideos}
+                images={caseData?.caseImages}
+                hideHeader={true}
+                filterPosition="center"
+              />
+            )}
+            {/* <Pagination /> */}
+            {/* <CommentsArea />
               <CommentsForm theme={theme} /> */}
-            </div>
           </div>
+          {/* </div> */}
         </div>
       </div>
       <SimilarCases data={data} />

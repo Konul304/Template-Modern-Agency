@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 const Image = (data) => {
   const img_url =
-    'https://project141.s3.eu-north-1.amazonaws.com/' + data?.data?.logoLink;
+    "https://project141.s3.eu-north-1.amazonaws.com/" + data?.data?.logoLink;
   return (
-    <div className="img">
+    <div className="case_header_img">
       <img src={img_url} alt="" />
     </div>
   );

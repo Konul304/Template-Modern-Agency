@@ -1913,6 +1913,10 @@ span:hover {
   width: 100vw !important;
 }
 
+.case_header_img img{
+  width: 100vw !important;
+}
+
 .nav-scroll {
   background: #1b1d21;
   border-color: #333538;
@@ -7331,7 +7335,9 @@ z-index: 99999;
   font-weight: 500;
 }
 
-.blog-pg .posts .item .img {
+.blog-pg .posts .item .img img {
+  width: 370px !important;
+  height: 192px !important;
   position: relative;
 }
 
