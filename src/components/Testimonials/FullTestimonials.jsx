@@ -99,13 +99,16 @@ function FullTestimonials({
               data-wow-delay=".5s"
             >
               {data?.map((item) => {
+                const img_url =
+                  "https://project141.s3.eu-north-1.amazonaws.com/" +
+                  item?.logoLink;
                 return (
                   <SwiperSlide className="item" key={item?.id}>
                     <div className="info valign">
                       <div className="cont">
                         <div className="author">
                           <div className="img">
-                            <img src="/img/clients/1.jpg" alt="" />
+                            <img src={img_url} alt="" />
                           </div>
                           <h6 className="author-name color-font">
                             {item?.fullName}
