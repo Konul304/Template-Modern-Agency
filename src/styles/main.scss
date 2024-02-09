@@ -244,3 +244,34 @@ body.hideX .pace {
 .ant-select-selection-placeholder {
   color: #fff !important;
 }
+
+.ant-collapse-header-text {
+  color: white !important;
+  font-size: 24px !important;
+  font-weight: 500 !important;
+}
+
+.ant-collapse {
+  border: none !important;
+  border-radius: 0px !important;
+}
+
+.ant-collapse-item:last-child {
+  border-radius: 0px !important;
+}
+
+.ant-collapse .ant-collapse-content {
+  background-color: transparent !important;
+}
+
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+  margin-top: 1rem !important;
+  color: #fff !important;
+}
+
+.ant-collapse
+  > .ant-collapse-item
+  > .ant-collapse-header
+  .ant-collapse-expand-icon {
+  padding-top: 19px !important;
+}

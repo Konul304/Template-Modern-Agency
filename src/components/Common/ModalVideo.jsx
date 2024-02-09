@@ -3,7 +3,6 @@ import React, { useEffect, useState, useRef } from 'react';
 
 function ModalVideo({ isOpen, onClose, source }) {
   const closeBtn = useRef(null);
-
   return isOpen ? (
     <div
       className="modal-video"

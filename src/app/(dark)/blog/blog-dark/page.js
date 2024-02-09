@@ -3,7 +3,7 @@ import React from "react";
 import Loading from "@/components/Common/Loader";
 import Navbar from "@/components/Common/Navbar";
 import PageHeader from "@/components/Headers/PageHeader";
-import BlogStanderd from "@/components/Blogs/BlogStanderd";
+import BlogStanderd from "@/components/Blogs/ServicesFAQ";
 import Footer from "@/components/Common/Footer";
 
 export const metadata = {

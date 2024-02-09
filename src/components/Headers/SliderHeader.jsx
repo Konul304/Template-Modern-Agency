@@ -1,32 +1,33 @@
-'use client';
-import React, { useEffect, useRef } from 'react';
+"use client";
+import React, { useEffect, useRef } from "react";
 //= Modules
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Parallax } from 'swiper';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Parallax } from "swiper";
 //= Scripts
-import removeSlashFromBagination from '@/common/removeSlashpagination';
-import fadeWhenScroll from '@/common/fadeWhenScroll';
+import removeSlashFromBagination from "@/common/removeSlashpagination";
+import fadeWhenScroll from "@/common/fadeWhenScroll";
 //= Static Data
-import { getSlider } from '@/app/(api)/api';
-import { useQuery } from 'react-query';
+import { getCases, getSlider } from "@/app/(api)/api";
+import { useQuery } from "react-query";
+import HTMLReactParser from "html-react-parser";
 
 const swiperOptions = {
   modules: [Parallax, Navigation, Pagination],
   speed: 1000,
   navigation: {
-    prevEl: '.swiper-button-prev',
-    nextEl: '.swiper-button-next',
+    prevEl: ".swiper-button-prev",
+    nextEl: ".swiper-button-next",
   },
   parallax: true,
   pagination: {
-    type: 'fraction',
+    type: "fraction",
     clickable: true,
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
   },
   onSwiper: (swiper) => {
     for (var i = 0; i < swiper.slides.length; i++) {
       swiper.slides[i].childNodes[0].setAttribute(
-        'data-swiper-parallax',
+        "data-swiper-parallax",
         0.75 * swiper.width
       );
     }
@@ -37,23 +38,26 @@ const SliderHeader = () => {
   const fixedSlider = useRef();
 
   const { data, isLoading, isError } = useQuery(
-    ['sliderData'],
-    async () => await getSlider(),
+    ["caseData"],
+    async () => await getCases(),
     {
       refetchOnWindowFocus: false,
       refetchOnMount: false,
     }
   );
+
+  const filteredData = data?.filter((item) => item.isSlider === true);
+
   useEffect(() => {
     removeSlashFromBagination();
-    fadeWhenScroll(document.querySelectorAll('.fixed-slider .caption'));
+    fadeWhenScroll(document.querySelectorAll(".fixed-slider .caption"));
   }, [data]);
 
   useEffect(() => {
     if (fixedSlider.current) {
-      const MainContent = document.querySelector('.main-content');
+      const MainContent = document.querySelector(".main-content");
       const slideHeight = fixedSlider.current.offsetHeight;
-      MainContent.style.marginTop = slideHeight + 'px';
+      MainContent.style.marginTop = slideHeight + "px";
     }
   }, [data]);
 
@@ -63,12 +67,12 @@ const SliderHeader = () => {
       ref={fixedSlider}
     >
       <div className="swiper-container parallax-slider">
-        {data && (
+        {filteredData && (
           <Swiper {...swiperOptions} className="swiper-wrapper">
-            {data?.map((slide) => {
+            {filteredData?.map((slide) => {
               const img_url =
-                'https://project141.s3.eu-north-1.amazonaws.com/' +
-                slide?.logoLink;
+                "https://project141.s3.eu-north-1.amazonaws.com/" +
+                slide?.sliderLogoLink;
               return (
                 <SwiperSlide key={slide.id} className="swiper-slide">
                   <div
@@ -80,11 +84,16 @@ const SliderHeader = () => {
                       <div className="row justify-content-center">
                         <div className="col-lg-8 col-md-10">
                           <div className="caption center mt-30">
-                            <h1 className="color-font">{slide.title}</h1>
-                            {slide.description}
+                            <h1 className="color-font">
+                              {" "}
+                              {slide.sliderTitle &&
+                                HTMLReactParser(slide.sliderTitle)}
+                            </h1>
+                            {slide.sliderDescription &&
+                              HTMLReactParser(slide.sliderDescription)}
                             {/* <a href="#" className="butn bord curve mt-30">
-                            <span>Look More</span>
-                          </a> */}
+                              <span>Look More</span>
+                            </a> */}
                           </div>
                         </div>
                       </div>

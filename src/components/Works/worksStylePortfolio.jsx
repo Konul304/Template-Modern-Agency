@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+
 import Link from "next/link";
 //= Scripts
 import initIsotope from "@/common/initIsotopePortfolio";
@@ -72,7 +73,7 @@ function WorksStylePortfolio({ grid, filterPosition, hideFilter }) {
     >
       {!hideFilter && (
         <div className="container">
-          <div className="row justify-content-center">
+          <div className="row justify-content-center mb-5">
             <div className="col-lg-8 col-md-10">
               <div className="sec-head text-center">
                 <h6 className="wow fadeIn" data-wow-delay=".5s">
@@ -188,7 +189,7 @@ function WorksStylePortfolio({ grid, filterPosition, hideFilter }) {
                     </div>
                   </div>
                   <div className="cont">
-                    <h6>{item?.title}</h6>
+                    <h6 className={styles.video_title}>{item?.title}</h6>
                     <ModalVideo
                       source={video_link}
                       isOpen={isOpenMap[index]}
