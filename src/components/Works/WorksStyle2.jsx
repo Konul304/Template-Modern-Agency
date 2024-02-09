@@ -153,7 +153,6 @@ function WorksStyle2({
                 'view?usp=drive_link',
                 'preview'
               );
-              console.log(video_link);
               return (
                 <div
                   key={index}
