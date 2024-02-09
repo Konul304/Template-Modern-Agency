@@ -3,7 +3,7 @@ import React from 'react';
 
 function Team2(data) {
   const img_url =
-    'https://project141.s3.eu-north-1.amazonaws.com/' + data?.data?.logoLink;
+    'https://project141.s3.eu-north-1.amazonaws.com/' + data?.data?.imageLink;
   return (
     <section className="team section-padding">
       <div className="container">
@@ -23,7 +23,7 @@ function Team2(data) {
           <div className="col-lg-11">
             <div className="post">
               <img src={img_url} alt="" />
-              <div className="text-center">
+              <div className="text-center mt-5">
                 {data?.data?.description &&
                   HTMLReactParser(data?.data?.description)}
               </div>
