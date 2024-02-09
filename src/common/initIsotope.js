@@ -1,15 +1,15 @@
-const initIsotope = (id) => {
+const initIsotope = (id, videos, images) => {
   var grid = document.querySelectorAll(`.gallery-${id}`);
   var iso;
 
   if (grid.length >= 1) {
     grid.forEach((item) => {
       iso = new Isotope(item, {
-        itemSelector: '.items',
+        itemSelector: ".items",
       });
 
       // Filter presentations initially
-      iso.arrange({ filter: '.videos' });
+      iso.arrange({ filter: videos?.length > 0 ? ".videos" : ".images" });
     });
   }
 
@@ -17,9 +17,9 @@ const initIsotope = (id) => {
   if (gridMons.length >= 1) {
     gridMons.forEach((item) => {
       iso = new Isotope(item, {
-        itemSelector: '.items',
+        itemSelector: ".items",
         masonry: {
-          columnWidth: '.width2',
+          columnWidth: ".width2",
         },
       });
     });
@@ -27,11 +27,11 @@ const initIsotope = (id) => {
 
   var filtersElem = document.querySelector(`.filtering-${id}`);
   if (filtersElem) {
-    filtersElem.addEventListener('click', function (event) {
-      if (!matchesSelector(event.target, 'span')) {
+    filtersElem.addEventListener("click", function (event) {
+      if (!matchesSelector(event.target, "span")) {
         return;
       }
-      var filterValue = event.target.getAttribute('data-filter');
+      var filterValue = event.target.getAttribute("data-filter");
       filterValue = filterValue;
       iso.arrange({ filter: filterValue });
     });
@@ -41,12 +41,12 @@ const initIsotope = (id) => {
       radioButtonGroup(buttonGroup);
     }
     function radioButtonGroup(buttonGroup) {
-      buttonGroup.addEventListener('click', function (event) {
-        if (!matchesSelector(event.target, 'span')) {
+      buttonGroup.addEventListener("click", function (event) {
+        if (!matchesSelector(event.target, "span")) {
           return;
         }
-        buttonGroup.querySelector('.active').classList.remove('active');
-        event.target.classList.add('active');
+        buttonGroup.querySelector(".active").classList.remove("active");
+        event.target.classList.add("active");
       });
     }
   }
