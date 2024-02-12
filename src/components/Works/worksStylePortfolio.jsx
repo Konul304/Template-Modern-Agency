@@ -100,7 +100,10 @@ function WorksStylePortfolio({ grid, filterPosition, hideFilter }) {
               } col-12`}
             >
               <div className="filter">
-                <span data-filter=".presentation" className="active">
+                <span
+                  data-filter=".presentation"
+                  className={presentations?.length > 0 ? `active` : ''}
+                >
                   {' '}
                   Presentation content{' '}
                 </span>
