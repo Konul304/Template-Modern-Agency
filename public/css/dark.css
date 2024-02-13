@@ -3324,7 +3324,7 @@ span:hover {
 }
 
 .works-header {
-  min-height: 100vh;
+  min-height: 100vh !important;
 }
 
 .works-header.hfixd {
