@@ -76,11 +76,11 @@ function WorksStylePortfolio({ grid, filterPosition, hideFilter }) {
           <div className="row justify-content-center mb-5">
             <div className="col-lg-8 col-md-10">
               <div className="sec-head text-center">
-                <h6 className="wow fadeIn" data-wow-delay=".5s">
+                {/* <h6 className="wow fadeIn" data-wow-delay=".5s">
                   {presentationInfo?.[0]?.tabTitle}
-                </h6>
+                </h6> */}
                 <h3 className="wow color-font fz-40 fw-500">
-                  {presentationInfo?.[0]?.tabDescription}
+                  {presentationInfo?.[0]?.pageDescription}
                 </h3>
               </div>
             </div>

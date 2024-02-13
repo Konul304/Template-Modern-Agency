@@ -1,33 +1,33 @@
-"use client";
-import React, { useEffect, useRef } from "react";
+'use client';
+import React, { useEffect, useRef } from 'react';
 //= Modules
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Parallax } from "swiper";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Parallax } from 'swiper';
 //= Scripts
-import removeSlashFromBagination from "@/common/removeSlashpagination";
-import fadeWhenScroll from "@/common/fadeWhenScroll";
+import removeSlashFromBagination from '@/common/removeSlashpagination';
+import fadeWhenScroll from '@/common/fadeWhenScroll';
 //= Static Data
-import { getCases, getSlider } from "@/app/(api)/api";
-import { useQuery } from "react-query";
-import HTMLReactParser from "html-react-parser";
+import { getCases, getSlider } from '@/app/(api)/api';
+import { useQuery } from 'react-query';
+import HTMLReactParser from 'html-react-parser';
 
 const swiperOptions = {
   modules: [Parallax, Navigation, Pagination],
   speed: 1000,
   navigation: {
-    prevEl: ".swiper-button-prev",
-    nextEl: ".swiper-button-next",
+    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-button-next',
   },
   parallax: true,
   pagination: {
-    type: "fraction",
+    type: 'fraction',
     clickable: true,
-    el: ".swiper-pagination",
+    el: '.swiper-pagination',
   },
   onSwiper: (swiper) => {
     for (var i = 0; i < swiper.slides.length; i++) {
       swiper.slides[i].childNodes[0].setAttribute(
-        "data-swiper-parallax",
+        'data-swiper-parallax',
         0.75 * swiper.width
       );
     }
@@ -38,7 +38,7 @@ const SliderHeader = () => {
   const fixedSlider = useRef();
 
   const { data, isLoading, isError } = useQuery(
-    ["caseData"],
+    ['caseData'],
     async () => await getCases(),
     {
       refetchOnWindowFocus: false,
@@ -50,14 +50,14 @@ const SliderHeader = () => {
 
   useEffect(() => {
     removeSlashFromBagination();
-    fadeWhenScroll(document.querySelectorAll(".fixed-slider .caption"));
+    fadeWhenScroll(document.querySelectorAll('.fixed-slider .caption'));
   }, [data]);
 
   useEffect(() => {
     if (fixedSlider.current) {
-      const MainContent = document.querySelector(".main-content");
+      const MainContent = document.querySelector('.main-content');
       const slideHeight = fixedSlider.current.offsetHeight;
-      MainContent.style.marginTop = slideHeight + "px";
+      MainContent.style.marginTop = slideHeight + 'px';
     }
   }, [data]);
 
@@ -71,7 +71,7 @@ const SliderHeader = () => {
           <Swiper {...swiperOptions} className="swiper-wrapper">
             {filteredData?.map((slide) => {
               const img_url =
-                "https://project141.s3.eu-north-1.amazonaws.com/" +
+                'https://project141.s3.eu-north-1.amazonaws.com/' +
                 slide?.sliderLogoLink;
               return (
                 <SwiperSlide key={slide.id} className="swiper-slide">
@@ -80,12 +80,15 @@ const SliderHeader = () => {
                     style={{ backgroundImage: `url('${img_url}')` }}
                     data-overlay-dark="6"
                   >
-                    <div className="container">
+                    <a
+                      href={`/cases/cases-dark/${slide?.id}`}
+                      className="container"
+                    >
                       <div className="row justify-content-center">
                         <div className="col-lg-8 col-md-10">
                           <div className="caption center mt-30">
                             <h1 className="color-font">
-                              {" "}
+                              {' '}
                               {slide.sliderTitle &&
                                 HTMLReactParser(slide.sliderTitle)}
                             </h1>
@@ -97,7 +100,7 @@ const SliderHeader = () => {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </a>
                   </div>
                 </SwiperSlide>
               );

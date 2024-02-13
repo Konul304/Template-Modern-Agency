@@ -1,7 +1,7 @@
-"use client";
-import { getPresentationInfo } from "@/app/(api)/api";
-import React, { useRef, useEffect } from "react";
-import { useQuery } from "react-query";
+'use client';
+import { getPresentationInfo } from '@/app/(api)/api';
+import React, { useRef, useEffect } from 'react';
+import { useQuery } from 'react-query';
 
 function WorksHeader() {
   const fixedSlider = useRef();
@@ -9,16 +9,16 @@ function WorksHeader() {
     data: presentationInfo,
     isLoading: infoLoading,
     isError: infoError,
-  } = useQuery(["presentationInfo"], async () => await getPresentationInfo(), {
+  } = useQuery(['presentationInfo'], async () => await getPresentationInfo(), {
     refetchOnWindowFocus: false,
     refetchOnMount: false,
   });
   // });
   useEffect(() => {
     if (fixedSlider.current) {
-      const MainContent = document.querySelector(".main-content");
+      const MainContent = document.querySelector('.main-content');
       const slideHeight = fixedSlider.current.offsetHeight;
-      MainContent.style.marginTop = slideHeight + "px";
+      MainContent.style.marginTop = slideHeight + 'px';
     }
   }, []);
 
@@ -35,7 +35,6 @@ function WorksHeader() {
                 <h1 className="color-font">
                   {presentationInfo?.[0]?.pageTitle}
                 </h1>
-                <p>{presentationInfo?.[0]?.pageDescription}</p>
               </div>
               <div className="bactxt custom-font valign">
                 <span className="full-width">Works</span>
