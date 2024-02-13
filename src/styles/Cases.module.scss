@@ -17,3 +17,13 @@
 .similar_cases_container {
   padding-top: 5rem;
 }
+
+.team_info {
+  p {
+    span {
+      background-color: transparent !important;
+      color: white !important;
+      margin-top: 1rem;
+    }
+  }
+}

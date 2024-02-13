@@ -1,9 +1,10 @@
 'use client';
 import { getAbout } from '@/app/(api)/api';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useQuery } from 'react-query';
 
 const PagesHeader = ({ children }) => {
+  const fixedSlider = useRef();
   const { data, isLoading, isError } = useQuery(
     ['aboutData'],
     async () => await getAbout(),
@@ -12,22 +13,32 @@ const PagesHeader = ({ children }) => {
       refetchOnMount: false,
     }
   );
+  useEffect(() => {
+    if (fixedSlider.current) {
+      const MainContent = document.querySelector('.main-content');
+      const slideHeight = fixedSlider.current.offsetHeight;
+      MainContent.style.marginTop = slideHeight + 'px';
+    }
+  }, []);
   const img_link =
     'https://project141.s3.eu-north-1.amazonaws.com/' + data?.wePhotoLink;
 
   return (
-    <header className="pages-header circle-bg valign">
+    <header
+      ref={fixedSlider}
+      className="works-header fixed-slider hfixd valign sub-bg"
+    >
       <div className="container">
         <div className="row justify-content-center">
-          {/* <div className="col-lg-10">
+          <div className="">
+            {/* <div className="col-lg-10">
             <div className="cont mt-100 mb-50 text-center">
               <h1 className="color-font fw-700">
                 {children}
               </h1>
             </div>
           </div> */}
-          <div className="">
-            <div className="about_header_img">
+            <div className="about_header_img ">
               <img src={`${img_link}`} alt="" />
             </div>
           </div>

@@ -22,25 +22,39 @@ function WorksHeader() {
     }
   }, []);
 
+  const img_link =
+    'https://project141.s3.eu-north-1.amazonaws.com/' +
+    presentationInfo?.[0]?.imageLink;
   return (
     <header
       ref={fixedSlider}
       className="works-header fixed-slider hfixd valign sub-bg"
+      style={{
+        backgroundImage: `url('${img_link}')`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+      }}
     >
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-lg-7 col-md-9 static">
+          {/* <div className="col-lg-7 col-md-9 static">
             <div className="capt mt-50">
-              <div className="parlx text-center">
-                <h1 className="color-font">
-                  {presentationInfo?.[0]?.pageTitle}
-                </h1>
-              </div>
-              <div className="bactxt custom-font valign">
-                <span className="full-width">Works</span>
-              </div>
-            </div>
+              <div className="parlx text-center"> */}
+          <div>
+            <h1 className="color-font">{presentationInfo?.[0]?.pageTitle}</h1>
           </div>
+        </div>
+        {/* <div className="bactxt custom-font valign">
+          <img src={`img_link`} className="full-width" /> */}
+        {/* </div>
+            </div>
+          </div> */}
+        {/* </div> */}
+      </div>
+      <div className="half sub-bg">
+        <div className="circle-color">
+          <div className="gradient-circle"></div>
+          <div className="gradient-circle two"></div>
         </div>
       </div>
     </header>

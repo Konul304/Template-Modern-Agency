@@ -79,8 +79,11 @@ function WorksStylePortfolio({ grid, filterPosition, hideFilter }) {
                 {/* <h6 className="wow fadeIn" data-wow-delay=".5s">
                   {presentationInfo?.[0]?.tabTitle}
                 </h6> */}
-                <h3 className="wow color-font fz-40 fw-500">
-                  {presentationInfo?.[0]?.pageDescription}
+                <h3
+                  className="wow color-font fz-40 fw-500 "
+                  style={{ marginLeft: '40px', marginBottom: '10px' }}
+                >
+                  {presentationInfo?.[0]?.tabDescription}
                 </h3>
               </div>
             </div>

@@ -18,20 +18,19 @@ const AboutDark = async () => {
     <>
       <Loading />
       <Navbar />
-      <PagesHeader>
-        Our dedicated team of creatives is bursting with talent, experience and
-        passion for what we do.
-      </PagesHeader>
-      <AboutIntro />
-      <Partners theme="dark" />
-      <OurHistory />
-      <Team />
-      {/* <Services style="4item" />
+      <PagesHeader />
+      <div className="main-content">
+        <AboutIntro />
+        <Partners theme="dark" />
+        <OurHistory />
+        <Team />
+        {/* <Services style="4item" />
       <TestimonialsWithVideo />
       <SkillsCircle from="aboutPage" />
       <MinimalArea />
       <CallToAction /> */}
-      <Footer />
+        <Footer />
+      </div>
     </>
   );
 };
