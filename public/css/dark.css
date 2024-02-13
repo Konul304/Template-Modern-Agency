@@ -1909,6 +1909,10 @@ span:hover {
   /* margin:10px 0px;  */
 }
 
+.about_header_img{
+  width: 100vw !important;
+}
+
 .about_header_img img{
   width: 100vw !important;
 }
@@ -3320,7 +3324,7 @@ span:hover {
 }
 
 .works-header {
-  min-height: 80vh;
+  min-height: 100vh;
 }
 
 .works-header.hfixd {

@@ -1,5 +1,6 @@
 import HTMLReactParser from 'html-react-parser';
 import React from 'react';
+import styles from '../../styles/Cases.module.scss';
 
 function Team2(data) {
   const img_url =
@@ -23,7 +24,7 @@ function Team2(data) {
           <div className="col-lg-11">
             <div className="post">
               <img src={img_url} alt="" />
-              <div className="text-center mt-5">
+              <div className={`${styles.team_info} text-center mt-5`}>
                 {data?.data?.description &&
                   HTMLReactParser(data?.data?.description)}
               </div>
