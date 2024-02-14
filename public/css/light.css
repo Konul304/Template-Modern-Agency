@@ -4075,7 +4075,7 @@ body {
   position: relative;
 }
 
-.about-us .img:before {
+/* .about-us .img:before {
   content: "";
   position: absolute;
   top: -50px;
@@ -4086,7 +4086,7 @@ body {
   background-repeat: repeat;
   opacity: 0.3;
   z-index: -1;
-}
+} */
 
 .about-us .img .stauts {
   position: absolute;
