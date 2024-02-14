@@ -1,8 +1,24 @@
-'use client';
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 function ModalVideo({ isOpen, onClose, source }) {
   const closeBtn = useRef(null);
+
+  useEffect(() => {
+    const handleButtonClick = () => {
+      onClose();
+    };
+
+    if (closeBtn.current) {
+      closeBtn.current.addEventListener('click', handleButtonClick);
+    }
+
+    return () => {
+      if (closeBtn.current) {
+        closeBtn.current.removeEventListener('click', handleButtonClick);
+      }
+    };
+  }, [onClose]);
+
   return isOpen ? (
     <div
       className="modal-video"
@@ -17,7 +33,6 @@ function ModalVideo({ isOpen, onClose, source }) {
             className="modal-video-close-btn"
             aria-label="video"
             ref={closeBtn}
-            onClick={onClose}
           />
           <div className="modal-video-movie-wrap">
             <iframe
@@ -27,7 +42,6 @@ function ModalVideo({ isOpen, onClose, source }) {
               allow="autoplay"
               allowFullScreen="allowFullScreen"
               style={{ marginTop: '65px', height: '550px' }}
-              // tabIndex="-1"
             ></iframe>
           </div>
         </div>
