@@ -9,7 +9,7 @@ import ProvidersWrapper from './Providers';
 export const metadata = {
   title: 'C141',
   description: 'Creative 141',
-  keywords: ['HTML5', 'Template', 'Vie', 'Multi-Purpose', 'themeforest'],
+  keywords: ['HTML5', '', '', 'Multi-Purpose', ''],
   icons: {
     icon: '/assets/imgs/favicon.ico',
     shortcut: '/assets/imgs/favicon.ico',
