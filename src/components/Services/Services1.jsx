@@ -1,26 +1,27 @@
-'use client';
-import React from 'react';
+"use client";
+import React from "react";
 //= Static Data
-import Link from 'next/link';
-import { getServiceDetail, getServices } from '@/app/(api)/api';
-import { useQuery } from 'react-query';
-import HTMLReactParser from 'html-react-parser';
+import Link from "next/link";
+import { getServiceDetail, getServices } from "@/app/(api)/api";
+import { useQuery } from "react-query";
+import HTMLReactParser from "html-react-parser";
 // import styles from '../../styles/Serv/ices.module.scss';
+import styles from "../../styles/Cases.module.scss";
 
 function Services1({ style, lines }) {
   const { data, isLoading, isError } = useQuery(
-    ['serviceDetails'],
+    ["serviceDetails"],
     async () => await getServiceDetail(),
     {
       refetchOnWindowFocus: false,
       refetchOnMount: false,
     }
   );
-  const video_url = data?.videoLink?.replace('view?usp=drive_link', 'preview');
+  const video_url = data?.videoLink?.replace("view?usp=drive_link", "preview");
   return (
     <section
       className={`services bords section-padding ${
-        style === '4item' ? 'lficon' : lines ? '' : 'pt-0'
+        style === "4item" ? "lficon" : lines ? "" : "pt-0"
       }`}
     >
       <div className="container">
@@ -31,7 +32,7 @@ function Services1({ style, lines }) {
                 Best Features
               </h6> */}
             <h3 className="wow color-font">
-              {' '}
+              {" "}
               {data?.title && HTMLReactParser(data?.title)}
             </h3>
           </div>
@@ -41,11 +42,15 @@ function Services1({ style, lines }) {
             width="1240"
             height="680"
             allow="autoplay"
+            autoPlay
             allowFullScreen="allowFullScreen"
-            style={{ marginTop: '65px', height: '550px' }}
+            style={{ marginTop: "65px", height: "550px" }}
             // tabIndex="-1"
+            muted
           ></iframe>
-          <h2>{data?.description && HTMLReactParser(data?.description)}</h2>
+          <h2 className={styles.team_info}>
+            {data?.description && HTMLReactParser(data?.description)}
+          </h2>
         </div>
         {/* <div className="row_services"> */}
         {/* {services?.map((item, index) => {
