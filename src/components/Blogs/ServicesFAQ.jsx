@@ -22,7 +22,7 @@ const ServicesFAQ = () => {
 
   const items = data?.map((item) => ({
     key: item?.id.toString(), // Assuming ids are unique and can be used as keys
-    label: item?.title,
+    label: <p>{item?.title && HTMLReactParser(item?.title)}</p>,
     children: <p>{item?.description && HTMLReactParser(item?.description)}</p>,
   }));
 
