@@ -1,6 +1,6 @@
-import React from "react";
-import Link from "next/link";
-import styles from "../../styles/Cases.module.scss";
+import React from 'react';
+import Link from 'next/link';
+import styles from '../../styles/Cases.module.scss';
 
 const SimilarCases = (data) => {
   const allData = data?.data?.data;
@@ -26,17 +26,23 @@ const SimilarCases = (data) => {
               {/* <h6 className="wow fadeIn" data-wow-delay=".5s">
                 RECENT ARTICLES
               </h6> */}
-              <h3 className="wow color-font">Related Cases</h3>
+              {filteredMatchingObjects?.length !== 0 && (
+                <h3 className="wow color-font mb-5">
+                  Related Cases
+                  <br />
+                  <br />
+                </h3>
+              )}
             </div>
           </div>
         </div>
         <div className="row">
           {filteredMatchingObjects?.map((item) => {
             const img_url =
-              "https://project141.s3.eu-north-1.amazonaws.com/" +
+              'https://project141.s3.eu-north-1.amazonaws.com/' +
               item?.logoLink;
             return (
-              <div key={item?.id} className="col-md-4">
+              <div key={item?.id} className="col-md-4 mt-5">
                 <div className="item md-mb50 wow fadeInUp" data-wow-delay=".3s">
                   <a href={`/cases/cases-dark/${item?.id}`} className="img">
                     <img src={img_url} alt="" />
