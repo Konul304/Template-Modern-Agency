@@ -3,7 +3,7 @@ import React from 'react';
 //= Static Data
 import Link from 'next/link';
 import { useQuery } from 'react-query';
-import { getServices } from '@/app/(api)/api';
+import { getServiceFAQ, getServices } from '@/app/(api)/api';
 // import styles from '../../styles/Serv/ices.module.scss';
 
 const HomepageServicesSection = ({ style, lines }) => {
@@ -11,7 +11,7 @@ const HomepageServicesSection = ({ style, lines }) => {
     data: services,
     isLoading,
     isError,
-  } = useQuery(['servicesData'], async () => await getServices(), {
+  } = useQuery(['servicesFAQ'], async () => await getServiceFAQ(), {
     refetchOnWindowFocus: false,
     refetchOnMount: false,
   });
