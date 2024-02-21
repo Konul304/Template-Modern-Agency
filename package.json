@@ -21,6 +21,7 @@
     "react-circular-progressbar": "^2.1.0",
     "react-countup": "^6.4.2",
     "react-dom": "18.2.0",
+    "react-player": "^2.14.1",
     "react-query": "^3.39.3",
     "react-scroll": "^1.8.9",
     "react-tsparticles": "^2.12.2",
