@@ -71,8 +71,8 @@ html {
 }
 
 body {
-  color: #fff;
-  background: #111215;
+  color: #000;
+  background: #fff;
   line-height: 1.5;
   font-weight: 400;
   overflow-x: hidden !important;
@@ -291,7 +291,7 @@ span:hover {
 }
 
 .sub-bg {
-  background: #18191d;
+  background: #fff;
 }
 
 .bg-img {
@@ -1072,7 +1072,7 @@ span:hover {
   left: 0;
   height: 50%;
   width: 100%;
-  background: #252531;
+  background: #fff;
   -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   -o-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
@@ -1776,7 +1776,7 @@ span:hover {
 .navbar .navbar-nav .nav-link {
   font-size: 12px;
   font-weight: 500;
-  color: #fff;
+  color: #999696;
   padding: 15px 7px;
   margin: 10px 15px;
 }
@@ -1922,8 +1922,8 @@ span:hover {
 }
 
 .nav-scroll {
-  background: #1b1d21;
-  border-color: #333538;
+  background: #fff;
+  border-color: #fff;
   padding: 0;
   position: fixed;
   top: -80px;
@@ -3422,7 +3422,7 @@ span:hover {
 }
 
 .main-content {
-  background: #111215;
+  background: #fff;
   position: relative;
   z-index: 3;
   overflow-x: hidden !important;
@@ -4406,6 +4406,7 @@ span:hover {
   border: 0;
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.01);
+  border: 1px solid silver !important;
 }
 
 .services.box .item-box .icon {
@@ -4616,6 +4617,7 @@ span:hover {
   padding: 60px 40px;
   justify-content: center;
   border-radius: 20px;
+  border: 1px solid silver;
 }
 
 .services.lficon .item-box.no-curve {
@@ -6619,7 +6621,9 @@ span:hover {
   -webkit-transform: scale(0.8);
   -ms-transform: scale(0.8);
   transform: scale(0.8);
-  background: -webkit-linear-gradient(
+  border-radius: 15px;
+  border: 1px solid silver;
+  /* background: -webkit-linear-gradient(
     323.53deg,
     #18191d 6.69%,
     rgba(2, 2, 30, 0) 85.43%
@@ -6633,7 +6637,7 @@ span:hover {
     126.47deg,
     #18191d 6.69%,
     rgba(2, 2, 30, 0) 85.43%
-  );
+  ); */
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   transition: all 0.4s;
@@ -6649,7 +6653,7 @@ span:hover {
 }
 
 .testimonials .item p {
-  color: #fff;
+  color: #000;
   font-size: 28px;
   font-weight: 600;
   padding-left: 30px;
@@ -8030,7 +8034,7 @@ z-index: 99999;
 .contact .form textarea {
   padding: 15px;
   min-height: 140px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid silver;
   margin-top: 30px;
 }
 
@@ -8079,6 +8083,7 @@ footer {
 }
 
 footer .item .title h5 {
+  color: #000 !important;
   margin-bottom: 30px;
 }
 
@@ -8094,6 +8099,7 @@ footer .item li:last-of-type {
 }
 
 footer .item li h6 {
+  color: #000 !important;
   font-size: 14px;
   font-weight: 600;
 }
