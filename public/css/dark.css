@@ -153,7 +153,8 @@ span:hover {
 }
 
 .color-font {
-  background: -webkit-gradient(
+  background: linear-gradient(90deg, rgba(36,27,0,1) 0%, rgba(9,121,24,1) 0%, rgba(255,175,0,1) 100%);
+  /* background: -webkit-gradient(
     linear,
     left top,
     right top,
@@ -163,9 +164,15 @@ span:hover {
   );
   background: -webkit-linear-gradient(left, #12c2e9, #c471ed, #f64f59);
   background: -o-linear-gradient(left, #12c2e9, #c471ed, #f64f59);
-  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.partners_heading{
+  /* h1{
+    color: linear-gradient(90deg, rgba(36,27,0,1) 0%, rgba(9,121,24,1) 0%, rgba(255,175,0,1) 100%) !important;
+  } */
 }
 
 .back-color {
