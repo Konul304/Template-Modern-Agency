@@ -3,13 +3,14 @@
 import { getContactData, getPortfolio, postEmail } from '@/app/(api)/api';
 import { useEffect, useState } from 'react';
 import countryData from '@/data/regions-to-countries';
-import { message } from 'antd';
+import { Select, message } from 'antd';
 
 const Footer = ({ hideBGCOLOR }) => {
   const { countries, zones } = require('moment-timezone/data/meta/latest.json');
   const timeZoneToCountry = {};
   const timeZoneCityToCountry = {};
   const [portfolioData, setPortfolioData] = useState();
+  const [country, setCountry] = useState({ value: '', label: '' });
   const [contactData, setContactData] = useState();
   const [contactInfo, setContactInfo] = useState({
     email: '',
@@ -105,6 +106,39 @@ const Footer = ({ hideBGCOLOR }) => {
               <div className="title">
                 <h5>Contact Us</h5>
               </div>
+              <Select
+                showSearch
+                // defaultValue="Azerbaijan"
+                // placeholder="Choose country"
+                style={{ width: 120 }}
+                value={
+                  country?.label !== ''
+                    ? country
+                    : {
+                        value: 'Azerbaijan',
+                        label: 'Azerbaijan',
+                      }
+                }
+                optionFilterProp="children"
+                className="footer_select"
+                onChange={(value, option) => {
+                  setCountry(option);
+                  const selectedLocationData = contactData?.find(
+                    (item) => item.country === option?.label
+                  );
+                  if (selectedLocationData) {
+                    setContactInfo({
+                      email: selectedLocationData?.email,
+                      phoneNumber: selectedLocationData?.phoneNumber,
+                      address: selectedLocationData?.address,
+                    });
+                  }
+                }}
+                options={contactData?.map((item) => ({
+                  value: item?.country,
+                  label: item?.country,
+                }))}
+              />
               <ul>
                 <li>
                   <span className="icon pe-7s-map-marker"></span>

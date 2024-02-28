@@ -28,6 +28,12 @@
   }
 }
 
+.footer_select {
+  .ant-select {
+    position: static !important;
+  }
+}
+
 // .partners_heading {
 //   background: linear-gradient(
 //     90deg,

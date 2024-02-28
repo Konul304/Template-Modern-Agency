@@ -91,7 +91,7 @@ const Clients = ({ theme }) => {
                               />
                               <Split>
                                 <a
-                                  href="#0"
+                                  href={`${partner?.link}`}
                                   className="link words chars splitting"
                                   data-splitting
                                 >
