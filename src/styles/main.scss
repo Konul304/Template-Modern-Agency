@@ -215,12 +215,12 @@ body.hideX .pace {
   }
 }
 
-.ant-select {
-  width: 150px !important;
-  position: absolute !important;
-  bottom: 86px !important;
-  z-index: 99 !important;
-}
+// .ant-select {
+//   width: 150px !important;
+//   position: absolute !important;
+//   bottom: 86px !important;
+//   z-index: 99 !important;
+// }
 
 .ant-select-selector {
   background-color: transparent !important;
@@ -235,6 +235,10 @@ body.hideX .pace {
       fill: #fff !important;
     }
   }
+}
+
+.ant-select-single {
+  margin-bottom: 4rem !important;
 }
 
 .ant-select-selection-item {

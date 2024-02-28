@@ -27,7 +27,9 @@ const OurHistory = () => {
             </div>
             <div className="col-lg-7 valign">
               <div className="cont">
-                <h1 className="mb-10 fw-600">{data?.historyTitle}</h1>
+                <h1 className="wow color-font  mb-50 fw-700 ">
+                  {data?.historyTitle}
+                </h1>
                 {/* <p>{data?.historyText}</p> */}
                 <div>
                   {data?.historyText && HTMLReactParser(data?.historyText)}

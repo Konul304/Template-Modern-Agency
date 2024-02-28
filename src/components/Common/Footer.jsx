@@ -1,35 +1,36 @@
-"use client";
+'use client';
 
-import { getContactData, getPortfolio, postEmail } from "@/app/(api)/api";
-import { useEffect, useState } from "react";
-import countryData from "@/data/regions-to-countries";
-import { message } from "antd";
+import { getContactData, getPortfolio, postEmail } from '@/app/(api)/api';
+import { useEffect, useState } from 'react';
+import countryData from '@/data/regions-to-countries';
+import { Select, message } from 'antd';
 
 const Footer = ({ hideBGCOLOR }) => {
-  const { countries, zones } = require("moment-timezone/data/meta/latest.json");
+  const { countries, zones } = require('moment-timezone/data/meta/latest.json');
   const timeZoneToCountry = {};
   const timeZoneCityToCountry = {};
   const [portfolioData, setPortfolioData] = useState();
+  const [country, setCountry] = useState({ value: '', label: '' });
   const [contactData, setContactData] = useState();
   const [contactInfo, setContactInfo] = useState({
-    email: "",
-    phoneNumber: "",
-    address: "",
+    email: '',
+    phoneNumber: '',
+    address: '',
   });
   const [email, setEmail] = useState();
   const [messageApi, contextHolder] = message.useMessage();
 
   const success = () => {
     messageApi.open({
-      type: "success",
-      content: "Successfully subscribed",
+      type: 'success',
+      content: 'Successfully subscribed',
     });
   };
 
   const error = () => {
     messageApi.open({
-      type: "error",
-      content: "Something went wrong",
+      type: 'error',
+      content: 'Something went wrong',
     });
   };
 
@@ -60,7 +61,7 @@ const Footer = ({ hideBGCOLOR }) => {
       userMail: email,
     };
     const response = await postEmail(query);
-    if (response?.message == "Added succesfully") {
+    if (response?.message == 'Added succesfully') {
       success();
     } else {
       error();
@@ -75,7 +76,7 @@ const Footer = ({ hideBGCOLOR }) => {
   useEffect(() => {
     Object.keys(zones).forEach((z) => {
       timeZoneToCountry[z] = countries[zones[z].countries[0]].name;
-      const cityArr = z.split("/");
+      const cityArr = z.split('/');
       const city = cityArr[cityArr.length - 1];
       timeZoneCityToCountry[city] = countries[zones[z].countries[0]].name;
     });
@@ -96,7 +97,7 @@ const Footer = ({ hideBGCOLOR }) => {
   }, [portfolioData, contactData]);
 
   return (
-    <footer className={`${!hideBGCOLOR ? "sub-bg" : ""}`}>
+    <footer className={`${!hideBGCOLOR ? 'sub-bg' : ''}`}>
       {contextHolder}
       <div className="container">
         <div className="row">
@@ -105,11 +106,44 @@ const Footer = ({ hideBGCOLOR }) => {
               <div className="title">
                 <h5>Contact Us</h5>
               </div>
+              <Select
+                showSearch
+                // defaultValue="Azerbaijan"
+                // placeholder="Choose country"
+                style={{ width: 120 }}
+                value={
+                  country?.label !== ''
+                    ? country
+                    : {
+                        value: 'Azerbaijan',
+                        label: 'Azerbaijan',
+                      }
+                }
+                optionFilterProp="children"
+                className="footer_select"
+                onChange={(value, option) => {
+                  setCountry(option);
+                  const selectedLocationData = contactData?.find(
+                    (item) => item.country === option?.label
+                  );
+                  if (selectedLocationData) {
+                    setContactInfo({
+                      email: selectedLocationData?.email,
+                      phoneNumber: selectedLocationData?.phoneNumber,
+                      address: selectedLocationData?.address,
+                    });
+                  }
+                }}
+                options={contactData?.map((item) => ({
+                  value: item?.country,
+                  label: item?.country,
+                }))}
+              />
               <ul>
                 <li>
                   <span className="icon pe-7s-map-marker"></span>
                   <div className="cont">
-                    <h6>Officeal Address</h6>
+                    <h6>Official Address</h6>
                     <p>{contactInfo?.address}</p>
                   </div>
                 </li>
@@ -138,7 +172,7 @@ const Footer = ({ hideBGCOLOR }) => {
               <ul>
                 {portfolioData?.map((item) => {
                   const img_link =
-                    "https://project141.s3.eu-north-1.amazonaws.com/" +
+                    'https://project141.s3.eu-north-1.amazonaws.com/' +
                     item?.logoLink;
                   return (
                     <li key={item?.id}>
