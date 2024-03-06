@@ -1,3 +1,4 @@
+'use client';
 import HTMLReactParser from 'html-react-parser';
 import Split from '@/components/Common/Split';
 import React from 'react';
