@@ -2399,7 +2399,7 @@ span:hover {
 
 .slider .parallax-slider .caption p {
   color: #eee;
-  margin-top: 15px;
+  /* margin-top: 15px; */
   opacity: 0;
   -webkit-transform: translateY(20px);
   -ms-transform: translateY(20px);
