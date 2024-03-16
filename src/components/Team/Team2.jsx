@@ -1,30 +1,22 @@
-'use client';
-import HTMLReactParser from 'html-react-parser';
-import Split from '@/components/Common/Split';
-import React from 'react';
-import styles from '../../styles/Cases.module.scss';
-import { useQuery } from 'react-query';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation } from 'swiper';
+"use client";
+import HTMLReactParser from "html-react-parser";
+import Split from "@/components/Common/Split";
+import React from "react";
+import styles from "../../styles/Cases.module.scss";
+import { useQuery } from "react-query";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper";
 
 function Team2(data) {
   const img_url =
-    'https://project141.s3.eu-north-1.amazonaws.com/' + data?.data?.imageLink;
+    "https://project141.s3.eu-north-1.amazonaws.com/" + data?.data?.imageLink;
 
-  const {
-    data: partners,
-    isLoading,
-    isError,
-  } = useQuery(['partnerData'], async () => await getPartners(), {
-    refetchOnWindowFocus: false,
-    refetchOnMount: false,
-  });
   const swiperOptions = {
     modules: [Autoplay, Navigation],
     loop: true,
     navigation: {
-      prevEl: '.arrows .prev',
-      nextEl: '.arrows .next',
+      prevEl: ".arrows .prev",
+      nextEl: ".arrows .next",
     },
     centeredSlides: true,
     autoplay: {
@@ -49,8 +41,10 @@ function Team2(data) {
     },
   };
 
-  const partnersPerPage = 4; // Number of partners to render per SwiperSlide
-  const totalSlides = Math.ceil(partners?.length / partnersPerPage);
+  const imagesPerPage = 4;
+  const totalSlides = Math.ceil(
+    data?.data?.teamMembersImages?.length / imagesPerPage
+  );
   return (
     <section className="team section-padding">
       <div className="container">
@@ -70,7 +64,7 @@ function Team2(data) {
               <div
                 className="row wow fadeInUp"
                 data-wow-delay=".5s"
-                style={{ marginTop: '70px', marginBottom: '70px' }}
+                style={{ marginTop: "70px", marginBottom: "70px" }}
               >
                 <div className="col-lg-12">
                   <Swiper
@@ -81,33 +75,33 @@ function Team2(data) {
                     {Array.from({ length: totalSlides }, (_, slideIndex) => (
                       <SwiperSlide className="item" key={slideIndex}>
                         <div className="row bord">
-                          {partners
+                          {data?.data?.teamMembersImages
                             ?.slice(
-                              slideIndex * partnersPerPage,
-                              (slideIndex + 1) * partnersPerPage
+                              slideIndex * imagesPerPage,
+                              (slideIndex + 1) * imagesPerPage
                             )
-                            .map((partner) => (
+                            .map((image) => (
                               <div
-                                key={partner.id}
+                                key={image.id}
                                 className="col-md-3 col-6 brands"
                               >
                                 <div
                                   className="item wow fadeIn"
                                   data-wow-delay={`${
-                                    partner.id === 1
-                                      ? '.3'
-                                      : partner.id === 2
-                                      ? '.6'
-                                      : partner.id === 3
-                                      ? '.8'
-                                      : partner.id === 4
-                                      ? '.3'
-                                      : ''
+                                    image.id === 1
+                                      ? ".3"
+                                      : image.id === 2
+                                      ? ".6"
+                                      : image.id === 3
+                                      ? ".8"
+                                      : image.id === 4
+                                      ? ".3"
+                                      : ""
                                   }s`}
                                 >
                                   <div className="img">
                                     <img
-                                      src={`https://project141.s3.eu-north-1.amazonaws.com/${partner?.logoLink}`}
+                                      src={`https://project141.s3.eu-north-1.amazonaws.com/${image?.logoLink}`}
                                       alt=""
                                     />
                                     {/* <Split>
