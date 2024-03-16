@@ -83,17 +83,37 @@ const SliderHeader = () => {
                     <a
                       href={`/cases/cases-dark/${slide?.id}`}
                       className="container"
+                      style={{
+                        display: 'block',
+                        height: '100vh',
+                        position: 'absolute',
+                      }}
                     >
-                      <div className="row justify-content-center">
-                        <div className="col-lg-8 col-md-10">
+                      <div
+                        className=" justify-content-center"
+                        style={{
+                          position: 'absolute',
+                          bottom: '10px',
+                          left: '3%',
+                          maxWidth: '900px',
+                        }}
+                      >
+                        <div>
                           <div className="caption center mt-30">
-                            <h1 className="color-font">
+                            <h1
+                              className="color-font"
+                              style={{ fontSize: '48px', textAlign: 'left' }}
+                            >
                               {' '}
                               {slide.sliderTitle &&
                                 HTMLReactParser(slide.sliderTitle)}
                             </h1>
-                            {slide.sliderDescription &&
-                              HTMLReactParser(slide.sliderDescription)}
+                            <div
+                              style={{ fontSize: '16px', textAlign: 'left' }}
+                            >
+                              {slide.sliderDescription &&
+                                HTMLReactParser(slide.sliderDescription)}
+                            </div>
                             {/* <a href="#" className="butn bord curve mt-30">
                               <span>Look More</span>
                             </a> */}

@@ -2399,7 +2399,7 @@ span:hover {
 
 .slider .parallax-slider .caption p {
   color: #eee;
-  margin-top: 15px;
+  /* margin-top: 15px; */
   opacity: 0;
   -webkit-transform: translateY(20px);
   -ms-transform: translateY(20px);
@@ -6334,9 +6334,9 @@ span:hover {
     color-stop(#c471ed),
     to(#f64f59)
   );
-  background: -webkit-linear-gradient(left, #12c2e9, #c471ed, #f64f59);
+  /* background: -webkit-linear-gradient(left, #12c2e9, #c471ed, #f64f59);
   background: -o-linear-gradient(left, #12c2e9, #c471ed, #f64f59);
-  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59); */
   opacity: 0;
   z-index: -1;
   -webkit-transition: all 0.7s;
@@ -6412,9 +6412,9 @@ span:hover {
     color-stop(#c471ed),
     to(#f64f59)
   );
-  background: -webkit-linear-gradient(left, #12c2e9, #c471ed, #f64f59);
+  /* background: -webkit-linear-gradient(left, #12c2e9, #c471ed, #f64f59);
   background: -o-linear-gradient(left, #12c2e9, #c471ed, #f64f59);
-  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59); */
   opacity: 0;
   z-index: -1;
   -webkit-transition: all 0.7s;
