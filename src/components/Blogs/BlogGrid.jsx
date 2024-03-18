@@ -46,7 +46,12 @@ const BlogGrid = () => {
                                   href={`/cases/cases-dark/${item?.id}`}
                                   className="tag"
                                 >
-                                  <span key={index}>{tagItem}</span>
+                                  <span
+                                    className="wow color-font fw-700 "
+                                    key={index}
+                                  >
+                                    {tagItem}
+                                  </span>
                                   &nbsp;&nbsp;&nbsp;
                                 </Link>
                               </>
