@@ -1912,6 +1912,160 @@ span:hover {
   cursor: pointer;
 }
 
+.light_body{
+   .main-content{
+    background-color: white !important;
+    color: #5F5F5F !important;
+
+   }
+
+   .services .item-box{
+    border: 1px solid #5F5F5F !important;
+   }
+   .see_more {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid #5F5F5F !important;
+    color: #5F5F5F !important;
+    transition: 0.3s;
+    margin-left: 88%;
+    &:hover {
+      background-color: #fff;
+      color: #000;
+    }
+  }
+   .section-padding{
+    background-color: white !important;
+   }
+   .sub-bg {
+    background:white !important;
+}
+   p {
+    color: #5F5F5F !important;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 2;
+    margin: 0;
+  }
+  .butn.bord {
+    border: 1px solid #5F5F5F !important;
+  }
+  .simple-btn:after {
+    content: "";
+    width: 45%;
+    height: 100%;
+    background: #FFCC2A!important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1!important;
+  }
+  .nav-scroll {
+    background: #FFCC2A !important;
+    border-color: #FFCC2A !important;
+    padding: 0;
+    position: fixed;
+    top: -80px;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    -o-transition: transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+    -webkit-transform: translateY(80px);
+    -ms-transform: translateY(80px);
+    transform: translateY(80px);
+  }
+  .services .step-item.xcolor {
+    background: #fff !important;
+    color: #626262 !important;
+  }
+  .work-carousel .swiper-slide-active .noraidus .cont {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition-delay: 0.5s;
+    -o-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+    background-color: white !important;
+  }
+  .testimonials .item .info .img {
+    width: 80px;
+    height: 80px;
+    border: none !important;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .blog .item .info .tag span {
+    color: linear-gradient(90deg, rgba(36, 27, 0, 1) 0%, rgba(9, 121, 24, 1) 0%, rgba(255, 175, 0, 1) 100%) !important;
+  }
+  .blog .item .btn-more {
+    margin-top: 15px  !important;
+    color: #5F5F5F !important;
+  }
+  footer .item .title h5 {
+    color: #000 !important;
+    margin-bottom: 30px !important;
+    color: #616161 !important;
+  }
+  footer .item li .subscribe input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    border: 1px solid #5F5F5F !important;
+    background: transparent;
+    color: #fff !important;
+    font-size: 13px;
+  }
+  footer .item .social a {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #5F5F5F !important;
+    font-size: 13px;
+    margin-right: 10px;
+  }
+}
+
+.dark_body{
+  .main-content{
+   background-color: #111215 !important;
+   color: #fff !important;
+
+  }
+  .services .item-box{
+    border: 1px solid #5F5F5F !important;
+   }
+  .sub-bg {
+   background:#111215 !important;
+}
+  p {
+   color: #fff !important;
+   font-size: 16px;
+   font-weight: 300;
+   line-height: 2;
+   margin: 0;
+ }
+
+ .nav-scroll {
+   background: #FFCC2A !important;
+   border-color: #FFCC2A !important;
+   padding: 0;
+   position: fixed;
+   top: -80px;
+   -webkit-transition: -webkit-transform 0.5s;
+   transition: -webkit-transform 0.5s;
+   -o-transition: transform 0.5s;
+   transition: transform 0.5s;
+   transition: transform 0.5s, -webkit-transform 0.5s;
+   -webkit-transform: translateY(80px);
+   -ms-transform: translateY(80px);
+   transform: translateY(80px);
+ }
+
+}
+
 .navbar .logo {
   /* width:80px; */
   /* margin:10px 0px;  */
@@ -6629,17 +6783,17 @@ span:hover {
   transform: scale(0.8);
   background: -webkit-linear-gradient(
     323.53deg,
-    #18191d 6.69%,
+    #FFCC2A 6.69%,
     rgba(2, 2, 30, 0) 85.43%
   );
   background: -o-linear-gradient(
     323.53deg,
-    #18191d 6.69%,
+    #FFCC2A 6.69%,
     rgba(2, 2, 30, 0) 85.43%
   );
   background: linear-gradient(
     126.47deg,
-    #18191d 6.69%,
+    #FFCC2A 6.69%,
     rgba(2, 2, 30, 0) 85.43%
   );
   -webkit-transition: all 0.4s;
