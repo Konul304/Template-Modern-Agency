@@ -2,7 +2,10 @@ import React from 'react';
 
 function PageHeader({ title, paragraph, classText }) {
   return (
-    <section className={`page-header ${classText && classText}`}>
+    <section
+      className={`page-header ${classText && classText}`}
+      style={{ background: 'white' }}
+    >
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-7 col-md-9">
@@ -14,7 +17,7 @@ function PageHeader({ title, paragraph, classText }) {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default PageHeader
+export default PageHeader;

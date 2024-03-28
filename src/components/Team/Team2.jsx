@@ -1,22 +1,22 @@
-"use client";
-import HTMLReactParser from "html-react-parser";
-import Split from "@/components/Common/Split";
-import React from "react";
-import styles from "../../styles/Cases.module.scss";
-import { useQuery } from "react-query";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper";
+'use client';
+import HTMLReactParser from 'html-react-parser';
+import Split from '@/components/Common/Split';
+import React from 'react';
+import styles from '../../styles/Cases.module.scss';
+import { useQuery } from 'react-query';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper';
 
 function Team2(data) {
   const img_url =
-    "https://project141.s3.eu-north-1.amazonaws.com/" + data?.data?.imageLink;
+    'https://project141.s3.eu-north-1.amazonaws.com/' + data?.data?.imageLink;
 
   const swiperOptions = {
     modules: [Autoplay, Navigation],
     loop: true,
     navigation: {
-      prevEl: ".arrows .prev",
-      nextEl: ".arrows .next",
+      prevEl: '.arrows .prev',
+      nextEl: '.arrows .next',
     },
     centeredSlides: true,
     autoplay: {
@@ -64,7 +64,7 @@ function Team2(data) {
               <div
                 className="row wow fadeInUp"
                 data-wow-delay=".5s"
-                style={{ marginTop: "70px", marginBottom: "70px" }}
+                style={{ marginTop: '70px', marginBottom: '70px' }}
               >
                 <div className="col-lg-12">
                   <Swiper
@@ -89,14 +89,14 @@ function Team2(data) {
                                   className="item wow fadeIn"
                                   data-wow-delay={`${
                                     image.id === 1
-                                      ? ".3"
+                                      ? '.3'
                                       : image.id === 2
-                                      ? ".6"
+                                      ? '.6'
                                       : image.id === 3
-                                      ? ".8"
+                                      ? '.8'
                                       : image.id === 4
-                                      ? ".3"
-                                      : ""
+                                      ? '.3'
+                                      : ''
                                   }s`}
                                 >
                                   <div className="img">
@@ -133,7 +133,7 @@ function Team2(data) {
                   </div>
                 </div>
               </div>
-              <div className={`${styles.team_info} text-center mt-5`}>
+              <div className={` text-center mt-5`}>
                 {data?.data?.description &&
                   HTMLReactParser(data?.data?.description)}
               </div>

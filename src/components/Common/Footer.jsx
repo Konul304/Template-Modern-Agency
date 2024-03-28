@@ -199,10 +199,12 @@ const Footer = ({ hideBGCOLOR }) => {
                         required
                         placeholder="Type Your Email"
                         onChange={(e) => setEmail(e?.target?.value)}
+                        style={{ color: '#000' }}
                       />
                       <button
                         type="submit"
                         className="subs pe-7s-paper-plane"
+                        style={{ border: 'none', marginTop: '0.5px' }}
                       ></button>
                     </form>
                   </div>
