@@ -186,16 +186,6 @@ const Navbar = ({ lr, theme }) => {
                 Contact
               </a>
             </li>
-            <li className="nav-item">
-              <a href={`/light-theme`} className="nav-link">
-                Light
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href={`/dark-theme`} className="nav-link">
-                Dark
-              </a>
-            </li>
           </ul>
         </div>
       </div>
