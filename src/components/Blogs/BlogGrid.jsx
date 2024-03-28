@@ -59,7 +59,10 @@ const BlogGrid = () => {
                           })}
                         </div>
                         <h5>
-                          <Link href={`/cases/cases-dark/${item?.id}`}>
+                          <Link
+                            href={`/cases/cases-dark/${item?.id}`}
+                            style={{ color: '#5f5f5f' }}
+                          >
                             {item.title.substr(0, 55) + '...'}
                           </Link>
                         </h5>

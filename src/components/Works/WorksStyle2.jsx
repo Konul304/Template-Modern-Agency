@@ -215,7 +215,12 @@ function WorksStyle2({
                     </div>
                   </div>
                   <div className="cont">
-                    <h6 className="text-center mt-4">{item?.title}</h6>
+                    <h6
+                      style={{ color: '#5f5f5f', textAlign: 'center' }}
+                      className="text-center mt-4"
+                    >
+                      {item?.title}
+                    </h6>
                     {/* <span> <a href="#0">Design</a>, <a href="#0">WordPress</a> </span> */}
                   </div>
                 </div>

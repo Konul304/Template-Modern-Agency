@@ -109,7 +109,11 @@ const SliderHeader = () => {
                                 HTMLReactParser(slide.sliderTitle)}
                             </h1>
                             <div
-                              style={{ fontSize: '16px', textAlign: 'left' }}
+                              style={{
+                                fontSize: '16px',
+                                textAlign: 'left',
+                              }}
+                              className="slider_desc"
                             >
                               {slide.sliderDescription &&
                                 HTMLReactParser(slide.sliderDescription)}

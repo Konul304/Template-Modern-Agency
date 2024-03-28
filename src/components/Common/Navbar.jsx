@@ -3,12 +3,14 @@ import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 //= Scripts
 import { handleDropdown, handleMobileDropdown } from '@/common/navbar';
+import { usePathname } from 'next/navigation';
 //= Static Data
 import { getLogo } from '@/app/(api)/api';
 import { useQuery } from 'react-query';
 
 const Navbar = ({ lr, theme }) => {
   const navbar = useRef();
+  const pathname = usePathname();
 
   const { data, isLoading, isError } = useQuery(
     ['Logo'],
@@ -41,6 +43,13 @@ const Navbar = ({ lr, theme }) => {
       className={`navbar navbar-expand-lg change ${
         theme === 'light' ? 'light' : ''
       }`}
+      style={{
+        background:
+          (pathname === '/about/about-dark' ||
+            pathname === '/services/services_dark' ||
+            pathname?.includes('/cases/cases-dark')) &&
+          '#FFCC2A',
+      }}
     >
       <div className="container">
         <Link className="logo" href="/">
@@ -184,16 +193,6 @@ const Navbar = ({ lr, theme }) => {
             <li className="nav-item">
               <a href={`/contact/contact-dark`} className="nav-link">
                 Contact
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href={`/light-theme`} className="nav-link">
-                Light
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href={`/dark-theme`} className="nav-link">
-                Dark
               </a>
             </li>
           </ul>

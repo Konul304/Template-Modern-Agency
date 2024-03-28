@@ -1,14 +1,14 @@
-import HTMLReactParser from "html-react-parser";
-import React from "react";
+import HTMLReactParser from 'html-react-parser';
+import React from 'react';
 
 const Content = (data) => {
   return (
     <div className="content pt-60">
       <div className="row justify-content-center">
         <div className="col-lg-10">
-          <div className="cont">
+          <div className="cont cases_content">
             <h4 className="extra-title">
-              {" "}
+              {' '}
               {data?.data?.heading1 && HTMLReactParser(data?.data?.heading1)}
             </h4>
             {/* <div className="spacial">

@@ -45,9 +45,7 @@ function Services1({ style, lines }) {
             />
           </div>
 
-          <h2 className={styles.team_info}>
-            {data?.description && HTMLReactParser(data?.description)}
-          </h2>
+          <h2>{data?.description && HTMLReactParser(data?.description)}</h2>
         </div>
         {/* <div className="row_services"> */}
         {/* {services?.map((item, index) => {
