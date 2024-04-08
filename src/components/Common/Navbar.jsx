@@ -46,6 +46,7 @@ const Navbar = ({ lr, theme }) => {
       style={{
         background:
           (pathname === '/about/about-dark' ||
+            pathname === '/contact/contact-dark' ||
             pathname === '/services/services_dark' ||
             pathname?.includes('/cases/cases-dark')) &&
           '#FFCC2A',
