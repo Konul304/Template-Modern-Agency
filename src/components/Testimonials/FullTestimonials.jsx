@@ -1,20 +1,20 @@
-"use client";
-import React, { useEffect } from "react";
+'use client';
+import React, { useEffect } from 'react';
 //= Modules
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper';
 //= Scripts
-import removeSlashFromBagination from "@/common/removeSlashpagination";
-import { getTestimonials } from "@/app/(api)/api";
-import { useQuery } from "react-query";
-import HTMLReactParser from "html-react-parser";
+import removeSlashFromBagination from '@/common/removeSlashpagination';
+import { getTestimonials } from '@/app/(api)/api';
+import { useQuery } from 'react-query';
+import HTMLReactParser from 'html-react-parser';
 
 const swiperOptions = {
   modules: [Autoplay, Navigation],
   loop: true,
   navigation: {
-    prevEl: ".arrows .prev",
-    nextEl: ".arrows .next",
+    prevEl: '.arrows .prev',
+    nextEl: '.arrows .next',
   },
   centeredSlides: true,
   autoplay: true,
@@ -33,6 +33,14 @@ const swiperOptions = {
       slidesPerView: 1,
       centeredSlides: false,
     },
+    410: {
+      slidesPerView: 1,
+      centeredSlides: false,
+    },
+    110: {
+      slidesPerView: 1,
+      centeredSlides: false,
+    },
   },
 };
 
@@ -44,7 +52,7 @@ function FullTestimonials({
   showHead,
 }) {
   const { data, isLoading, isError } = useQuery(
-    ["testimonialData"],
+    ['testimonialData'],
     async () => await getTestimonials(),
     {
       refetchOnWindowFocus: false,
@@ -62,15 +70,15 @@ function FullTestimonials({
     <section
       className={`testimonials ${
         withIMG
-          ? "section-padding bg-img"
+          ? 'section-padding bg-img'
           : withCOLOR
-          ? "section-padding back-color"
+          ? 'section-padding back-color'
           : noPadding
-          ? ""
-          : "section-padding"
-      } ${classText ? classText : ""}`}
+          ? ''
+          : 'section-padding'
+      } ${classText ? classText : ''}`}
       style={{
-        backgroundImage: `${withIMG ? "url(" + withIMG + ")" : "none"}`,
+        backgroundImage: `${withIMG ? 'url(' + withIMG + ')' : 'none'}`,
       }}
     >
       {showHead && (
@@ -100,7 +108,7 @@ function FullTestimonials({
             >
               {data?.map((item) => {
                 const img_url =
-                  "https://project141.s3.eu-north-1.amazonaws.com/" +
+                  'https://project141.s3.eu-north-1.amazonaws.com/' +
                   item?.logoLink;
                 return (
                   <SwiperSlide className="item" key={item?.id}>
@@ -114,8 +122,8 @@ function FullTestimonials({
                             {item?.fullName}
                           </h6>
                           <span className="author-details">
-                            {" "}
-                            {item?.position}, {item?.company}{" "}
+                            {' '}
+                            {item?.position}, {item?.company}{' '}
                           </span>
                         </div>
                       </div>
