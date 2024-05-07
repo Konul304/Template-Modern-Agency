@@ -1,13 +1,13 @@
-"use client";
-import React from "react";
-import Link from "next/link";
-import styles from "../../styles/Cases.module.scss";
-import { getCases } from "@/app/(api)/api";
-import { useQuery } from "react-query";
+'use client';
+import React from 'react';
+import Link from 'next/link';
+import styles from '../../styles/Cases.module.scss';
+import { getCases } from '@/app/(api)/api';
+import { useQuery } from 'react-query';
 
 const CasesHomePage = () => {
   const { data, isLoading, isError } = useQuery(
-    ["caseData"],
+    ['caseData'],
     async () => await getCases(),
     {
       refetchOnWindowFocus: false,
@@ -35,7 +35,7 @@ const CasesHomePage = () => {
             <div className="row">
               {data?.map((item) => {
                 const img_url =
-                  "https://project141.s3.eu-north-1.amazonaws.com/" +
+                  'https://project141.s3.eu-north-1.amazonaws.com/' +
                   item?.logoLink;
                 return (
                   <div className="col-lg-4">
@@ -85,6 +85,8 @@ const CasesHomePage = () => {
                   </div>
                 );
               })}
+            </div>
+            <div className={styles.see_more_container}>
               <a href={`/cases/cases-dark`} className={styles.see_more}>
                 See more
               </a>
