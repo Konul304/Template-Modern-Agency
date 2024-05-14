@@ -118,9 +118,7 @@ function FullTestimonials({
                           <div className="img">
                             <img src={img_url} alt="" />
                           </div>
-                          <h6 className="author-name color-font">
-                            {item?.fullName}
-                          </h6>
+                          <h6 className="author-name ">{item?.fullName}</h6>
                           <span className="author-details">
                             {' '}
                             {item?.position}, {item?.company}{' '}
