@@ -6649,7 +6649,7 @@ span:hover {
 }
 
 .testimonials .item {
-  max-height: 400px !important;
+  max-height: 400px;
   overflow-y: hidden;
   text-align: left;
   padding: 80px 40px;
@@ -8546,6 +8546,7 @@ footer .item .copy-right p a {
   }
 
   .testimonials .item {
+    max-height: unset;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
@@ -9204,6 +9205,7 @@ footer .item .copy-right p a {
   }
 
   .testimonials .item {
+    max-height: unset;
     display: block !important;
     padding: 60px 30px;
   }
