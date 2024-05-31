@@ -6649,6 +6649,8 @@ span:hover {
 }
 
 .testimonials .item {
+  max-height: 400px !important;
+  overflow-y: hidden;
   text-align: left;
   padding: 80px 40px;
   -webkit-transform: scale(0.8);
