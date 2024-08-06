@@ -1,18 +1,23 @@
 'use client';
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 //= Scripts
-import { handleDropdown, handleMobileDropdown } from "@/common/navbar";
+import { handleDropdown, handleMobileDropdown } from '@/common/navbar';
 //= Static Data
-import appData from "@/data/app.json";
+import appData from '@/data/app.json';
 
 const NavbarMobileApp = ({ lr, nr, theme }) => {
   return (
-    <nav ref={nr} className={`navbar navbar-expand-lg change ${theme === "themeL" ? "light" : ""}`}>
+    <nav
+      ref={nr}
+      className={`navbar navbar-expand-lg change ${
+        theme === 'themeL' ? 'light' : ''
+      }`}
+    >
       <div className="container">
         <Link href="/" className="logo">
           {theme ? (
-            theme === "themeL" ? (
+            theme === 'themeL' ? (
               <img ref={lr} src={appData.darkLogo} alt="logo" />
             ) : (
               <img ref={lr} src={appData.lightLogo} alt="logo" />
@@ -51,7 +56,7 @@ const NavbarMobileApp = ({ lr, nr, theme }) => {
                 Home
               </span>
               <div className="dropdown-menu">
-                <Link className="dropdown-item" href="/homepage/home1-dark">
+                <Link className="dropdown-item" href="/homepage/">
                   Main Home
                 </Link>
                 <Link className="dropdown-item" href="/homepage/home2-dark">
@@ -78,7 +83,7 @@ const NavbarMobileApp = ({ lr, nr, theme }) => {
               </div>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="/mobile-app/services-dark">
+              <Link className="nav-link" href="/mobile-app">
                 Services
               </Link>
             </li>
@@ -89,7 +94,6 @@ const NavbarMobileApp = ({ lr, nr, theme }) => {
             </li>
             <li className="nav-item">
               <Link className="nav-link" href="/mobile-app/portfolio-dark">
-
                 Portfolio
               </Link>
             </li>
@@ -99,7 +103,7 @@ const NavbarMobileApp = ({ lr, nr, theme }) => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="/contact/contact-dark">
+              <Link className="nav-link" href="/contact">
                 Contact
               </Link>
             </li>

@@ -25,7 +25,7 @@ const BlogGrid = () => {
               return (
                 <div className="col-lg-4" key={item.id}>
                   <div className="item mb-80 wow fadeInUp" data-wow-delay=".3s">
-                    <a href={`/cases/cases-dark/${item?.id}`} className="img">
+                    <a href={`/cases/${item?.id}`} className="img">
                       <img src={img_url} alt="" />
                     </a>
                     <div className="cont">
@@ -43,7 +43,7 @@ const BlogGrid = () => {
                               <>
                                 <Link
                                   key={index}
-                                  href={`/cases/cases-dark/${item?.id}`}
+                                  href={`/cases/${item?.id}`}
                                   className="tag"
                                 >
                                   <span
@@ -60,7 +60,7 @@ const BlogGrid = () => {
                         </div>
                         <h5>
                           <Link
-                            href={`/cases/cases-dark/${item?.id}`}
+                            href={`/cases/${item?.id}`}
                             style={{ color: '#5f5f5f' }}
                           >
                             {item.title.substr(0, 55) + '...'}
@@ -68,7 +68,7 @@ const BlogGrid = () => {
                         </h5>
                         <div className="btn-more">
                           <Link
-                            href={`/cases/cases-dark/${item?.id}`}
+                            href={`/cases/${item?.id}`}
                             className="simple-btn"
                           >
                             Read More

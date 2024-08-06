@@ -81,7 +81,7 @@ const SliderHeader = () => {
                     data-overlay-dark="6"
                   >
                     <a
-                      href={`/cases/cases-dark/${slide?.id}`}
+                      href={`/cases/${slide?.id}`}
                       className="container"
                       style={{
                         display: 'block',

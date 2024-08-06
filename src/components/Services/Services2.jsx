@@ -1,5 +1,5 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
 const Services2 = () => {
   return (
@@ -50,9 +50,7 @@ const Services2 = () => {
           </div>
         </div>
         <div className="smore">
-          <Link href="/about/about-dark">
-            Discover More
-          </Link>
+          <Link href="/about">Discover More</Link>
           <i className="fas fa-long-arrow-alt-right"></i>
         </div>
       </div>

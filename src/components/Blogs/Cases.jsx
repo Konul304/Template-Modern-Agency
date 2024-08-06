@@ -43,7 +43,7 @@ const CasesHomePage = () => {
                       className="item mb-80 wow fadeInUp"
                       data-wow-delay=".3s"
                     >
-                      <a href={`/cases/cases-dark/${item?.id}`} className="img">
+                      <a href={`/cases/${item?.id}`} className="img">
                         <img src={img_url} alt="" />
                       </a>
                       <div className="cont">
@@ -58,7 +58,7 @@ const CasesHomePage = () => {
                             {item?.tagNames?.map((tag) => {
                               return (
                                 <Link
-                                  href={`/cases/cases-dark/${item?.id}`}
+                                  href={`/cases/${item?.id}`}
                                   className="tag"
                                 >
                                   <span>{tag}</span>
@@ -67,13 +67,13 @@ const CasesHomePage = () => {
                             })}
                           </div>
                           <h5>
-                            <Link href={`/cases/cases-dark/${item?.id}`}>
+                            <Link href={`/cases/${item?.id}`}>
                               {item?.title}
                             </Link>
                           </h5>
                           <div className="btn-more">
                             <Link
-                              href={`/cases/cases-dark/${item?.id}`}
+                              href={`/cases/${item?.id}`}
                               className="simple-btn"
                             >
                               Read More
@@ -87,7 +87,7 @@ const CasesHomePage = () => {
               })}
             </div>
             <div className={styles.see_more_container}>
-              <a href={`/cases/cases-dark`} className={styles.see_more}>
+              <a href={`/cases`} className={styles.see_more}>
                 See more
               </a>
             </div>
