@@ -28,7 +28,7 @@ const HomepageServicesSection = ({ style, lines }) => {
               {/* <h6 className="wow fadeIn" data-wow-delay=".5s">
                 Best Features
               </h6> */}
-              <h3 className="wow color-font">Our Services</h3>
+              <h3 className="wow color-font">OUR SERVICES</h3>
             </div>
           </div>
         </div>

@@ -51,7 +51,7 @@ const Clients = ({ theme }) => {
 
   return (
     <section className="clients section-padding">
-      <h1 className="wow color-font text-center mb-50 fw-700 ">Our Partners</h1>
+      <h1 className="wow color-font text-center mb-50 fw-700 ">OUR PARTNERS</h1>
       <div className="container-fluid position-re">
         <div className="row wow fadeInUp" data-wow-delay=".5s">
           <div className="col-lg-12">
