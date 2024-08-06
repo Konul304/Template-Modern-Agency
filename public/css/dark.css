@@ -2524,9 +2524,9 @@ span:hover {
   margin: 0;
   border-radius: 50%;
   display: inline-block;
-  -webkit-transition: all 0.3s;
+  /* -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
-  transition: all 0.3s;
+  transition: all 0.3s; */
 }
 
 .slider .txt-botm .swiper-nav-ctrl span {
@@ -6649,7 +6649,8 @@ span:hover {
 }
 
 .testimonials .item {
-  max-height: 400px;
+  max-height: 350px;
+  min-height: 350px;
   overflow-y: hidden;
   text-align: left;
   padding: 80px 40px;
@@ -6692,6 +6693,13 @@ span:hover {
   padding-left: 30px;
   margin-left: 6px;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5; /* Adjust the line height as needed */
+  max-height: calc(1.5em * 8);
 }
 
 .testimonials .item .info {
@@ -6744,9 +6752,10 @@ span:hover {
 
 .testimonials .arrows {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 60%;
+  left: 43%;
+  width: 10%;
+  min-width: 200px;
   height: 100%;
 }
 
@@ -6769,7 +6778,7 @@ span:hover {
   font-size: 20px;
   border: 1px solid #eee;
   border-radius: 50%;
-  opacity: 0;
+  /* opacity: 0; */
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   transition: all 0.4s;
@@ -9037,7 +9046,7 @@ footer .item .copy-right p a {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 725px) {
   .hamenu .cont-info {
     display: none;
   }
