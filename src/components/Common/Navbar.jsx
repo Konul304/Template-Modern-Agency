@@ -45,10 +45,10 @@ const Navbar = ({ lr, theme }) => {
       }`}
       style={{
         background:
-          (pathname === '/about/about-dark' ||
-            pathname === '/contact/contact-dark' ||
-            pathname === '/services/services_dark' ||
-            pathname?.includes('/cases/cases-dark')) &&
+          (pathname === '/about' ||
+            pathname === '/contact' ||
+            pathname === '/services' ||
+            pathname?.includes('/cases')) &&
           '#FFCC2A',
       }}
     >
@@ -114,13 +114,13 @@ const Navbar = ({ lr, theme }) => {
               </div> */}
             </li>
             <li className="nav-item">
-              <a className="nav-link" href={`/about/about-dark`}>
+              <a className="nav-link" href={`/about`}>
                 About
               </a>
             </li>
             <li className="nav-item dropdown">
               <a
-                href={`/works2/portfolio`}
+                href={`/portfolio`}
                 className="nav-link "
                 // className="nav-link dropdown-toggle"
                 // data-toggle="dropdown"
@@ -153,7 +153,7 @@ const Navbar = ({ lr, theme }) => {
             </li>
             <li className="nav-item dropdown">
               <a
-                href={`/services/services_dark`}
+                href={`/services`}
                 className="nav-link "
                 // className="nav-link dropdown-toggle"
                 // data-toggle="dropdown"
@@ -180,7 +180,7 @@ const Navbar = ({ lr, theme }) => {
             </li>
             <li className="nav-item dropdown">
               <a
-                href={`/cases/cases-dark`}
+                href={`/cases`}
                 className="nav-link "
                 // className="nav-link dropdown-toggle"
                 // data-toggle="dropdown"
@@ -192,7 +192,7 @@ const Navbar = ({ lr, theme }) => {
               </a>
             </li>
             <li className="nav-item">
-              <a href={`/contact/contact-dark`} className="nav-link">
+              <a href={`/contact`} className="nav-link">
                 Contact
               </a>
             </li>

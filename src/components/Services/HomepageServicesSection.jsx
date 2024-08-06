@@ -40,7 +40,7 @@ const HomepageServicesSection = ({ style, lines }) => {
                 className="col-md-4 wow fadeInLeft"
                 data-wow-delay={`0s`}
               >
-                <Link href={`/services/services_dark`} className="item-box">
+                <Link href={`/services`} className="item-box">
                   <div className="cont">
                     <h6 className="text-center">{item?.title}</h6>
                     {/* <p>sdfsd</p> */}

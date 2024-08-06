@@ -30,7 +30,7 @@ const AboutUs1 = () => {
                 {data?.weTitle && HTMLReactParser(data?.weTitle)}
               </h3>
               <p>{data?.weText && HTMLReactParser(data?.weText)}</p>
-              <a href={`/about/about-dark`} className="butn bord curve mt-30">
+              <a href={`/about`} className="butn bord curve mt-30">
                 <span>Read More</span>
               </a>
             </div>

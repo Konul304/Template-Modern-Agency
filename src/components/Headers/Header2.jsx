@@ -9,7 +9,7 @@ function Header2() {
     if (fixedSlider.current) {
       const MainContent = document.querySelector('.main-content');
       const slideHeight = fixedSlider.current.offsetHeight;
-      if (MainContent) MainContent.style.marginTop = slideHeight + "px";
+      if (MainContent) MainContent.style.marginTop = slideHeight + 'px';
     }
   }, []);
 
@@ -27,7 +27,7 @@ function Header2() {
                 We help our clients succeed by creating brand identities,
                 digital experiences, and print materials.
               </p>
-              <Link href={`/about/about-dark`} className="butn bord curve mt-30">
+              <Link href={`/about`} className="butn bord curve mt-30">
                 <span>About Us</span>
               </Link>
             </div>
@@ -42,6 +42,6 @@ function Header2() {
       <div className="line bottom left"></div>
     </header>
   );
-};
+}
 
-export default Header2
+export default Header2;

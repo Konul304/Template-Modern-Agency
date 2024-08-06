@@ -44,7 +44,7 @@ const SimilarCases = (data) => {
             return (
               <div key={item?.id} className="col-md-4 mt-5">
                 <div className="item md-mb50 wow fadeInUp" data-wow-delay=".3s">
-                  <a href={`/cases/cases-dark/${item?.id}`} className="img">
+                  <a href={`/cases/${item?.id}`} className="img">
                     <img src={img_url} alt="" />
                   </a>
                   <div className="cont">
@@ -56,10 +56,7 @@ const SimilarCases = (data) => {
                           </span>
                         </Link>
                         <span>/</span> */}
-                        <Link
-                          href={`/cases/cases-dark/${item?.id}`}
-                          className="tag"
-                        >
+                        <Link href={`/cases/${item?.id}`} className="tag">
                           {item?.tagNames?.map((tag, index) => {
                             return (
                               <>
@@ -70,13 +67,11 @@ const SimilarCases = (data) => {
                         </Link>
                       </div>
                       <h5>
-                        <Link href={`/cases/cases-dark/${item?.id}`}>
-                          {item?.title}
-                        </Link>
+                        <Link href={`/cases/${item?.id}`}>{item?.title}</Link>
                       </h5>
                       <div className="btn-more">
                         <Link
-                          href={`/cases/cases-dark/${item?.id}`}
+                          href={`/cases/${item?.id}`}
                           className="simple-btn"
                         >
                           Read More
