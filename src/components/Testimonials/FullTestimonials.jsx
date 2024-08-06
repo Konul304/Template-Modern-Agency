@@ -1,48 +1,10 @@
 'use client';
-import React, { useEffect } from 'react';
-//= Modules
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper';
-//= Scripts
-import removeSlashFromBagination from '@/common/removeSlashpagination';
 import { getTestimonials } from '@/app/(api)/api';
 import { useQuery } from 'react-query';
 import HTMLReactParser from 'html-react-parser';
-
-const swiperOptions = {
-  modules: [Autoplay, Navigation],
-  loop: true,
-  navigation: {
-    prevEl: '.arrows .prev',
-    nextEl: '.arrows .next',
-  },
-  centeredSlides: true,
-  autoplay: true,
-  slidesPerView: 3,
-  spaceBetween: 60,
-  breakpoints: {
-    1024: {
-      slidesPerView: 3,
-      centeredSlides: false,
-    },
-    767: {
-      slidesPerView: 1,
-      centeredSlides: false,
-    },
-    480: {
-      slidesPerView: 1,
-      centeredSlides: false,
-    },
-    410: {
-      slidesPerView: 1,
-      centeredSlides: false,
-    },
-    110: {
-      slidesPerView: 1,
-      centeredSlides: false,
-    },
-  },
-};
 
 function FullTestimonials({
   withIMG,
@@ -59,12 +21,41 @@ function FullTestimonials({
       refetchOnMount: false,
     }
   );
-  // const img_link =
-  //   'https://project141.s3.eu-north-1.amazonaws.com/' + data?.historyPhotoLink;
 
-  useEffect(() => {
-    removeSlashFromBagination();
-  }, []);
+  const swiperOptions = {
+    modules: [Autoplay, Navigation],
+    loop: true,
+    navigation: {
+      prevEl: '.arrows .prev',
+      nextEl: '.arrows .next',
+    },
+    centeredSlides: true,
+    autoplay: true,
+    slidesPerView: 3,
+    spaceBetween: 60,
+    breakpoints: {
+      1024: {
+        slidesPerView: 3,
+        centeredSlides: false,
+      },
+      767: {
+        slidesPerView: 1,
+        centeredSlides: false,
+      },
+      480: {
+        slidesPerView: 1,
+        centeredSlides: false,
+      },
+      410: {
+        slidesPerView: 1,
+        centeredSlides: false,
+      },
+      110: {
+        slidesPerView: 1,
+        centeredSlides: false,
+      },
+    },
+  };
 
   return (
     <section
@@ -135,9 +126,10 @@ function FullTestimonials({
             </Swiper>
           </div>
         </div>
+
         <div className="arrows">
-          <div className="container">
-            <div className="next cursor-pointer">
+          <div className="button_container">
+            <div className="next cursor-pointer ">
               <span className="pe-7s-angle-right"></span>
             </div>
             <div className="prev cursor-pointer">

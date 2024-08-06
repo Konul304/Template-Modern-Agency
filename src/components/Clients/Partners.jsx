@@ -16,6 +16,7 @@ const Clients = ({ theme }) => {
     refetchOnWindowFocus: false,
     refetchOnMount: false,
   });
+
   const swiperOptions = {
     modules: [Autoplay, Navigation],
     loop: true,
