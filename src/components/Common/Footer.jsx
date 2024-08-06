@@ -171,13 +171,17 @@ const Footer = ({ hideBGCOLOR }) => {
               </div>
               <ul>
                 {portfolioData?.map((item) => {
+                  const view_url = item?.pdfLink?.replace(
+                    'view?usp=drive_link',
+                    'preview'
+                  );
                   const img_link =
                     'https://project141.s3.eu-north-1.amazonaws.com/' +
                     item?.logoLink;
                   return (
                     <li key={item?.id}>
                       <div className="img">
-                        <a href="#">
+                        <a href={view_url} target="_blank">
                           <img src={img_link} alt="" />
                         </a>
                       </div>
@@ -221,13 +225,22 @@ const Footer = ({ hideBGCOLOR }) => {
                 <img src="/img/logo-light.png" alt="logo" />
               </div> */}
               <div className="social">
-                <a href="https://www.instagram.com/creative_141?igsh=ZjZtZjAxcGdoMjJh">
+                <a
+                  href="https://www.instagram.com/creative_141?igsh=ZjZtZjAxcGdoMjJh"
+                  target="_blank"
+                >
                   <i className="fab fa-instagram"></i>
                 </a>
-                <a href="https://www.facebook.com/c141worldwide?mibextid=ZbWKwL">
+                <a
+                  href="https://www.facebook.com/c141worldwide?mibextid=ZbWKwL"
+                  target="_blank"
+                >
                   <i className="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://www.linkedin.com/company/marketing-agency-c141-creative-one-for-one-/">
+                <a
+                  href="https://www.linkedin.com/company/marketing-agency-c141-creative-one-for-one-/"
+                  target="_blank"
+                >
                   <i className="fab fa-linkedin"></i>
                 </a>
                 {/* <a href="https://www.facebook.com/c141worldwide?mibextid=ZbWKwL">

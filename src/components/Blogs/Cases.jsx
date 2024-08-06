@@ -26,7 +26,7 @@ const CasesHomePage = () => {
               {/* <h6 className="wow fadeIn" data-wow-delay=".5s">
                 RECENT ARTICLES
               </h6> */}
-              <h3 className="wow color-font mb-4">Our Cases</h3>
+              <h3 className="wow color-font mb-4">OUR CASES</h3>
             </div>
           </div>
         </div>

@@ -23,7 +23,7 @@ const CasesPage = async () => {
       </div>
       <Navbar />
       <PageHeader
-        title="Our Cases"
+        title="OUR CASES"
         paragraph="All the most current news and events of our creative team."
       />
       <BlogGrid />

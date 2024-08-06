@@ -87,7 +87,7 @@ function FullTestimonials({
             <div className="col-lg-8 col-md-10">
               <div className="sec-head text-center">
                 <h6 className="wow fadeIn" data-wow-delay=".5s">
-                  Testimonials
+                  TESTIMONIALS
                 </h6>
                 <h3 className="wow color-font">
                   We love our clients from all over the world.

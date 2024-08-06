@@ -51,7 +51,7 @@ function Team2(data) {
         <div className="row justify-content-center">
           <div className="col-lg-8 col-md-10">
             <div className="sec-head text-center">
-              <h3 className="wow color-font">Our Team</h3>
+              <h3 className="wow color-font">OUR TEAM</h3>
             </div>
           </div>
         </div>
